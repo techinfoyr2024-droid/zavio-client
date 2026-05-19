@@ -1,120 +1,188 @@
-/* Responsive Fixes */
+/* ==========================================================================
+   Consolidated Responsive Overhaul
+   Mobile-First Strategy (320px - 1024px+)
+   ========================================================================== */
 
+/* 1. Global Layout Constraints - Prevent all possible horizontal scroll */
+html, body {
+    max-width: 100%;
+    overflow-x: hidden !important;
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+
+.container, .container-fluid {
+    width: 100%;
+    max-width: 100vw !important;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+    overflow: hidden !important;
+}
+
+section {
+    width: 100% !important;
+    overflow-x: hidden !important;
+}
+
+/* 2. Responsive Typography (Fluid approach) */
+@media (max-width: 768px) {
+    .display-3 { font-size: 2.5rem !important; line-height: 1.2; }
+    .display-5 { font-size: 2rem !important; }
+    .display-6 { font-size: 1.75rem !important; }
+    .hero-title { font-size: 2.5rem !important; }
+    .lead { font-size: 1rem !important; }
+    h2 { font-size: 1.8rem !important; }
+    h3 { font-size: 1.5rem !important; }
+}
+
+/* 3. Navigation & Header Fixing */
 @media (max-width: 991.98px) {
-    /* Navbar collapse */
+    .premium-nav .container-fluid {
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+    }
+
+    .brand-logo { 
+        height: 30px !important; 
+    }
+
+    .navbar-toggler {
+        padding: 5px !important;
+        border: none !important;
+        z-index: 1050;
+    }
+
     .navbar-collapse {
         background: var(--glass-bg);
-        padding: 1rem;
-        border-radius: 12px;
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
         margin-top: 10px;
+        padding: 1.5rem;
+        border-radius: 20px;
         border: 1px solid var(--border-light-alpha);
     }
-    .navbar-nav .nav-link {
-        margin: 5px 0;
-        display: inline-block;
-    }
-    .navbar-nav .nav-link::after {
-        display: none;
-    }
-    
-    .section-padding { padding: 80px 0; }
-    
-    .mockup-window {
-        transform: rotateY(0) rotateX(0); /* Remove 3D skew on mobile */
-        height: 600px;
-    }
-    .widget-1 { left: -10px; }
-    .widget-2 { right: -10px; bottom: 10px; }
 
-    .showcase-browser-frame {
-        transform: scale(0.95);
+    .navbar-nav .nav-link {
+        padding: 0.8rem 1rem !important;
+        margin: 4px 0 !important;
+        border-radius: 12px;
+        font-size: 1rem;
     }
 }
 
+/* 4. Hero Section - Stacked Buttons & UI cleanup */
 @media (max-width: 767.98px) {
-    .brand-logo { height: 32px !important; }
-
-    .section-padding { padding: 60px 0; }
+    .section-padding { padding: 60px 0 !important; }
     
     .hero-section {
-        padding-top: 60px;
-    }
-    .hero-title {
-        font-size: 2.3rem;
-    }
-    
-    .hero-section .btn-lg {
-        width: 100%;
-        padding: 1rem !important;
-        font-size: 1rem;
-    }
-    
-    .trust-metrics {
-        justify-content: space-around !important;
-        width: 100%;
-    }
-    
-    .mockup-window {
-        height: auto;
-        min-height: 250px;
-        transform: scale(0.95);
-    }
-    .mockup-content {
-        padding: 1.5rem !important;
-    }
-    
-    .dashboard-mockup-wrapper {
-        margin-left: -15px;
-        margin-right: -15px;
-        overflow: hidden;
-    }
-    
-    .widget-1, .widget-2 {
-        display: none; /* Hide floating widgets on very small screens to avoid overflow */
+        padding-top: 80px !important;
     }
 
-    .social-interactive-strip {
-        gap: 15px !important;
+    /* Stack buttons for mobile-first */
+    .hero-section .d-flex.flex-column.flex-sm-row {
+        gap: 12px !important;
     }
-    .social-blob {
-        width: 60px !important;
-        height: 60px !important;
-        font-size: 1.5rem !important;
+
+    .hero-section .btn-lg {
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 1rem 1.5rem !important;
+        font-size: 1rem !important;
+    }
+
+    .trust-metrics {
+        gap: 20px !important;
+        justify-content: center !important;
+    }
+
+    /* Fix Mockup Window */
+    .mockup-window {
+        transform: none !important; /* Remove 3D skew to avoid clipping */
+        height: auto !important;
+        min-height: 250px;
+    }
+
+    .dashboard-mockup-wrapper {
+        margin: 0 -5px;
+        perspective: none !important;
+    }
+
+    .widget-1, .widget-2 {
+        display: none !important;
+    }
+}
+
+/* 5. Feature Sections & Tables */
+@media (max-width: 767.98px) {
+    /* Feature Cards alignment */
+    .premium-card {
+        padding: 1.5rem !important;
+        text-align: center;
     }
     
-    #dynamic-glow {
-        max-width: 220px !important;
-        max-height: 220px !important;
+    .card-icon {
+        margin: 0 auto 1.5rem auto !important;
     }
-    
-    #dynamic-social-icon {
-        width: 90px !important;
-        height: 90px !important;
-        font-size: 3.5rem !important;
-    }
-    
-    #dynamic-social-title {
-        font-size: 1.75rem !important;
-    }
-    
-    .pricing-card.premium-tier {
-        transform: scale(1);
-    }
-    
-    /* Comparison Table Overflow */
+
+    /* Comparison Table Horizontal Scrolling (Native Swiping) */
     .comparison-card {
         overflow-x: auto !important;
         white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+        border-radius: 16px !important;
     }
+
     .comparison-card .row {
-        min-width: 600px;
+        min-width: 700px; /* Force overflow for swipeability */
+        margin: 0 !important;
+    }
+}
+
+/* 6. Social Dashboard Refinement */
+@media (max-width: 767.98px) {
+    .social-nav-sidebar {
+        flex-direction: row !important;
+        overflow-x: auto !important;
+        padding: 10px 5px !important;
+        gap: 10px !important;
+    }
+
+    .social-nav-item {
+        min-width: 70px !important;
+    }
+
+    .social-nav-item span {
+        display: none !important; /* Show only icons on mobile nav bar */
+    }
+
+    .magnifying-glass-fx {
+        width: 180px !important;
+        height: 180px !important;
+    }
+}
+
+/* 7. Contact Form & Footer */
+@media (max-width: 767.98px) {
+    #contact .row {
+        margin: 0 !important;
     }
     
-    .showcase-browser-frame .sidebar {
-        display: none !important;
+    #contact .col-lg-5, #contact .col-lg-7 {
+        padding: 2rem 1.5rem !important;
     }
-    
-    .dashboard-showcase-container .position-absolute {
-        display: none; /* Hide floating widgets over showcase on mobile */
+
+    .footer-links {
+        text-align: center;
+        margin-bottom: 2rem;
     }
+}
+
+/* 8. Smallest Screens Fix (320px) */
+@media (max-width: 360px) {
+    .display-3, .hero-title { font-size: 2.2rem !important; }
+    .brand-logo { height: 28px !important; }
 }

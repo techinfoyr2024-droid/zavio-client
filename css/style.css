@@ -24,6 +24,10 @@
     --shadow-premium: 0 20px 40px -10px rgba(0, 0, 0, 0.05);
     --shadow-super-premium: 0 40px 80px -20px rgba(0, 0, 0, 0.08);
     --glass-shadow: 0 8px 32px 0 rgba(15, 23, 42, 0.05);
+
+    /* Cursor Variables */
+    --cursor-primary: var(--primary);
+    --cursor-accent: var(--accent);
 }
 
 body[data-theme='dark'] {
@@ -53,6 +57,51 @@ body {
     font-family: 'Inter', sans-serif;
     transition: background-color 0.4s ease, color 0.4s ease;
     overflow-x: hidden;
+    cursor: none; /* Hide default cursor */
+}
+
+/* Custom Cursor Elements */
+#custom-cursor-dot, #custom-cursor-outline {
+    pointer-events: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: 9999;
+    transition: width 0.3s ease, height 0.3s ease, transform 0.15s ease, opacity 0.3s ease;
+}
+
+#custom-cursor-dot {
+    width: 8px;
+    height: 8px;
+    background-color: var(--cursor-accent);
+}
+
+#custom-cursor-outline {
+    width: 32px;
+    height: 32px;
+    border: 1.5px solid var(--cursor-primary);
+    background-color: rgba(43, 87, 154, 0.05);
+}
+
+/* Hover States for Interactive Elements */
+body.cursor-active #custom-cursor-outline {
+    width: 50px;
+    height: 50px;
+    background-color: rgba(43, 87, 154, 0.15);
+    border-color: var(--cursor-accent);
+}
+
+body.cursor-active #custom-cursor-dot {
+    transform: translate(-50%, -50%) scale(0.5);
+    opacity: 0.5;
+}
+
+/* Fix for mobile - disable custom cursor */
+@media (max-width: 1024px) {
+    body { cursor: auto; }
+    #custom-cursor-dot, #custom-cursor-outline { display: none !important; }
 }
 
 .font-poppins { font-family: 'Poppins', sans-serif; }
