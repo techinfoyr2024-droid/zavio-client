@@ -1,0 +1,159 @@
+/* Hover Scale Effects */
+.hover-lift {
+    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+.hover-lift:hover {
+    transform: translateY(-5px);
+}
+
+.hover-lift-shadow {
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+.hover-lift-shadow:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-premium);
+}
+
+.transform-scale {
+    transition: transform 0.4s ease;
+}
+.transform-scale:hover {
+    transform: scale(1.02);
+}
+
+/* Keyframes */
+@keyframes pulseDot {
+    0% { box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.7); }
+    70% { box-shadow: 0 0 0 10px rgba(245, 158, 11, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(245, 158, 11, 0); }
+}
+.pulse-dot {
+    animation: pulseDot 2s infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0px); }
+}
+.float-animation {
+    animation: float 8s ease-in-out infinite;
+}
+.widget-1 { animation: float 6s ease-in-out infinite reverse; }
+.widget-2 { animation: float 7s ease-in-out infinite; }
+
+/* Dark mode toggle rotation */
+@keyframes spinTheme {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+.spin-anim {
+    animation: spinTheme 0.5s ease-out;
+}
+
+/* Background blob decorations */
+.hero-bg-shapes::before, .hero-bg-shapes::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(100px);
+    z-index: 0;
+    opacity: 0.15;
+}
+.hero-bg-shapes::before {
+    width: 600px;
+    height: 600px;
+    background: var(--primary);
+    top: -200px;
+    left: -200px;
+}
+.hero-bg-shapes::after {
+    width: 500px;
+    height: 500px;
+    background: var(--accent);
+    bottom: -150px;
+    right: -100px;
+}
+body[data-theme='dark'] .hero-bg-shapes::before,
+body[data-theme='dark'] .hero-bg-shapes::after {
+    opacity: 0.08; 
+}
+
+/* --- NEW SOCIAL DASHBOARD STYLES --- */
+
+/* Social Brand Colors */
+.instagram-gradient { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%); }
+.bg-facebook { background-color: #1877F2; }
+.bg-linkedin { background-color: #0A66C2; }
+.text-instagram { color: #E1306C; }
+
+/* Generic transition */
+.transition-all { transition: all 0.3s ease; }
+.cursor-pointer { cursor: pointer; }
+
+/* Dashboard UI Layout */
+.social-nav-item.active {
+    border-color: rgba(26, 59, 102, 0.4) !important;
+    background-color: var(--bg-main) !important;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05) !important;
+}
+.nav-connector {
+    width: 2px;
+    height: 30px;
+    background: repeating-linear-gradient(to bottom, var(--border-light-alpha) 0, var(--border-light-alpha) 4px, transparent 4px, transparent 8px);
+    margin: -10px auto;
+    z-index: 1;
+}
+
+/* Magnifying Glass Effect */
+.magnifying-glass-fx {
+    width: 250px;
+    height: 250px;
+    margin: 0 auto;
+}
+.glass-reflection {
+    background: linear-gradient(135deg, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0) 50%, rgba(0,0,0,0.05) 100%);
+}
+.magnifying-handle {
+    width: 20px;
+    height: 90px;
+    bottom: -70px;
+    right: -40px;
+    transform: rotate(-45deg);
+    z-index: 0;
+}
+.magnifying-handle-grip {
+    width: 24px;
+    height: 40px;
+    bottom: -80px;
+    right: -50px;
+    transform: rotate(-45deg);
+    z-index: 1;
+}
+.hover-to-zoom svg {
+    opacity: 0.5;
+}
+
+/* Interactive Hover Buttons */
+.btn-outline-social:hover {
+    background: var(--border-light-alpha);
+    transform: translateY(-2px);
+}
+.line-height-sm {
+    line-height: 1.4;
+}
+
+/* Responsive Overrides */
+@media (min-width: 992px) {
+    .border-start-lg { border-left: 1px solid var(--border-light-alpha) !important; }
+    .social-nav-sidebar { padding-right: 0px !important; }
+}
+@media (max-width: 767.98px) {
+    .social-nav-sidebar { flex-direction: row !important; overflow-x: auto; padding-bottom: 15px;}
+    .social-nav-item { min-width: 90px; }
+    .magnifying-glass-fx { width: 180px; height: 180px; }
+    #dynamic-social-icon { width: 90px !important; height: 90px !important; font-size: 3.5rem !important; }
+    .magnifying-handle { width: 16px; height: 70px; bottom: -55px; right: -30px; }
+    .magnifying-handle-grip { width: 20px; height: 30px; bottom: -65px; right: -40px; }
+}
+

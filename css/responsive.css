@@ -1,0 +1,120 @@
+/* Responsive Fixes */
+
+@media (max-width: 991.98px) {
+    /* Navbar collapse */
+    .navbar-collapse {
+        background: var(--glass-bg);
+        padding: 1rem;
+        border-radius: 12px;
+        margin-top: 10px;
+        border: 1px solid var(--border-light-alpha);
+    }
+    .navbar-nav .nav-link {
+        margin: 5px 0;
+        display: inline-block;
+    }
+    .navbar-nav .nav-link::after {
+        display: none;
+    }
+    
+    .section-padding { padding: 80px 0; }
+    
+    .mockup-window {
+        transform: rotateY(0) rotateX(0); /* Remove 3D skew on mobile */
+        height: 600px;
+    }
+    .widget-1 { left: -10px; }
+    .widget-2 { right: -10px; bottom: 10px; }
+
+    .showcase-browser-frame {
+        transform: scale(0.95);
+    }
+}
+
+@media (max-width: 767.98px) {
+    .brand-logo { height: 32px !important; }
+
+    .section-padding { padding: 60px 0; }
+    
+    .hero-section {
+        padding-top: 60px;
+    }
+    .hero-title {
+        font-size: 2.3rem;
+    }
+    
+    .hero-section .btn-lg {
+        width: 100%;
+        padding: 1rem !important;
+        font-size: 1rem;
+    }
+    
+    .trust-metrics {
+        justify-content: space-around !important;
+        width: 100%;
+    }
+    
+    .mockup-window {
+        height: auto;
+        min-height: 250px;
+        transform: scale(0.95);
+    }
+    .mockup-content {
+        padding: 1.5rem !important;
+    }
+    
+    .dashboard-mockup-wrapper {
+        margin-left: -15px;
+        margin-right: -15px;
+        overflow: hidden;
+    }
+    
+    .widget-1, .widget-2 {
+        display: none; /* Hide floating widgets on very small screens to avoid overflow */
+    }
+
+    .social-interactive-strip {
+        gap: 15px !important;
+    }
+    .social-blob {
+        width: 60px !important;
+        height: 60px !important;
+        font-size: 1.5rem !important;
+    }
+    
+    #dynamic-glow {
+        max-width: 220px !important;
+        max-height: 220px !important;
+    }
+    
+    #dynamic-social-icon {
+        width: 90px !important;
+        height: 90px !important;
+        font-size: 3.5rem !important;
+    }
+    
+    #dynamic-social-title {
+        font-size: 1.75rem !important;
+    }
+    
+    .pricing-card.premium-tier {
+        transform: scale(1);
+    }
+    
+    /* Comparison Table Overflow */
+    .comparison-card {
+        overflow-x: auto !important;
+        white-space: nowrap;
+    }
+    .comparison-card .row {
+        min-width: 600px;
+    }
+    
+    .showcase-browser-frame .sidebar {
+        display: none !important;
+    }
+    
+    .dashboard-showcase-container .position-absolute {
+        display: none; /* Hide floating widgets over showcase on mobile */
+    }
+}
