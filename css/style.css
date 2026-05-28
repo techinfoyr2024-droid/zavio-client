@@ -60,48 +60,33 @@ body {
     cursor: none; /* Hide default cursor */
 }
 
-/* Custom Cursor Elements */
-#custom-cursor-dot, #custom-cursor-outline {
+/* Smooth Physics Cursor */
+#smooth-cursor {
     pointer-events: none;
     position: fixed;
     top: 0;
     left: 0;
-    transform: translate(-50%, -50%);
-    border-radius: 50%;
-    z-index: 9999;
-    transition: width 0.3s ease, height 0.3s ease, transform 0.15s ease, opacity 0.3s ease;
+    z-index: 99999;
+    will-change: transform;
+    /* transform is driven entirely by JS */
 }
 
-#custom-cursor-dot {
-    width: 8px;
-    height: 8px;
-    background-color: var(--cursor-accent);
+#smooth-cursor-svg {
+    display: block;
+    /* size & filter driven by JS on hover */
+    transition: filter 0.2s ease, opacity 0.3s ease;
+    filter: drop-shadow(0 2px 8px rgba(59, 130, 246, 0.55));
 }
 
-#custom-cursor-outline {
-    width: 32px;
-    height: 32px;
-    border: 1.5px solid var(--cursor-primary);
-    background-color: rgba(43, 87, 154, 0.05);
+/* Mobile — hide custom cursor entirely */
+@media (max-width: 1024px), (pointer: coarse) {
+    body { cursor: auto !important; }
+    #smooth-cursor { display: none !important; }
 }
 
-/* Hover States for Interactive Elements */
-body.cursor-active #custom-cursor-outline {
-    width: 50px;
-    height: 50px;
-    background-color: rgba(43, 87, 154, 0.15);
-    border-color: var(--cursor-accent);
-}
-
-body.cursor-active #custom-cursor-dot {
-    transform: translate(-50%, -50%) scale(0.5);
-    opacity: 0.5;
-}
-
-/* Fix for mobile - disable custom cursor */
-@media (max-width: 1024px) {
-    body { cursor: auto; }
-    #custom-cursor-dot, #custom-cursor-outline { display: none !important; }
+/* Restore default text cursor for inputs */
+input, textarea, select {
+    cursor: text !important;
 }
 
 .font-poppins { font-family: 'Poppins', sans-serif; }

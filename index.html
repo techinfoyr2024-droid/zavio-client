@@ -28,9 +28,18 @@
 </head>
 
 <body>
-    <!-- Premium Custom Cursor -->
-    <div id="custom-cursor-dot"></div>
-    <div id="custom-cursor-outline"></div>
+    <!-- Smooth Physics Cursor -->
+    <div id="smooth-cursor" aria-hidden="true">
+        <svg id="smooth-cursor-svg" xmlns="http://www.w3.org/2000/svg" width="24" height="36" viewBox="0 0 24 36" fill="none">
+            <path d="M5.65376 12.3673H5.46026L5.31717 12.4976L0.500002 16.8829L0.500002 1.19841L11.7841 12.3673H5.65376Z" fill="url(#cursor-gradient)" stroke="white" stroke-width="1"/>
+            <defs>
+                <linearGradient id="cursor-gradient" x1="0" y1="0" x2="24" y2="36" gradientUnits="userSpaceOnUse">
+                    <stop offset="0%" stop-color="#3B82F6"/>
+                    <stop offset="100%" stop-color="#1D4ED8"/>
+                </linearGradient>
+            </defs>
+        </svg>
+    </div>
 
     <!-- Navigation Bar -->
     <nav class="navbar navbar-expand-lg fixed-top premium-nav py-2" id="mainNavbar">
@@ -308,219 +317,202 @@
         </div>
     </section>
 
-    <!-- Social Media Integration Section -->
-    <section id="socials" class="py-5 section-padding bg-main position-relative">
+
+
+    <!-- Complete Feature Showcase Dashboard -->
+    <section id="platform-features" class="py-5 section-padding bg-main position-relative">
         <div class="container py-5">
-            <div
-                class="social-dashboard-card bg-card p-4 p-lg-5 rounded-4 border border-light-alpha shadow-super-premium">
+            <div class="features-dashboard-card bg-card p-4 p-lg-5 rounded-4 border border-light-alpha shadow-super-premium">
 
                 <!-- Header Area -->
-                <div class="d-flex flex-column flex-lg-row justify-content-between align-items-lg-start mb-5 gap-4">
-                    <div style="max-width: 500px;">
+                <div class="d-flex flex-column flex-lg-row justify-content-between align-items-lg-start mb-5 gap-4" data-aos="fade-up">
+                    <div style="max-width: 600px;">
                         <div class="d-flex align-items-center mb-3">
                             <div class="bg-primary text-white rounded d-flex align-items-center justify-content-center me-3 shadow-sm"
                                 style="width: 45px; height: 45px;">
-                                <i class="fa-solid fa-share-nodes fs-5"></i>
+                                <i class="fa-solid fa-bolt fs-5 text-accent"></i>
                             </div>
-                            <span class="text-primary fw-bold text-uppercase tracking-wide fs-8">Social
-                                Integrations</span>
+                            <span class="text-primary fw-bold text-uppercase tracking-wide fs-8">Platform Showcase</span>
                         </div>
-                        <h2 class="display-6 fw-bold font-poppins mb-3 text-main">All your social<br>connections.
-                            One<br>powerful CRM.</h2>
-                        <p class="font-inter text-muted-secondary fs-7">Integrate your favorite platforms to manage
-                            conversations, capture leads, and grow relationships.</p>
+                        <h2 class="display-6 fw-bold font-poppins mb-3 text-main">8 Core Engines.<br>One Seamless Powerhouse.</h2>
+                        <p class="font-inter text-muted-secondary fs-7">Explore our market-leading features. Click any engine on the left to see how it works and why business owners love it.</p>
                     </div>
 
-                    <div
-                        class="status-badge bg-card border border-light-alpha rounded-3 p-3 shadow-sm d-flex align-items-center gap-3">
+                    <div class="status-badge bg-card border border-light-alpha rounded-3 p-3 shadow-sm d-flex align-items-center gap-3">
                         <div class="status-icon text-success bg-success-soft rounded-circle d-flex justify-content-center align-items-center"
                             style="width: 35px; height: 35px;">
-                            <i class="fa-regular fa-circle-check"></i>
+                            <i class="fa-solid fa-circle-check"></i>
                         </div>
                         <div>
-                            <div class="fw-bold fs-7 text-main">All integrations connected</div>
-                            <div class="fs-8 text-muted-secondary">Real-time sync across platforms</div>
+                            <div class="fw-bold fs-7 text-main">All Engines Online</div>
+                            <div class="fs-8 text-muted-secondary">Fully integrated & optimized</div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Main Split Layout -->
-                <div
-                    class="row g-0 align-items-stretch position-relative mb-5 z-2 bg-main-alt rounded-4 border border-light-alpha p-lg-2 p-1">
-                    <!-- Left Nav (Horizontal Scroll on Mobile, Column on Desktop) -->
-                    <div class="col-md-3 col-lg-2 border-end border-light-alpha p-3 d-flex flex-row flex-md-column gap-2 gap-md-3 position-relative social-nav-sidebar overflow-x-auto overflow-y-hidden"
-                        style="scrollbar-width: none;">
+                <div class="row g-0 align-items-stretch position-relative mb-5 z-2 bg-main-alt rounded-4 border border-light-alpha p-lg-2 p-1">
+                    <!-- Left Nav Sidebar (Vertical Scroll on Desktop, Horizontal Swipe on Mobile) -->
+                    <div class="col-md-4 col-lg-3 border-end border-light-alpha p-3 d-flex flex-row flex-md-column gap-2 gap-md-2 position-relative feature-nav-sidebar overflow-x-auto overflow-y-hidden"
+                        style="scrollbar-width: none; max-height: 580px; overflow-y: auto !important;">
 
-                        <!-- Nav Items -->
-                        <div class="social-nav-item active d-flex flex-md-column align-items-center p-2 p-md-3 rounded-4 cursor-pointer text-center position-relative z-2 bg-card border border-light-alpha shadow-sm hover-lift"
-                            data-platform="instagram" style="min-width: 80px;">
-                            <div class="social-icon-box instagram-gradient rounded-3 d-flex align-items-center justify-content-center text-white mb-0 mb-md-2 me-2 me-md-0 shadow-sm"
-                                style="width: 50px; height: 50px; font-size: 1.8rem;">
-                                <i class="fa-brands fa-instagram"></i>
+                        <!-- Feature Nav Items -->
+                        <div class="feature-nav-item active d-flex align-items-center p-2 p-md-3 rounded-4 cursor-pointer position-relative z-2 bg-card border border-light-alpha shadow-sm hover-lift"
+                            data-feature="unified-inbox" style="min-width: 150px; width: 100%;">
+                            <div class="feature-icon-box bg-primary text-white rounded-3 d-flex align-items-center justify-content-center me-3 shadow-sm"
+                                style="width: 40px; height: 40px; font-size: 1.2rem; flex-shrink: 0;">
+                                <i class="fa-solid fa-inbox"></i>
                             </div>
-                            <span class="fs-8 fw-bold text-main d-none d-md-block">Instagram</span>
+                            <span class="fs-8 fw-bold text-main">Unified Inbox</span>
                         </div>
-                        <div class="nav-connector d-none d-md-block"
-                            style="height: 10px; width: 2px; border-left: 2px dashed var(--border-light-alpha); margin: 0 auto;">
-                        </div>
-                        <div class="social-nav-item d-flex flex-md-column align-items-center p-2 p-md-3 rounded-4 cursor-pointer text-center position-relative z-2 hover-lift"
-                            data-platform="facebook" style="min-width: 80px;">
-                            <div class="social-icon-box bg-facebook rounded-3 d-flex align-items-center justify-content-center text-white mb-0 mb-md-2 me-2 me-md-0 shadow-sm"
-                                style="width: 50px; height: 50px; font-size: 1.8rem;">
-                                <i class="fa-brands fa-facebook-f"></i>
-                            </div>
-                            <span class="fs-8 fw-bold text-main d-none d-md-block">Facebook</span>
-                        </div>
-                        <div class="nav-connector d-none d-md-block"
-                            style="height: 10px; width: 2px; border-left: 2px dashed var(--border-light-alpha); margin: 0 auto;">
-                        </div>
-                        <div class="social-nav-item d-flex flex-md-column align-items-center p-2 p-md-3 rounded-4 cursor-pointer text-center position-relative z-2 hover-lift"
-                            data-platform="linkedin" style="min-width: 80px;">
-                            <div class="social-icon-box bg-linkedin rounded-3 d-flex align-items-center justify-content-center text-white mb-0 mb-md-2 me-2 me-md-0 shadow-sm"
-                                style="width: 50px; height: 50px; font-size: 1.8rem;">
-                                <i class="fa-brands fa-linkedin-in"></i>
-                            </div>
-                            <span class="fs-8 fw-bold text-main d-none d-md-block">LinkedIn</span>
-                        </div>
-                        <div class="nav-connector d-none d-md-block"
-                            style="height: 10px; width: 2px; border-left: 2px dashed var(--border-light-alpha); margin: 0 auto;">
-                        </div>
-                        <div class="social-nav-item d-flex flex-md-column align-items-center p-2 p-md-3 rounded-4 cursor-pointer text-center position-relative z-2 hover-lift"
-                            data-platform="twitter" style="min-width: 80px;">
-                            <div class="social-icon-box bg-dark text-white rounded-3 d-flex align-items-center justify-content-center mb-0 mb-md-2 me-2 me-md-0 border border-light-alpha shadow-sm"
-                                style="width: 50px; height: 50px; font-size: 1.8rem;">
-                                <i class="fa-brands fa-x-twitter"></i>
-                            </div>
-                            <span class="fs-8 fw-bold text-main d-none d-md-block">Twitter / X</span>
-                        </div>
-                        <div class="nav-connector d-none d-md-block"
-                            style="height: 10px; width: 2px; border-left: 2px dashed var(--border-light-alpha); margin: 0 auto;">
-                        </div>
-                        <div class="social-nav-item d-flex flex-md-column align-items-center p-2 p-md-3 rounded-4 cursor-pointer text-center position-relative z-2 hover-lift"
-                            data-platform="whatsapp" style="min-width: 80px;">
-                            <div class="social-icon-box bg-success text-white rounded-3 d-flex align-items-center justify-content-center mb-0 mb-md-2 me-2 me-md-0 shadow-sm"
-                                style="width: 50px; height: 50px; font-size: 1.8rem;">
-                                <i class="fa-brands fa-whatsapp"></i>
-                            </div>
-                            <span class="fs-8 fw-bold text-main d-none d-md-block">WhatsApp</span>
-                        </div>
-                        <div class="nav-connector d-none d-md-block"
-                            style="height: 10px; width: 2px; border-left: 2px dashed var(--border-light-alpha); margin: 0 auto;">
-                        </div>
-                        <div class="social-nav-item d-flex flex-md-column align-items-center p-2 p-md-3 rounded-4 cursor-pointer text-center position-relative z-2 hover-lift"
-                            data-platform="telegram" style="min-width: 80px;">
-                            <div class="social-icon-box bg-info text-white rounded-3 d-flex align-items-center justify-content-center mb-0 mb-md-2 me-2 me-md-0 shadow-sm"
-                                style="width: 50px; height: 50px; font-size: 1.8rem;">
-                                <i class="fa-brands fa-telegram"></i>
-                            </div>
-                            <span class="fs-8 fw-bold text-main d-none d-md-block">Telegram</span>
-                        </div>
+                        <div class="nav-connector d-none d-md-block" style="height: 10px; width: 2px; border-left: 2px dashed var(--border-light-alpha); margin: 0 32px;"></div>
 
-                        <!-- Need Help -->
-                        <div class="mt-md-auto pt-4 pb-2 text-center text-md-start px-2 d-none d-md-block">
-                            <div class="d-flex align-items-center gap-2 mb-1">
-                                <span
-                                    class="bg-card border border-light-alpha rounded-circle d-inline-flex justify-content-center align-items-center text-muted-secondary fs-9"
-                                    style="width:16px;height:16px;">?</span>
-                                <span class="fs-8 fw-semibold text-main">Need help?</span>
+                        <div class="feature-nav-item d-flex align-items-center p-2 p-md-3 rounded-4 cursor-pointer position-relative z-2 hover-lift"
+                            data-feature="missed-call" style="min-width: 150px; width: 100%;">
+                            <div class="feature-icon-box bg-success text-white rounded-3 d-flex align-items-center justify-content-center me-3 shadow-sm"
+                                style="width: 40px; height: 40px; font-size: 1.2rem; flex-shrink: 0;">
+                                <i class="fa-solid fa-phone-slash"></i>
                             </div>
-                            <a href="#"
-                                class="fs-8 text-primary-dark text-decoration-none hover-text-main fw-medium">View guide
-                                <i class="fa-solid fa-arrow-up-right-from-square ms-1 fs-9"></i></a>
+                            <span class="fs-8 fw-bold text-main">Missed-Call Text-Back</span>
+                        </div>
+                        <div class="nav-connector d-none d-md-block" style="height: 10px; width: 2px; border-left: 2px dashed var(--border-light-alpha); margin: 0 32px;"></div>
+
+                        <div class="feature-nav-item d-flex align-items-center p-2 p-md-3 rounded-4 cursor-pointer position-relative z-2 hover-lift"
+                            data-feature="google-reviews" style="min-width: 150px; width: 100%;">
+                            <div class="feature-icon-box bg-warning text-white rounded-3 d-flex align-items-center justify-content-center me-3 shadow-sm"
+                                style="width: 40px; height: 40px; font-size: 1.2rem; flex-shrink: 0;">
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <span class="fs-8 fw-bold text-main">Google Reviews</span>
+                        </div>
+                        <div class="nav-connector d-none d-md-block" style="height: 10px; width: 2px; border-left: 2px dashed var(--border-light-alpha); margin: 0 32px;"></div>
+
+                        <div class="feature-nav-item d-flex align-items-center p-2 p-md-3 rounded-4 cursor-pointer position-relative z-2 hover-lift"
+                            data-feature="smart-calendars" style="min-width: 150px; width: 100%;">
+                            <div class="feature-icon-box bg-info text-white rounded-3 d-flex align-items-center justify-content-center me-3 shadow-sm"
+                                style="width: 40px; height: 40px; font-size: 1.2rem; flex-shrink: 0;">
+                                <i class="fa-solid fa-calendar-check"></i>
+                            </div>
+                            <span class="fs-8 fw-bold text-main">Smart Calendars</span>
+                        </div>
+                        <div class="nav-connector d-none d-md-block" style="height: 10px; width: 2px; border-left: 2px dashed var(--border-light-alpha); margin: 0 32px;"></div>
+
+                        <div class="feature-nav-item d-flex align-items-center p-2 p-md-3 rounded-4 cursor-pointer position-relative z-2 hover-lift"
+                            data-feature="websites" style="min-width: 150px; width: 100%;">
+                            <div class="feature-icon-box bg-danger text-white rounded-3 d-flex align-items-center justify-content-center me-3 shadow-sm"
+                                style="width: 40px; height: 40px; font-size: 1.2rem; flex-shrink: 0;">
+                                <i class="fa-solid fa-laptop-code"></i>
+                            </div>
+                            <span class="fs-8 fw-bold text-main">Landing Pages</span>
+                        </div>
+                        <div class="nav-connector d-none d-md-block" style="height: 10px; width: 2px; border-left: 2px dashed var(--border-light-alpha); margin: 0 32px;"></div>
+
+                        <div class="feature-nav-item d-flex align-items-center p-2 p-md-3 rounded-4 cursor-pointer position-relative z-2 hover-lift"
+                            data-feature="sales-dashboard" style="min-width: 150px; width: 100%;">
+                            <div class="feature-icon-box text-white rounded-3 d-flex align-items-center justify-content-center me-3 shadow-sm"
+                                style="width: 40px; height: 40px; font-size: 1.2rem; flex-shrink: 0; background-color: #14B8A6;">
+                                <i class="fa-solid fa-chart-pie"></i>
+                            </div>
+                            <span class="fs-8 fw-bold text-main">Sales Dashboard</span>
+                        </div>
+                        <div class="nav-connector d-none d-md-block" style="height: 10px; width: 2px; border-left: 2px dashed var(--border-light-alpha); margin: 0 32px;"></div>
+
+                        <div class="feature-nav-item d-flex align-items-center p-2 p-md-3 rounded-4 cursor-pointer position-relative z-2 hover-lift"
+                            data-feature="social-planner" style="min-width: 150px; width: 100%;">
+                            <div class="feature-icon-box text-white rounded-3 d-flex align-items-center justify-content-center me-3 shadow-sm"
+                                style="width: 40px; height: 40px; font-size: 1.2rem; flex-shrink: 0; background-color: #EF4444;">
+                                <i class="fa-solid fa-share-nodes"></i>
+                            </div>
+                            <span class="fs-8 fw-bold text-main">Social Planner</span>
+                        </div>
+                        <div class="nav-connector d-none d-md-block" style="height: 10px; width: 2px; border-left: 2px dashed var(--border-light-alpha); margin: 0 32px;"></div>
+
+                        <div class="feature-nav-item d-flex align-items-center p-2 p-md-3 rounded-4 cursor-pointer position-relative z-2 hover-lift"
+                            data-feature="custom-branding" style="min-width: 150px; width: 100%;">
+                            <div class="feature-icon-box text-white rounded-3 d-flex align-items-center justify-content-center me-3 shadow-sm"
+                                style="width: 40px; height: 40px; font-size: 1.2rem; flex-shrink: 0; background-color: #6366F1;">
+                                <i class="fa-solid fa-hashtag"></i>
+                            </div>
+                            <span class="fs-8 fw-bold text-main">Custom Branding</span>
                         </div>
                     </div>
 
                     <!-- Right Detail Pane -->
-                    <div
-                        class="col-md-9 col-lg-10 p-4 p-lg-5 position-relative overflow-hidden social-detail-pane bg-card rounded-end-4">
+                    <div class="col-md-8 col-lg-9 p-4 p-lg-5 position-relative overflow-hidden feature-detail-pane bg-card rounded-end-4">
                         <div class="row align-items-center position-relative z-2 h-100">
                             <!-- Magnifying Glass Area -->
-                            <div class="col-lg-6 text-center position-relative mb-5 mb-lg-0 d-flex justify-content-center align-items-center min-vh-25"
+                            <div class="col-lg-5 text-center position-relative mb-5 mb-lg-0 d-flex justify-content-center align-items-center min-vh-25"
                                 data-aos="zoom-in">
                                 <!-- Ambient Glow -->
-                                <div id="dynamic-glow"
+                                <div id="dynamic-feature-glow"
                                     class="position-absolute top-50 start-50 translate-middle rounded-circle z-1 opacity-25 transition-all"
-                                    style="width: 320px; height: 320px; background: radial-gradient(circle, #E1306C 0%, transparent 70%); filter: blur(30px);">
+                                    style="width: 320px; height: 320px; background: radial-gradient(circle, #3B82F6 0%, transparent 70%); filter: blur(30px);">
                                 </div>
 
-                                <div
-                                    class="magnifying-glass-fx d-inline-flex justify-content-center align-items-center bg-card rounded-circle border border-4 border-white shadow-super-premium position-relative z-2">
-                                    <div
-                                        class="glass-reflection rounded-circle position-absolute top-0 start-0 w-100 h-100 opacity-25">
-                                    </div>
-                                    <div
-                                        class="magnifying-handle position-absolute bg-white border border-light-alpha rounded-pill shadow-sm">
-                                    </div>
-                                    <div
-                                        class="magnifying-handle-grip position-absolute bg-light rounded-pill shadow-sm">
-                                    </div>
+                                <div class="magnifying-glass-fx d-inline-flex justify-content-center align-items-center bg-card rounded-circle border border-4 border-white shadow-super-premium position-relative z-2">
+                                    <div class="glass-reflection rounded-circle position-absolute top-0 start-0 w-100 h-100 opacity-25"></div>
+                                    <div class="magnifying-handle position-absolute bg-white border border-light-alpha rounded-pill shadow-sm"></div>
+                                    <div class="magnifying-handle-grip position-absolute bg-light rounded-pill shadow-sm"></div>
                                     <!-- Dynamic Icon -->
-                                    <div id="dynamic-social-icon"
-                                        class="social-icon-box instagram-gradient transition-all rounded-4 d-flex align-items-center justify-content-center text-white shadow-lg"
+                                    <div id="dynamic-feature-icon"
+                                        class="social-icon-box bg-primary transition-all rounded-4 d-flex align-items-center justify-content-center text-white shadow-lg"
                                         style="width: 140px; height: 140px; font-size: 6rem;">
-                                        <i class="fa-brands fa-instagram"></i>
+                                        <i class="fa-solid fa-inbox"></i>
                                     </div>
                                 </div>
                             </div>
 
                             <!-- Content Details Area -->
-                            <div class="col-lg-6 ps-lg-5 pt-5 pt-lg-0 text-center text-lg-start" data-aos="fade-left"
-                                data-aos-delay="100">
-                                <div
-                                    class="d-inline-flex align-items-center gap-2 px-3 py-1 bg-success-soft text-success fs-8 fw-bold mb-4 rounded-pill">
-                                    <span class="dot bg-success"
-                                        style="width:8px; height:8px; border-radius:50%;"></span> Active
+                            <div class="col-lg-7 ps-lg-5 pt-5 pt-lg-0 text-center text-lg-start" data-aos="fade-left" data-aos-delay="100">
+                                <div id="dynamic-feature-badge-container" class="mb-4">
+                                    <span id="dynamic-feature-badge" class="d-inline-flex align-items-center gap-2 px-3 py-1 bg-success-soft text-success fs-8 fw-bold rounded-pill">
+                                        <span class="dot bg-success" style="width:8px; height:8px; border-radius:50%;"></span> Active Engine
+                                    </span>
                                 </div>
 
-                                <h3 id="dynamic-social-title" class="fw-bold font-poppins text-main mb-2 fs-2">Instagram
-                                </h3>
-                                <div id="dynamic-social-subtitle"
-                                    class="d-flex align-items-center gap-2 text-instagram fw-semibold fs-7 mb-4 transition-all"
-                                    style="color: #E1306C;">
-                                    <i class="fa-solid fa-arrows-rotate"></i> Active Sync
+                                <h3 id="dynamic-feature-title" class="fw-bold font-poppins text-main mb-2 fs-2">The Unified Inbox</h3>
+                                <div id="dynamic-feature-catchphrase" class="d-flex align-items-center gap-2 fw-semibold fs-7 mb-4 transition-all" style="color: #3B82F6;">
+                                    Stop Hunting for Messages.
                                 </div>
 
-                                <p id="dynamic-social-desc" class="text-muted-secondary font-inter fs-7 mb-4 pe-lg-4">
-                                    Sync DMs, comments, and mentions. Capture leads and engage with your audience — all
-                                    in one place.</p>
+                                <p id="dynamic-feature-desc" class="text-muted-secondary font-inter fs-7 mb-4 pe-lg-4">
+                                    Whether a customer messages you on Facebook, Instagram, Google, Email, or Text, it all lands in one single inbox. You can text them back right from your phone without switching apps.
+                                </p>
 
-                                <ul id="dynamic-social-features" class="list-unstyled d-flex flex-column gap-3 mb-5">
-                                    <li
-                                        class="d-flex align-items-center gap-3 border-bottom border-light-alpha pb-3 px-2">
-                                        <div class="icon-bg p-2 rounded bg-opacity-10 transition-all text-instagram"
-                                            style="background-color: rgba(225, 48, 108, 0.1); color: #E1306C;"><i
-                                                class="fa-regular fa-comment-dots"></i></div>
+                                <ul id="dynamic-feature-bullets" class="list-unstyled d-flex flex-column gap-3 mb-5">
+                                    <li class="d-flex align-items-center gap-3 border-bottom border-light-alpha pb-3 px-2">
+                                        <div class="icon-bg p-2 rounded bg-opacity-10 transition-all text-primary" style="background-color: rgba(59, 130, 246, 0.1); color: #3B82F6;"><i class="fa-solid fa-circle-nodes"></i></div>
                                         <div>
-                                            <div class="fw-bold fs-7 text-main">Sync conversations</div>
-                                            <div class="fs-8 text-muted-secondary">Messages & comments</div>
+                                            <div class="fw-bold fs-7 text-main">All channels in one place</div>
+                                            <div class="fs-8 text-muted-secondary">Facebook, Instagram, Email, SMS & Google</div>
                                         </div>
                                     </li>
-                                    <li
-                                        class="d-flex align-items-center gap-3 border-bottom border-light-alpha pb-3 px-2">
-                                        <div class="icon-bg p-2 rounded bg-opacity-10 transition-all text-instagram"
-                                            style="background-color: rgba(225, 48, 108, 0.1); color: #E1306C;"><i
-                                                class="fa-solid fa-user-plus"></i></div>
+                                    <li class="d-flex align-items-center gap-3 border-bottom border-light-alpha pb-3 px-2">
+                                        <div class="icon-bg p-2 rounded bg-opacity-10 transition-all text-primary" style="background-color: rgba(59, 130, 246, 0.1); color: #3B82F6;"><i class="fa-solid fa-mobile-screen-button"></i></div>
                                         <div>
-                                            <div class="fw-bold fs-7 text-main">Capture leads</div>
-                                            <div class="fs-8 text-muted-secondary">Auto-create CRM contacts</div>
+                                            <div class="fw-bold fs-7 text-main">Respond direct from phone</div>
+                                            <div class="fs-8 text-muted-secondary">No switching between multiple apps</div>
                                         </div>
                                     </li>
                                     <li class="d-flex align-items-center gap-3 px-2">
-                                        <div class="icon-bg p-2 rounded bg-opacity-10 transition-all text-instagram"
-                                            style="background-color: rgba(225, 48, 108, 0.1); color: #E1306C;"><i
-                                                class="fa-solid fa-bolt"></i></div>
+                                        <div class="icon-bg p-2 rounded bg-opacity-10 transition-all text-primary" style="background-color: rgba(59, 130, 246, 0.1); color: #3B82F6;"><i class="fa-solid fa-shield-halved"></i></div>
                                         <div>
-                                            <div class="fw-bold fs-7 text-main">Engage faster</div>
-                                            <div class="fs-8 text-muted-secondary">Respond from one inbox</div>
+                                            <div class="fw-bold fs-7 text-main">Zero missed opportunities</div>
+                                            <div class="fs-8 text-muted-secondary">Never lose another hot lead in your DMs</div>
                                         </div>
                                     </li>
                                 </ul>
 
-                                <button id="dynamic-social-btn"
-                                    class="btn btn-outline-social w-100 d-flex justify-content-between align-items-center px-4 py-3 rounded-2 fw-semibold border border-light-alpha shadow-sm hover-lift transition-all"
-                                    style="color: #E1306C;">
-                                    View Instagram Insights <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                                </button>
+                                <div id="dynamic-feature-why-attractive-container" class="why-attractive p-3 rounded-3 bg-accent-soft border border-light-alpha mb-4 text-start">
+                                    <span class="fs-8 fw-bold text-main d-block mb-1"><i class="fa-solid fa-fire text-accent me-1"></i> Why it's attractive:</span>
+                                    <p id="dynamic-feature-why-attractive" class="fs-8 text-muted-secondary mb-0 font-inter" style="line-height: 1.4;">
+                                        Eliminates the stress of missing a DM from a potential buyer because you forgot to check Instagram.
+                                    </p>
+                                </div>
+
+                                <a id="dynamic-feature-btn" href="#contact" class="btn btn-premium w-100 d-flex justify-content-between align-items-center px-4 py-3 rounded-2 fw-semibold border border-light-alpha shadow-sm hover-lift transition-all">
+                                    <span>Get Started with Unified Inbox</span> <i class="fa-solid fa-arrow-right"></i>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -529,125 +521,43 @@
                 <!-- Bottom Stats Ribbon -->
                 <div class="row g-4 pt-4 border-top border-light-alpha w-100 mx-0 pb-3" data-aos="fade-up">
                     <div class="col-sm-6 col-lg-3 d-flex align-items-center gap-3">
-                        <div class="p-2 bg-primary-soft text-primary-dark rounded-circle fs-5 d-flex align-items-center justify-content-center"
-                            style="width: 45px; height: 45px;">
-                            <i class="fa-solid fa-rotate"></i>
+                        <div class="p-2 bg-primary-soft text-primary-dark rounded-circle fs-5 d-flex align-items-center justify-content-center" style="width: 45px; height: 45px;">
+                            <i class="fa-solid fa-shield-halved text-primary"></i>
                         </div>
                         <div>
-                            <div class="fw-bold fs-7 text-main">Real-time Sync</div>
-                            <div class="fs-9 text-muted-secondary line-height-sm">Conversations sync instantly across
-                                platforms.</div>
+                            <div class="fw-bold fs-7 text-main">Enterprise Grade</div>
+                            <div class="fs-9 text-muted-secondary line-height-sm">Secure and fully compliant routing.</div>
                         </div>
                     </div>
-                    <div
-                        class="col-sm-6 col-lg-3 d-flex align-items-center gap-3 border-start-lg border-light-alpha ps-lg-4">
-                        <div class="p-2 bg-success-soft text-success rounded-circle fs-5 d-flex align-items-center justify-content-center"
-                            style="width: 45px; height: 45px;">
-                            <i class="fa-solid fa-shield-halved"></i>
+                    <div class="col-sm-6 col-lg-3 d-flex align-items-center gap-3 border-start-lg border-light-alpha ps-lg-4">
+                        <div class="p-2 bg-success-soft text-success rounded-circle fs-5 d-flex align-items-center justify-content-center" style="width: 45px; height: 45px;">
+                            <i class="fa-solid fa-bolt text-success"></i>
                         </div>
                         <div>
-                            <div class="fw-bold fs-7 text-main">Secure & Reliable</div>
-                            <div class="fs-9 text-muted-secondary line-height-sm">Enterprise-grade security to keep your
-                                data protected.</div>
+                            <div class="fw-bold fs-7 text-main">Ultra Fast Sync</div>
+                            <div class="fs-9 text-muted-secondary line-height-sm">Real-time instant message processing.</div>
                         </div>
                     </div>
-                    <div
-                        class="col-sm-6 col-lg-3 d-flex align-items-center gap-3 border-start-lg border-light-alpha ps-lg-4">
-                        <div class="p-2 bg-warning bg-opacity-10 text-warning rounded-circle fs-5 d-flex align-items-center justify-content-center"
-                            style="width: 45px; height: 45px;">
-                            <i class="fa-solid fa-chart-simple"></i>
+                    <div class="col-sm-6 col-lg-3 d-flex align-items-center gap-3 border-start-lg border-light-alpha ps-lg-4">
+                        <div class="p-2 bg-warning bg-opacity-10 text-warning rounded-circle fs-5 d-flex align-items-center justify-content-center" style="width: 45px; height: 45px;">
+                            <i class="fa-solid fa-chart-simple text-accent"></i>
                         </div>
                         <div>
-                            <div class="fw-bold fs-7 text-main">Better Insights</div>
-                            <div class="fs-9 text-muted-secondary line-height-sm">Track performance and engagement
-                                across channels.</div>
+                            <div class="fw-bold fs-7 text-main">Intelligent Pipelines</div>
+                            <div class="fs-9 text-muted-secondary line-height-sm">Automatically route leads to sales.</div>
                         </div>
                     </div>
-                    <div
-                        class="col-sm-6 col-lg-3 d-flex align-items-center gap-3 border-start-lg border-light-alpha ps-lg-4">
-                        <div class="p-2 bg-info-soft text-info rounded-circle fs-5 d-flex align-items-center justify-content-center"
-                            style="width: 45px; height: 45px;">
-                            <i class="fa-regular fa-clock"></i>
+                    <div class="col-sm-6 col-lg-3 d-flex align-items-center gap-3 border-start-lg border-light-alpha ps-lg-4">
+                        <div class="p-2 bg-info-soft text-info rounded-circle fs-5 d-flex align-items-center justify-content-center" style="width: 45px; height: 45px;">
+                            <i class="fa-regular fa-clock text-info"></i>
                         </div>
                         <div>
-                            <div class="fw-bold fs-7 text-main">Save Time</div>
-                            <div class="fs-9 text-muted-secondary line-height-sm">Manage everything from one unified CRM
-                                inbox.</div>
+                            <div class="fw-bold fs-7 text-main">Hours Saved</div>
+                            <div class="fs-9 text-muted-secondary line-height-sm">Replace tedious manual work.</div>
                         </div>
                     </div>
                 </div>
 
-            </div>
-
-            <!-- Loved By Ribbon -->
-            <div class="mt-4 text-center pb-2">
-                <div
-                    class="glass-panel d-inline-flex align-items-center px-4 py-2 rounded-pill border border-light-alpha shadow-sm mx-auto flex-wrap justify-content-center">
-                    <div class="d-flex" style="margin-right: -10px;">
-                        <img src="https://i.pravatar.cc/100?img=11" alt="user"
-                            class="rounded-circle border border-2 border-white position-relative"
-                            style="width: 28px; height: 28px; left: 0;">
-                        <img src="https://i.pravatar.cc/100?img=12" alt="user"
-                            class="rounded-circle border border-2 border-white position-relative"
-                            style="width: 28px; height: 28px; left: -10px; z-index: 2;">
-                        <img src="https://i.pravatar.cc/100?img=13" alt="user"
-                            class="rounded-circle border border-2 border-white position-relative"
-                            style="width: 28px; height: 28px; left: -20px; z-index: 3;">
-                    </div>
-                    <span class="fs-8 fw-medium text-muted-secondary ms-2">Loved by 10,000+ teams worldwide</span>
-                    <div class="text-warning fs-8 ms-3 ms-md-4">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star-half-stroke"></i>
-                    </div>
-                    <span class="fs-8 fw-bold text-main ms-2">4.8/5</span>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- Complete Feature Cards Grid -->
-    <section id="platform-features" class="py-5 section-padding bg-main">
-        <div class="container py-5">
-            <div class="row mb-5 text-center" data-aos="fade-up">
-                <div class="col-12">
-                    <h2 class="display-5 fw-bold font-poppins mb-3">Enterprise Tools, Startup Agility</h2>
-                </div>
-            </div>
-
-            <div class="row g-4">
-                <!-- 9 Features dynamically populated -->
-                <script>
-                    const features = [
-                        { i: "fa-solid fa-users", title: "CRM Management", desc: "Centralized contact base with enriched firmographic data tracking." },
-                        { i: "fa-solid fa-robot", title: "Marketing Automation", desc: "Build advanced visual logic to automate emails, SMS, and tasks." },
-                        { i: "fa-solid fa-filter", title: "Funnel Builder", desc: "Craft pixel-perfect pages to capture info and up-sell automatically." },
-                        { i: "fa-brands fa-whatsapp", title: "WhatsApp Automation", desc: "Full WhatsApp Business API connection for instant notifications." },
-                        { i: "fa-solid fa-comment-dots", title: "AI Chatbot", desc: "Leverage AI to qualify leads and answer FAQs directly on your site." },
-                        { i: "fa-solid fa-envelope-open-text", title: "Email Campaigns", desc: "Drag-and-drop designer for mass blasts with supreme deliverability." },
-                        { i: "fa-solid fa-chart-line", title: "Analytics Dashboard", desc: "Beautiful reporting visuals comparing ad spend directly to closed revenue." },
-                        { i: "fa-solid fa-calendar-check", title: "Appointment Booking", desc: "Client-facing scheduling calendars integrated directly with Zoom/Google." },
-                        { i: "fa-solid fa-star-half-stroke", title: "Reputation Management", desc: "Automatically request and track reviews on Google and Yelp to build trust." }
-                    ];
-
-                    features.forEach((feat, index) => {
-                        let delay = (index % 3) * 100 + 100;
-                        document.write(`
-                            <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="${delay}">
-                                <div class="premium-feature-card h-100 p-4 rounded-4 bg-glass-ui border border-light-alpha hover-lift-shadow position-relative overflow-hidden">
-                                    <div class="feature-icon mb-3 fs-3 bg-gradient-premium bg-clip-text text-transparent d-inline-block">
-                                        <i class="${feat.i} z-text-gradient"></i>
-                                    </div>
-                                    <h4 class="fw-bold font-poppins fs-5 mb-2 text-main">${feat.title}</h4>
-                                    <p class="font-inter fs-7 text-muted-secondary mb-0">${feat.desc}</p>
-                                </div>
-                            </div>
-                        `);
-                    });
-                </script>
             </div>
         </div>
     </section>
@@ -1040,8 +950,8 @@
     <footer class="bg-main text-main font-inter position-relative">
         <div class="footer-gradient-divider"
             style="height:4px; background: linear-gradient(90deg, var(--primary-dark), var(--accent));"></div>
-        <div class="container pt-5 pb-4 mt-4">
-            <div class="row g-5 mb-5">
+        <div class="container pt-4 pb-3">
+            <div class="row g-4 mb-4">
                 <!-- Info -->
                 <div class="col-lg-4 pe-lg-5">
                     <img src="image/logo.png" alt="ZavioCRM" class="mb-4" style="height:32px; border-radius: 4px;"
@@ -1094,7 +1004,7 @@
                 </div>
             </div>
 
-            <hr class="border-light-alpha my-4">
+            <hr class="border-light-alpha my-3">
 
             <div
                 class="d-flex flex-column flex-md-row justify-content-between align-items-center text-muted-secondary fs-8">
@@ -1120,33 +1030,146 @@
         document.addEventListener('DOMContentLoaded', function () {
             AOS.init({ once: true, offset: 50, duration: 800 });
 
-            // Custom Cursor Logic
-            const cursorDot = document.getElementById('custom-cursor-dot');
-            const cursorOutline = document.getElementById('custom-cursor-outline');
-            const body = document.body;
+            // ─── Smooth Physics Cursor ───────────────────────────────────────────────
+            // Only runs on fine-pointer (mouse/trackpad) desktop devices
+            const isFinePointer = window.matchMedia('(pointer: fine)').matches;
+            const cursorEl  = document.getElementById('smooth-cursor');
+            const cursorSvg = document.getElementById('smooth-cursor-svg');
 
-            if (window.innerWidth > 1024) {
-                window.addEventListener('mousemove', (e) => {
-                    const posX = e.clientX;
-                    const posY = e.clientY;
+            if (!cursorEl || !isFinePointer || window.innerWidth <= 1024) return;
 
-                    // Immediate dot movement
-                    cursorDot.style.left = `${posX}px`;
-                    cursorDot.style.top = `${posY}px`;
+            // Spring configuration (matching Magic UI defaults)
+            const spring = {
+                damping:   45,
+                stiffness: 400,
+                mass:      1,
+                restDelta: 0.001
+            };
 
-                    // Delayed outline movement for "trailing" effect
-                    cursorOutline.animate({
-                        left: `${posX}px`,
-                        top: `${posY}px`
-                    }, { duration: 500, fill: "forwards" });
-                });
+            // State
+            let mouseX = window.innerWidth  / 2;
+            let mouseY = window.innerHeight / 2;
 
-                const interactives = document.querySelectorAll('a, button, .cursor-pointer, input, textarea, [role="button"]');
-                interactives.forEach(el => {
-                    el.addEventListener('mouseenter', () => body.classList.add('cursor-active'));
-                    el.addEventListener('mouseleave', () => body.classList.remove('cursor-active'));
-                });
+            let posX = mouseX, posY = mouseY;
+            let velX = 0,      velY = 0;
+
+            let prevX = mouseX, prevY = mouseY;
+            let currentRotation = 0;
+            let targetRotation  = 0;
+            let rafId = null;
+            let isHovering = false;
+            let isVisible  = false;
+
+            // Track mouse
+            window.addEventListener('mousemove', (e) => {
+                mouseX = e.clientX;
+                mouseY = e.clientY;
+
+                if (!isVisible) {
+                    // Snap on first appearance
+                    posX = mouseX;
+                    posY = mouseY;
+                    isVisible = true;
+                    cursorEl.style.opacity = '1';
+                }
+            });
+
+            // Hover detection on interactive elements
+            const interactives = document.querySelectorAll(
+                'a, button, .cursor-pointer, [role="button"], .feature-nav-item, .nav-link, .btn'
+            );
+            interactives.forEach(el => {
+                el.addEventListener('mouseenter', () => { isHovering = true;  updateCursorAppearance(); });
+                el.addEventListener('mouseleave', () => { isHovering = false; updateCursorAppearance(); });
+            });
+
+            function updateCursorAppearance() {
+                if (isHovering) {
+                    cursorSvg.style.filter = 'drop-shadow(0 4px 16px rgba(59,130,246,0.9))';
+                    cursorSvg.style.transform = 'scale(1.35)';
+                } else {
+                    cursorSvg.style.filter = 'drop-shadow(0 2px 8px rgba(59,130,246,0.55))';
+                    cursorSvg.style.transform = 'scale(1)';
+                }
             }
+
+            // Spring physics tick — called every RAF frame
+            function springStep(dt) {
+                const dtSeconds = Math.min(dt / 1000, 0.064); // cap at ~60fps equivalent
+
+                // Spring force toward mouse
+                const dx = mouseX - posX;
+                const dy = mouseY - posY;
+
+                const springForceX = spring.stiffness * dx;
+                const springForceY = spring.stiffness * dy;
+
+                const dampingForceX = spring.damping * velX;
+                const dampingForceY = spring.damping * velY;
+
+                const accelX = (springForceX - dampingForceX) / spring.mass;
+                const accelY = (springForceY - dampingForceY) / spring.mass;
+
+                velX += accelX * dtSeconds;
+                velY += accelY * dtSeconds;
+
+                posX += velX * dtSeconds;
+                posY += velY * dtSeconds;
+
+                // Rotation: angle from last position to current
+                const moveDx = posX - prevX;
+                const moveDy = posY - prevY;
+                const speed  = Math.sqrt(moveDx * moveDx + moveDy * moveDy);
+
+                if (speed > 0.1) {
+                    // atan2 gives angle of travel; offset by -90deg because SVG arrow points up
+                    targetRotation = Math.atan2(moveDy, moveDx) * (180 / Math.PI) + 90;
+                }
+
+                // Smooth rotation interpolation (avoid gimbal wrap-around)
+                let rotDiff = targetRotation - currentRotation;
+                // Normalise to [-180, 180]
+                while (rotDiff >  180) rotDiff -= 360;
+                while (rotDiff < -180) rotDiff += 360;
+                currentRotation += rotDiff * Math.min(dtSeconds * 14, 1);
+
+                prevX = posX;
+                prevY = posY;
+
+                return Math.abs(dx) < spring.restDelta &&
+                       Math.abs(dy) < spring.restDelta &&
+                       Math.abs(velX) < spring.restDelta &&
+                       Math.abs(velY) < spring.restDelta;
+            }
+
+            // RAF loop
+            let lastTime = null;
+            function loop(timestamp) {
+                if (lastTime === null) lastTime = timestamp;
+                const dt = timestamp - lastTime;
+                lastTime = timestamp;
+
+                springStep(dt);
+
+                cursorEl.style.transform =
+                    `translate(${posX}px, ${posY}px) rotate(${currentRotation}deg)`;
+
+                rafId = requestAnimationFrame(loop);
+            }
+
+            // Start hidden, show on first mousemove
+            cursorEl.style.opacity = '0';
+            cursorEl.style.transition = 'opacity 0.4s ease';
+            rafId = requestAnimationFrame(loop);
+
+            // Hide when mouse leaves window
+            document.addEventListener('mouseleave', () => {
+                cursorEl.style.opacity = '0';
+                isVisible = false;
+            });
+            document.addEventListener('mouseenter', () => {
+                if (isVisible) cursorEl.style.opacity = '1';
+            });
         });
     </script>
 </body>

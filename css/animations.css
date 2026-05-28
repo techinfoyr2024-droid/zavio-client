@@ -157,3 +157,27 @@ body[data-theme='dark'] .hero-bg-shapes::after {
     .magnifying-handle-grip { width: 20px; height: 30px; bottom: -65px; right: -40px; }
 }
 
+/* --- INTERACTIVE FEATURE SHOWCASE STYLES --- */
+.feature-nav-item.active {
+    border-color: rgba(26, 59, 102, 0.4) !important;
+    background-color: var(--bg-main) !important;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05) !important;
+}
+
+@media (max-width: 767.98px) {
+    .feature-nav-sidebar {
+        flex-direction: row !important;
+        overflow-x: auto !important;
+        padding: 10px 5px !important;
+        gap: 12px !important;
+    }
+    .feature-nav-item {
+        min-width: 190px !important;
+        flex-shrink: 0;
+    }
+    .feature-nav-item span {
+        display: inline-block !important; /* Keep names visible on mobile swiping nav bar */
+    }
+}
+
+
