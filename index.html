@@ -25,6 +25,7 @@
     <link href="css/style.css" rel="stylesheet">
     <link href="css/animations.css" rel="stylesheet">
     <link href="css/responsive.css" rel="stylesheet">
+    <link href="css/ai-ecosystem.css" rel="stylesheet">
 </head>
 
 <body>
@@ -82,7 +83,7 @@
 
                 <!-- Center Content -->
                 <div class="col-12 col-lg-10 col-xl-8 mx-auto text-center pt-lg-4 mb-5">
-                    <div class="d-inline-flex flex-wrap justify-content-center align-items-center mb-4 bg-glass border border-light-alpha rounded-pill px-3 px-md-4 py-2 shadow-sm text-muted-secondary fs-9 fs-md-8 fw-medium"
+                    <div class="d-inline-flex flex-wrap justify-content-center align-items-center mb-4 bg-glass border border-light-alpha rounded-pill px-3 px-md-4 py-2 shadow-sm text-muted-secondary fs-9 fs-md-8 fw-medium badge-float"
                         style="max-width: 100%;">
                         <i class="fa-solid fa-globe text-primary-dark me-2"></i> <span class="text-truncate"
                             style="max-width: 100%;">Multi-Language Support: EN | ES | FR | DE | PT | IT | NL | SV |
@@ -316,13 +317,155 @@
             </div>
         </div>
     </section>
+ 
+    <!-- Futuristic Interactive AI Ecosystem -->
+    <section id="ai-ecosystem" class="bg-dark-premium position-relative overflow-hidden">
+        <!-- Volumetric Ambient Glow Backdrops -->
+        <div class="glow-bg glow-cyan position-absolute"></div>
+        <div class="glow-bg glow-purple position-absolute"></div>
+        
+        <div class="container ecosystem-container position-relative z-3">
+            <!-- Header Section -->
+            <div class="row justify-content-center text-center mb-5" data-aos="fade-up">
+                <div class="col-lg-8">
+                    <span class="premium-badge rounded-pill px-3 py-1 d-inline-flex align-items-center mb-3">
+                        <span class="badge-dot pulse-dot me-2 bg-gradient-cyan"></span>
+                        <span class="fs-8 fw-semibold text-cyan-glow font-inter tracking-wide text-uppercase">Autonomous Operations Center</span>
+                    </span>
+                    <h2 class="display-5 fw-extrabold font-poppins mb-3">
+                        The Live <span class="text-neon-gradient">AI Workforce</span> Ecosystem
+                    </h2>
+                    <p class="lead font-inter text-muted-sci-fi mx-auto" style="max-width: 650px;">
+                        Explore the neural grid of our active AI agents operating in real-time across your entire digital presence. Hover to interact; click to command.
+                    </p>
+                </div>
+            </div>
 
+            <!-- Ecosystem Visualizer Wrapper -->
+            <div class="row align-items-center justify-content-center position-relative mb-5" id="ecosystem-view-wrapper">
+                <div class="col-12 text-center position-relative d-flex justify-content-center align-items-center" style="height: 600px;">
+                    
+                    <!-- WebGL Custom Canvas -->
+                    <canvas id="globe-canvas" class="position-absolute"></canvas>
 
+                    <!-- Orbiting Satellites / Nodes -->
+                    <!-- Node 1: AI Customer Concierge (Omnichannel Chatbot) -->
+                    <div class="satellite-node" id="node-concierge" data-index="0" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="satellite-inner glassmorphism shadow-cyan">
+                            <div class="pulse-ring pulse-cyan"></div>
+                            <div class="sat-icon bg-cyan"><i class="fa-solid fa-comments"></i></div>
+                            <div class="sat-info">
+                                <span class="sat-title">Customer Concierge</span>
+                                <span class="sat-subtitle">Conversation AI</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Node 2: AI Call Executive (Voice AI) -->
+                    <div class="satellite-node" id="node-voice" data-index="1" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="satellite-inner glassmorphism shadow-purple">
+                            <div class="pulse-ring pulse-purple"></div>
+                            <div class="sat-icon bg-purple"><i class="fa-solid fa-phone-volume"></i></div>
+                            <div class="sat-info">
+                                <span class="sat-title">Call Executive</span>
+                                <span class="sat-subtitle">Voice AI</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Node 3: AI Knowledge Brain (Training Hub) -->
+                    <div class="satellite-node" id="node-knowledge" data-index="2" data-aos="zoom-in" data-aos-delay="300">
+                        <div class="satellite-inner glassmorphism shadow-pink">
+                            <div class="pulse-ring pulse-pink"></div>
+                            <div class="sat-icon bg-pink"><i class="fa-solid fa-brain"></i></div>
+                            <div class="sat-info">
+                                <span class="sat-title">Knowledge Brain</span>
+                                <span class="sat-subtitle">Centralized Engine</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Node 4: AI Reputation Guardian (Reviews AI) -->
+                    <div class="satellite-node" id="node-reputation" data-index="3" data-aos="zoom-in" data-aos-delay="400">
+                        <div class="satellite-inner glassmorphism shadow-orange">
+                            <div class="pulse-ring pulse-orange"></div>
+                            <div class="sat-icon bg-orange"><i class="fa-solid fa-shield-heart"></i></div>
+                            <div class="sat-info">
+                                <span class="sat-title">Reputation Guardian</span>
+                                <span class="sat-subtitle">Reviews AI</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Node 5: AI Growth Studio (Content Creator) -->
+                    <div class="satellite-node" id="node-growth" data-index="4" data-aos="zoom-in" data-aos-delay="500">
+                        <div class="satellite-inner glassmorphism shadow-green">
+                            <div class="pulse-ring pulse-green"></div>
+                            <div class="sat-icon bg-green"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                            <div class="sat-info">
+                                <span class="sat-title">Growth Studio</span>
+                                <span class="sat-subtitle">Content AI</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Glassmorphism Preview Cards (Appear on hover) -->
+                    <div id="ecosystem-hover-preview" class="glassmorphism preview-card position-absolute hide">
+                        <div class="preview-header">
+                            <div class="preview-badge-status"><span class="pulse-dot"></span> Live</div>
+                            <h4 class="preview-title font-poppins mb-1">AI Customer Concierge</h4>
+                            <span class="preview-subtitle text-cyan">Conversation AI</span>
+                        </div>
+                        <p class="preview-desc text-muted-sci-fi font-inter my-3">
+                            Seamless customer engagement across SMS, Webchat, Instagram, Messenger, and WhatsApp with real-time sync.
+                        </p>
+                        <div class="preview-footer text-start">
+                            <span class="btn-command-hint text-cyan"><i class="fa-solid fa-hand-pointer me-2"></i> Click to command department</span>
+                        </div>
+                    </div>
+
+                    <!-- Glassmorphism Active Command Pop-up Card (Appears on click) -->
+                    <div id="ecosystem-active-pop" class="glassmorphism active-pop-card position-absolute hide">
+                        <div class="pop-header d-flex justify-content-between align-items-start border-bottom border-light-alpha pb-2 mb-3">
+                            <div>
+                                <div class="pop-badge-status d-flex align-items-center gap-2"><span class="pulse-dot"></span> ACTIVE DEPARTMENT</div>
+                                <h4 class="pop-title font-poppins mb-1 fs-6">AI Customer Concierge</h4>
+                                <span class="pop-subtitle text-cyan fs-9 fw-semibold">Conversation AI</span>
+                            </div>
+                            <button class="btn-close-pop border-0 bg-transparent opacity-70 hover-opacity-100 fs-7" id="btn-close-active-pop" aria-label="Close Popup">
+                                <i class="fa-solid fa-xmark"></i>
+                            </button>
+                        </div>
+                        
+                        <div class="pop-body">
+                            <p class="pop-desc text-muted-sci-fi font-inter fs-8 mb-3">
+                                Seamless customer engagement across SMS, Webchat, Instagram, Messenger, and WhatsApp with real-time sync.
+                            </p>
+                            
+                            <!-- Dynamic specifications checklist -->
+                            <div class="pop-specs-box mb-3">
+                                <div class="fw-bold fs-9 mb-2" id="pop-specs-title"><i class="fa-solid fa-terminal text-cyan me-1"></i> Core Operational Specs</div>
+                                <ul class="list-unstyled pop-specs-list d-flex flex-column gap-2 ps-0 mb-0" id="pop-specs-container">
+                                    <!-- Populated dynamically by script to avoid empty elements -->
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="pop-footer border-top border-light-alpha pt-3 mt-2 text-start">
+                            <a href="#contact" class="btn btn-pop-action w-100 py-2 rounded-3 fw-bold fs-8 text-white text-center d-block">
+                                Deploy AI Employee <i class="fa-solid fa-arrow-right ms-1"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                </div> <!-- Closes col-12 -->
+            </div> <!-- Closes ecosystem-view-wrapper -->
+        </div> <!-- Closes container -->
+    </section> <!-- Closes ai-ecosystem -->
 
     <!-- Complete Feature Showcase Dashboard -->
     <section id="platform-features" class="py-5 section-padding bg-main position-relative">
         <div class="container py-5">
-            <div class="features-dashboard-card bg-card p-4 p-lg-5 rounded-4 border border-light-alpha shadow-super-premium">
 
                 <!-- Header Area -->
                 <div class="d-flex flex-column flex-lg-row justify-content-between align-items-lg-start mb-5 gap-4" data-aos="fade-up">
@@ -1026,6 +1169,9 @@
     <script src="js/darkmode.js"></script>
     <script src="js/animations.js"></script>
     <script src="js/main.js"></script>
+    <!-- GSAP for smooth animations and transitions -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="js/ai-ecosystem.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             AOS.init({ once: true, offset: 50, duration: 800 });
@@ -1081,6 +1227,40 @@
             interactives.forEach(el => {
                 el.addEventListener('mouseenter', () => { isHovering = true;  updateCursorAppearance(); });
                 el.addEventListener('mouseleave', () => { isHovering = false; updateCursorAppearance(); });
+            });
+
+            // Click visual feedback and cybernetic ripples
+            window.addEventListener('mousedown', (e) => {
+                if (!isVisible) return;
+                
+                cursorSvg.style.transform = 'scale(0.85)';
+
+                const ripple = document.createElement('div');
+                ripple.className = 'cursor-click-ripple';
+                ripple.style.left = `${e.clientX}px`;
+                ripple.style.top = `${e.clientY}px`;
+                
+                const isDarkActive = document.body.getAttribute('data-theme') === 'dark';
+                const clr = isDarkActive ? '#06B6D4' : '#3B82F6';
+                ripple.style.borderColor = clr;
+                ripple.style.boxShadow = `0 0 12px ${clr}, inset 0 0 6px ${clr}`;
+                
+                document.body.appendChild(ripple);
+
+                gsap.fromTo(ripple, 
+                    { scale: 0.4, opacity: 0.85 },
+                    { 
+                        scale: 3.5, 
+                        opacity: 0, 
+                        duration: 0.5, 
+                        ease: "power2.out", 
+                        onComplete: () => ripple.remove() 
+                    }
+                );
+            });
+
+            window.addEventListener('mouseup', () => {
+                updateCursorAppearance();
             });
 
             function updateCursorAppearance() {

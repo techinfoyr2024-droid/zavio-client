@@ -180,4 +180,37 @@ body[data-theme='dark'] .hero-bg-shapes::after {
     }
 }
 
+/* ==========================================================================
+   ADDITIONAL FLOATING ANIMATIONS & FOOTER TIGHTNESS RULES
+   ========================================================================== */
+
+@keyframes subtle-float {
+    0% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-6px) rotate(0.4deg); }
+    100% { transform: translateY(0px) rotate(0deg); }
+}
+
+.badge-float {
+    animation: subtle-float 6s ease-in-out infinite;
+    will-change: transform;
+}
+
+footer {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+footer .container {
+    padding-top: 2.5rem !important;
+    padding-bottom: 1.5rem !important;
+}
+
+@media (max-width: 768px) {
+    footer .container {
+        padding-top: 1.5rem !important;
+        padding-bottom: 1rem !important;
+    }
+}
+
 
