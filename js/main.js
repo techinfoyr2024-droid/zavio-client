@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 catchphrase: "Turn Missed Calls Into Done Deals.",
                 hex: "#10B981",
                 iconCls: "fa-phone-slash",
-                desc: "When you're busy with a client and miss a phone call, our system instantly texts the caller back: 'Hey there, sorry we missed you! How can we help today?' This locks them in before they call your competitor.",
+                desc: "When you're busy with a customer and miss a phone call, our system instantly texts the caller back: 'Hey there, sorry we missed you! How can we help today?' This locks them in before they call your competitor.",
                 badge: "Highest Converting",
                 badgeCls: "bg-accent-soft text-accent",
                 whyAttractive: "It literally rescues lost money.",
@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 catchphrase: "Dominate Google on Autopilot.",
                 hex: "#F59E0B",
                 iconCls: "fa-star",
-                desc: "The moment you finish a job or close a sale, our system automatically texts your client a friendly link asking for a review. Watch your 5-star rating skyrocket on Google while you sleep.",
+                desc: "The moment you finish a job or close a sale, our system automatically texts your customer a friendly link asking for a review. Watch your 5-star rating skyrocket on Google while you sleep.",
                 badge: "Active Engine",
                 badgeCls: "bg-success-soft text-success",
                 whyAttractive: "More reviews = higher ranking on Google = more free traffic.",
@@ -86,12 +86,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 catchphrase: "Your Bookings, Fully Automated.",
                 hex: "#8B5CF6",
                 iconCls: "fa-calendar-check",
-                desc: "Let clients book, reschedule, or pay for appointments online 24/7. The platform automatically sends them text reminders so they actually show up.",
+                desc: "Let customers book, reschedule, or pay for appointments online 24/7. The platform automatically sends them text reminders so they actually show up.",
                 badge: "Active Engine",
                 badgeCls: "bg-success-soft text-success",
                 whyAttractive: "No more tedious back-and-forth 'What time works for you?' emails.",
                 bullets: [
-                    { icon: "fa-clock", title: "24/7 self-service scheduling", desc: "Let clients book anytime with live availability" },
+                    { icon: "fa-clock", title: "24/7 self-service scheduling", desc: "Let customers book anytime with live availability" },
                     { icon: "fa-bell", title: "Automated text reminders", desc: "Drastically reduce appointment no-shows" },
                     { icon: "fa-rotate", title: "Direct calendar sync", desc: "Syncs flawlessly with Google Calendar & Outlook" }
                 ]
@@ -228,5 +228,56 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+
+    // ─── PAGE LOADER & TRANSITION SYSTEM ──────────────────────────────────
+    const loader = document.getElementById('page-loader');
+    if (loader) {
+        // Minimum 2.2-second intro transition while loading the page start
+        setTimeout(() => {
+            loader.classList.add('fade-out');
+        }, 2200);
+    }
+
+    // Intercept clicks to perform loading overlay transitions
+    const transitionLinks = document.querySelectorAll('a');
+    transitionLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        // Check if it is a real page transition link
+        if (href && (href.includes('.html') || href === 'index.html' || (href.startsWith('index.html#') && !window.location.pathname.includes('index.html')))) {
+            link.addEventListener('click', (e) => {
+                // If opening in new tab or keyboard modifiers, don't intercept
+                if (link.getAttribute('target') === '_blank' || e.ctrlKey || e.metaKey) return;
+                
+                e.preventDefault();
+                if (loader) {
+                    loader.classList.remove('fade-out');
+                    setTimeout(() => {
+                        window.location.href = href;
+                    }, 500); // Allow fade-in duration before redirect
+                } else {
+                    window.location.href = href;
+                }
+            });
+        } else if (href && href.startsWith('#') && href !== '#') {
+            // Anchor links: show a quick premium loader transition when clicking navbar links
+            link.addEventListener('click', (e) => {
+                if (link.closest('.premium-nav')) {
+                    e.preventDefault();
+                    if (loader) {
+                        loader.classList.remove('fade-out');
+                        setTimeout(() => {
+                            loader.classList.add('fade-out');
+                            const targetEl = document.querySelector(href);
+                            if (targetEl) {
+                                targetEl.scrollIntoView({ behavior: 'smooth' });
+                            }
+                        }, 700); // Sleek transition visual flash
+                    }
+                }
+            });
+        }
+    });
+
+    // Smooth Physics Cursor removed
 
 });

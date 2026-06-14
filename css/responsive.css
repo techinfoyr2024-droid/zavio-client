@@ -39,15 +39,15 @@ section {
 /* 3. Navigation & Header Fixing */
 @media (max-width: 991.98px) {
     .premium-nav .container-fluid {
-        padding-left: 10px !important;
-        padding-right: 10px !important;
+        padding-left: 18px !important;
+        padding-right: 18px !important;
         display: flex !important;
         justify-content: space-between !important;
         align-items: center !important;
     }
 
     .brand-logo { 
-        height: 30px !important; 
+        height: 38px !important; 
     }
 
     .navbar-toggler {
@@ -176,7 +176,7 @@ section {
     }
 
     .footer-links {
-        text-align: center;
+        text-align: left;
         margin-bottom: 2rem;
     }
 }
@@ -184,5 +184,5 @@ section {
 /* 8. Smallest Screens Fix (320px) */
 @media (max-width: 360px) {
     .display-3, .hero-title { font-size: 2.2rem !important; }
-    .brand-logo { height: 28px !important; }
+    .brand-logo { height: 30px !important; }
 }

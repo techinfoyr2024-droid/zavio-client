@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover why consolidation wins but the passive 'system of record' is over. Learn about multi-agent AI ecosystems, adaptive automation, and composable architectures.">
+    <title>Beyond the All-in-One: Why Zavio CRM is the Future of Marketing Automation - ZavioCRM Blog</title>
+
+    <!-- Google Fonts: Poppins (Headings) & Inter (Body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/animations.css" rel="stylesheet">
+    <link href="css/responsive.css" rel="stylesheet">
+    <link href="css/ai-ecosystem.css" rel="stylesheet">
+    <link href="css/blog.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Page Loader / Transition Overlay -->
+    <div id="page-loader" class="page-loader">
+        <div class="loader-content">
+            <img src="image/logo.png" alt="ZavioCRM Logo" class="loader-logo">
+            <div class="loader-spinner"></div>
+        </div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg fixed-top premium-nav py-1" id="mainNavbar">
+        <div class="container-fluid d-flex align-items-center justify-content-between">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="image/logo.png" alt="ZavioCRM Logo" class="brand-logo"
+                    onerror="this.src=''; this.alt='ZavioCRM'; this.style.fontSize='1.5rem'; this.style.fontWeight='bold'; this.style.color='var(--primary-dark)';">
+            </a>
+
+            <button class="navbar-toggler shadow-none border-0" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fa-solid fa-bars fs-3 text-main"></i>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto align-items-lg-center">
+                    <li class="nav-item"><a class="nav-link" href="index.html#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#platform-features">Features</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#pricing">Package</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="index.html#blogs">Blogs</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
+                </ul>
+                <div class="d-flex align-items-lg-center mt-3 mt-lg-0 gap-3">
+                    <button class="btn btn-theme-toggle" id="darkModeToggle" aria-label="Toggle Theme">
+                        <i class="fa-solid fa-moon"></i>
+                    </button>
+                    <a href="index.html#contact" class="btn btn-accent px-4 py-2 rounded-pill shadow-sm fw-semibold d-none d-sm-inline-block">Try Zavio
+                        <i class="fa-solid fa-arrow-right ms-1"></i></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content wrapper -->
+    <section class="blog-article-wrapper bg-main-alt">
+        <div class="container">
+            <div class="row">
+                <!-- Breadcrumbs & Header -->
+                <div class="col-12 mb-4" data-aos="fade-up">
+                    <nav class="blog-breadcrumbs" aria-label="breadcrumb">
+                        <a href="index.html">Home</a>
+                        <i class="fa-solid fa-chevron-right"></i>
+                        <a href="index.html#blogs">Blog</a>
+                        <i class="fa-solid fa-chevron-right"></i>
+                        <span class="text-main">Beyond the All-in-One</span>
+                    </nav>
+                    <span class="blog-tag bg-primary-soft text-primary-dark">Enterprise Marketing</span>
+                    <h1 class="blog-title text-main">Beyond the All-in-One: Why Zavio CRM is the Future of Marketing Automation</h1>
+                    
+                    <div class="blog-meta">
+                        <div class="blog-meta-item">
+                            <div class="blog-author-avatar">SJ</div>
+                            <div>
+                                <div class="fw-bold text-main fs-8">Sarah Jenkins</div>
+                                <div class="text-muted-secondary fs-9">B2B SaaS Strategist</div>
+                            </div>
+                        </div>
+                        <div class="blog-meta-item">
+                            <i class="fa-regular fa-calendar text-primary-dark"></i>
+                            <span>June 14, 2026</span>
+                        </div>
+                        <div class="blog-meta-item">
+                            <i class="fa-regular fa-clock text-primary-dark"></i>
+                            <span>8 min read</span>
+                        </div>
+                        <div class="blog-meta-item text-success">
+                            <i class="fa-solid fa-circle-check text-success"></i>
+                            <span>Verified Research</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <!-- Sticky Sidebar Column -->
+                <div class="col-lg-3 d-none d-lg-block">
+                    <div class="blog-sidebar-sticky visible">
+                        <div class="blog-toc-card">
+                            <h5 class="blog-toc-title"><i class="fa-solid fa-list-ul text-primary-dark me-2"></i> Contents</h5>
+                            <ul class="blog-toc-list">
+                                <li><a href="#intro" class="blog-toc-link active">Introduction</a></li>
+                                <li><a href="#automation" class="blog-toc-link">1. Adaptive Autopilot</a></li>
+                                <li><a href="#agents" class="blog-toc-link">2. Multi-Agent AI</a></li>
+                                <li><a href="#sync" class="blog-toc-link">3. Omnichannel Sync</a></li>
+                                <li><a href="#ecosystem" class="blog-toc-link">4. Composable Ecosystem</a></li>
+                                <li><a href="#compliance" class="blog-toc-link">5. Compliance & Privacy</a></li>
+                                <li><a href="#cta" class="blog-toc-link">6. Ready to Level Up?</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Main Content Column -->
+                <div class="col-lg-9 col-12">
+                    <article class="blog-content">
+                        <!-- Section 0: Hero & Intro -->
+                        <div id="intro" class="scroll-margin-top" style="scroll-margin-top: 100px;">
+                            <!-- Hero Image -->
+                            <div class="blog-media-container" data-aos="fade-up">
+                                <img src="image/hero_command_center.png" alt="Multi-Agent AI Command Center" class="blog-media-img">
+                                <div class="blog-media-caption">
+                                    <i class="fa-solid fa-circle-info"></i>
+                                    <span>Image 1: The Multi-Agent AI Command Center dashboard orchestrating workflows.</span>
+                                </div>
+                            </div>
+
+                            <p class="lead" data-aos="fade-up">If you’ve been running an agency or scaling a business over the last few years, you’ve likely crossed paths with GoHighLevel (GHL). There is no denying it: GHL revolutionized the industry by proving that businesses don't want to stitch together seven different subscriptions just to send an email, build a funnel, and track a lead. They proved that consolidation wins.</p>
+                            
+                            <p data-aos="fade-up">But as we move through 2026, the landscape has shifted. The era of the passive "all-in-one system of record" is officially over. Today's businesses don't just need a software bucket to hold their leads—they need an intelligent system of action.</p>
+                            
+                            <p data-aos="fade-up">Modern marketing automation isn’t just about scheduling an email blast; it’s about hyper-personalization, multi-agent AI ecosystems, and seamless omnichannel syncing.</p>
+                            
+                            <p data-aos="fade-up">Here is a look at the massive trends defining marketing automation this year, and why Zavio CRM is built to handle where the industry is going—not where it’s been.</p>
+                        </div>
+
+                        <!-- Section 1 -->
+                        <div id="automation" class="scroll-margin-top" style="scroll-margin-top: 100px;">
+                            <h2 data-aos="fade-up">1. Moving from Rules-Based Timers to Adaptive Automation</h2>
+                            
+                            <p data-aos="fade-up">Traditionally, platforms like GHL relied heavily on static, linear workflows. You set a trigger (e.g., Form Submitted), and the system followed a rigid timeline (Wait 1 Day <span class="text-primary-dark">&rarr;</span> Send Email 1 <span class="text-primary-dark">&rarr;</span> Wait 2 Days <span class="text-primary-dark">&rarr;</span> Send Email 2).</p>
+                            
+                            <p data-aos="fade-up">In 2026, static paths are a quick way to get marked as spam. Modern marketing automation relies on Adaptive Autopilot.</p>
+
+                            <div class="blog-reality-box" data-aos="fade-up">
+                                <div class="blog-reality-title">The 2026 Reality</div>
+                                <p class="mb-0 text-main fs-7">Campaigns must adapt dynamically based on real-time intent signals, engagement levels, and cross-channel behavior.</p>
+                            </div>
+
+                            <p data-aos="fade-up"><span class="fw-bold text-main">How Zavio CRM Does It:</span> Instead of locking prospects into an unyielding sequence, Zavio tracks live behavioral data. If a lead opens an email, skips the desktop landing page, but clicks a link via SMS on their phone, Zavio instantly shifts their journey. The CRM dynamically recalculates the next best action, ensuring your brand interacts on the channel they prefer, precisely when they are most active.</p>
+
+                            <!-- Section 1 Image -->
+                            <div class="blog-media-container" data-aos="fade-up">
+                                <img src="image/adaptive_workflow.png" alt="Adaptive Intelligent Workflow Comparison" class="blog-media-img">
+                                <div class="blog-media-caption">
+                                    <i class="fa-solid fa-circle-info"></i>
+                                    <span>Image 2: Outdated static workflows (left) vs. Zavio's smart branching adaptive AI decision engine (right).</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Section 2 -->
+                        <div id="agents" class="scroll-margin-top" style="scroll-margin-top: 100px;">
+                            <h2 data-aos="fade-up">2. From "Solo Bots" to Multi-Agent AI Ecosystems</h2>
+                            
+                            <p data-aos="fade-up">We’ve all experienced the frustration of early-generation chatbots that could only answer "Yes" or "No" before breaking. While early all-in-one CRMs introduced basic automated web-chat, the current standard demands far greater sophistication.</p>
+                            
+                            <p data-aos="fade-up">The dominant trend right now is the shift toward Multi-Agent AI. Instead of one overworked chatbot trying to handle everything, smart CRMs deploy specialized, interconnected AI agents.</p>
+
+                            <!-- Interactive Flow Diagram -->
+                            <div class="agent-flow-diagram" data-aos="fade-up">
+                                <div class="agent-flow-header">
+                                    <span class="agent-flow-badge"><i class="fa-solid fa-network-wired me-1"></i> Specialized Multi-Agent Workforce</span>
+                                </div>
+                                <div class="agent-flow-grid">
+                                    <div class="agent-flow-node lead-source">
+                                        <div class="agent-node-icon"><i class="fa-solid fa-user-plus text-success"></i></div>
+                                        <div class="agent-node-title">Incoming Lead</div>
+                                        <div class="agent-node-subtitle">Profile Ingestion</div>
+                                    </div>
+                                    <div class="agent-flow-connector"></div>
+                                    <div class="agent-flow-node">
+                                        <div class="agent-node-icon"><i class="fa-solid fa-database text-primary"></i></div>
+                                        <div class="agent-node-title">Data-Check Agent</div>
+                                        <div class="agent-node-subtitle">Telemetry Cleanse</div>
+                                    </div>
+                                    <div class="agent-flow-connector"></div>
+                                    <div class="agent-flow-node">
+                                        <div class="agent-node-icon"><i class="fa-solid fa-brain text-purple"></i></div>
+                                        <div class="agent-node-title">Nurturing Agent</div>
+                                        <div class="agent-node-subtitle">Brand Voice QA</div>
+                                    </div>
+                                    <div class="agent-flow-connector"></div>
+                                    <div class="agent-flow-node">
+                                        <div class="agent-node-icon"><i class="fa-solid fa-calendar-check text-danger"></i></div>
+                                        <div class="agent-node-title">Booking Agent</div>
+                                        <div class="agent-node-subtitle">Schedule Drop</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Agent Explanations -->
+                            <div class="agent-info-grid" data-aos="fade-up">
+                                <div class="agent-info-card">
+                                    <div class="agent-info-header">
+                                        <div class="agent-info-icon" style="background-color: var(--primary);"><i class="fa-solid fa-database"></i></div>
+                                        <h5 class="agent-info-title">Data-Check Agent</h5>
+                                    </div>
+                                    <p class="fs-8 text-muted-secondary mb-0">Instantly scans, cleans, and updates the incoming CRM profile to prevent telemetry fragmentation.</p>
+                                </div>
+                                <div class="agent-info-card">
+                                    <div class="agent-info-header">
+                                        <div class="agent-info-icon" style="background-color: #6366F1;"><i class="fa-solid fa-brain"></i></div>
+                                        <h5 class="agent-info-title">Nurturing Agent</h5>
+                                    </div>
+                                    <p class="fs-8 text-muted-secondary mb-0">Answers complex, specific product questions using your exact brand voice guidelines and knowledge base.</p>
+                                </div>
+                                <div class="agent-info-card">
+                                    <div class="agent-info-header">
+                                        <div class="agent-info-icon" style="background-color: #EF4444;"><i class="fa-solid fa-calendar-check"></i></div>
+                                        <h5 class="agent-info-title">Booking Agent</h5>
+                                    </div>
+                                    <p class="fs-8 text-muted-secondary mb-0">Seamlessly drops the scheduling link the moment a high-intent buying signal is detected in the conversation.</p>
+                                </div>
+                            </div>
+
+                            <p data-aos="fade-up">Zavio CRM is engineered for this hyper-automated reality, letting you deploy specialized internal workflows that drastically cut down manual admin tasks without losing a shred of authentic human connection.</p>
+                        </div>
+
+                        <!-- Section 3 -->
+                        <div id="sync" class="scroll-margin-top" style="scroll-margin-top: 100px;">
+                            <h2 data-aos="fade-up">3. Omnichannel Sync and Real-Time Behavioral Tracking</h2>
+                            
+                            <p data-aos="fade-up">In the omnichannel world of 2026, forcing a lead to engage on your timeline or via a single channel is a fast track to deletion. True real-time tracking is not just about recording a behavior; it is about synchronizing operations across email, SMS, mobile apps, and ad channels instantly.</p>
+                            
+                            <p data-aos="fade-up">If a lead stalls during an email sequence, the Zavio CRM engine immediately detects the drop in engagement, evaluates their mobile signals, and shifts gears to trigger a personalized SMS or web notification. This prevents campaign stagnation and keeps conversion momentum high.</p>
+
+                            <!-- Section 3 Image -->
+                            <div class="blog-media-container" data-aos="fade-up">
+                                <img src="image/omnichannel_sync.png" alt="Omnichannel Sync Engine" class="blog-media-img">
+                                <div class="blog-media-caption">
+                                    <i class="fa-solid fa-circle-info"></i>
+                                    <span>Image 3: Zavio Omnichannel Engine redirecting communication from low-engagement email to high-conversion mobile SMS.</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Section 4 -->
+                        <div id="ecosystem" class="scroll-margin-top" style="scroll-margin-top: 100px;">
+                            <h2 data-aos="fade-up">4. Composable Ecosystems Beat Rigid Walls</h2>
+                            
+                            <p data-aos="fade-up">One of the historical pain points of legacy all-in-one platforms has been the "walled garden" effect. If a platform's native email builder or internal pipeline tracking didn't perfectly match your operational workflow, you were forced to use clunky workarounds.</p>
+                            
+                            <p data-aos="fade-up">The enterprise shift is clear: Composable beats monolithic. Businesses want a core CRM system that acts as a powerful central nervous system but integrates flawlessly with specialized deep-tech tools, payment gateways, and external ad platforms.</p>
+
+                            <!-- Comparison Table -->
+                            <div class="comparison-table-wrapper" data-aos="fade-up">
+                                <table class="table-premium">
+                                    <thead>
+                                        <tr>
+                                            <th>Feature / Capability</th>
+                                            <th>Legacy All-In-One CRMs</th>
+                                            <th>Zavio CRM (Next-Gen)</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="table-feature-title">Workflow Logic</td>
+                                            <td>Rigid, time-based sequences</td>
+                                            <td class="table-highlight-cell text-primary-dark fw-bold"><i class="fa-solid fa-clock-rotate-left me-2 text-primary"></i> Behavioral, adaptive, and real-time</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="table-feature-title">AI Integration</td>
+                                            <td>Basic, single-bot text generation</td>
+                                            <td class="table-highlight-cell text-primary-dark fw-bold"><i class="fa-solid fa-microchip me-2 text-primary"></i> Multi-agent specialized orchestration</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="table-feature-title">System Architecture</td>
+                                            <td>Walled garden (difficult to customize)</td>
+                                            <td class="table-highlight-cell text-primary-dark fw-bold"><i class="fa-solid fa-cubes me-2 text-primary"></i> Composable & modular ecosystem</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="table-feature-title">Data Synchronization</td>
+                                            <td>Batched or delayed updates</td>
+                                            <td class="table-highlight-cell text-primary-dark fw-bold"><i class="fa-solid fa-bolt me-2 text-primary"></i> Zero-latency, instant data replication</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <p data-aos="fade-up">Zavio CRM gives you the best of both worlds. It offers an elite native suite of marketing automation tools, while natively supporting open API structures and cross-app connectors. Your data is never held hostage, and your tech stack remains completely fluid.</p>
+
+                            <!-- Section 4 Image -->
+                            <div class="blog-media-container" data-aos="fade-up">
+                                <img src="image/composable_ecosystem.png" alt="Composable Ecosystem Architecture" class="blog-media-img">
+                                <div class="blog-media-caption">
+                                    <i class="fa-solid fa-circle-info"></i>
+                                    <span>Image 4: Zavio CRM acting as the central nervous system connecting Shopify, Stripe, OpenAI, and custom API pipelines.</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Section 5 -->
+                        <div id="compliance" class="scroll-margin-top" style="scroll-margin-top: 100px;">
+                            <h2 data-aos="fade-up">5. Hyper-Personalization and Privacy-First Compliance</h2>
+                            
+                            <p data-aos="fade-up">With privacy laws tighter than ever and the imminent death of third-party tracking cookies, the gold standard of 2026 marketing is First-Party and Zero-Party Data. You can no longer rely on broad demographic profiles. Personalization must happen through direct, consensual interactions.</p>
+                            
+                            <p data-aos="fade-up">Advanced automation means your system must seamlessly handle compliance—like automated consent logs and self-service data management portals—while simultaneously delivering deep personalization.</p>
+                            
+                            <p data-aos="fade-up">If a prospect browses a specific service tier on your site, Zavio CRM updates their profile instantly. Their next touchpoint—whether it’s a dynamic web page, an SMS reminder, or an email—automatically reflects that exact interest without requiring a team member to manually tag the lead.</p>
+                        </div>
+
+                        <!-- Section 6: CTA -->
+                        <div id="cta" class="blog-cta-section scroll-margin-top" style="scroll-margin-top: 100px;">
+                            <h2 data-aos="fade-up" class="d-none">The Bottom Line: Ready to Level Up?</h2>
+                            
+                            <p class="mb-4" data-aos="fade-up"><span class="fw-bold text-main">The Bottom Line:</span> Consolidating your marketing tools was the right move five years ago. But today, simply having your tools in one place isn't enough. They need to be faster, smarter, and deeply integrated with the way modern consumers actually behave.</p>
+                            
+                            <p class="mb-4" data-aos="fade-up">Zavio CRM takes the core promise of the all-in-one platform and upgrades it with the predictive power, real-time flexibility, and multi-channel synchronization required to win in the current market.</p>
+                            
+                            <p class="mb-5" data-aos="fade-up">Stop fighting your software. Switch to Zavio CRM and experience marketing automation the way it was meant to be.</p>
+
+                            <!-- CTA Box -->
+                            <div class="blog-cta-card" data-aos="fade-up">
+                                <div class="blog-cta-flex">
+                                    <div class="blog-cta-content">
+                                        <span class="badge bg-accent-soft text-accent rounded-pill px-3 py-1 fs-9 fw-semibold mb-3">Upgrade Your Operations</span>
+                                        <h3 class="blog-cta-title mb-3">Switch to Zavio CRM</h3>
+                                        <p class="blog-cta-desc">Ditch the rigid lag of legacy tools. Deploy autonomous AI workflows, zero-latency syncing, and composable deep integrations today.</p>
+                                        <div class="d-flex flex-wrap gap-3">
+                                            <a href="index.html#contact" class="btn btn-accent px-4 py-3 rounded-pill fw-semibold text-uppercase tracking-wider fs-8">Start Free Trial <i class="fa-solid fa-arrow-right ms-1"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="blog-cta-mockup d-none d-md-block">
+                                        <div class="blog-cta-mockup-frame">
+                                            <img src="image/cta_dashboard_mockup.png" alt="Zavio CRM Live Dashboard" class="blog-cta-mockup-img">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-main text-main font-inter position-relative">
+        <div class="footer-gradient-divider" style="height:4px; background: linear-gradient(90deg, var(--primary-dark), var(--accent));"></div>
+        <div class="container pt-4 pb-3">
+            <div class="row g-4 mb-4">
+                <!-- Info -->
+                <div class="col-lg-4 pe-lg-5">
+                    <img src="image/logo.png" alt="ZavioCRM" class="mb-4" style="height:32px; border-radius: 4px;"
+                        onerror="this.src=''; this.alt='ZavioCRM'; this.style.fontSize='1.5rem'; this.style.fontWeight='bold'; this.style.color='var(--primary-dark)';">
+                    <p class="text-muted-secondary mb-4 fs-7">Enterprise-grade marketing, sales, and CRM platform built to scale businesses efficiently organically without friction.</p>
+                    <div class="d-flex gap-3 social-icons">
+                        <a href="#" class="border border-light-alpha text-muted-secondary hover-lift"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#" class="border border-light-alpha text-muted-secondary hover-lift"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#" class="border border-light-alpha text-muted-secondary hover-lift"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <!-- Links 1 -->
+                <div class="col-lg-2 col-md-4">
+                    <h6 class="fw-bold mb-4 font-poppins text-uppercase tracking-wide fs-8">Product</h6>
+                    <ul class="list-unstyled footer-links text-muted-secondary fs-7">
+                        <li class="mb-2"><a href="index.html#platform-features">CRM Platform</a></li>
+                        <li class="mb-2"><a href="index.html#platform-features">Marketing Automation</a></li>
+                        <li class="mb-2"><a href="index.html#platform-features">Pipeline Tracking</a></li>
+                        <li class="mb-2"><a href="index.html#platform-features">Integrations API</a></li>
+                    </ul>
+                </div>
+
+                <!-- Links 2 -->
+                <div class="col-lg-2 col-md-4">
+                    <h6 class="fw-bold mb-4 font-poppins text-uppercase tracking-wide fs-8">Company</h6>
+                    <ul class="list-unstyled footer-links text-muted-secondary fs-7">
+                        <li class="mb-2"><a href="index.html#about">About Us</a></li>
+                        <li class="mb-2"><a href="#">Careers</a></li>
+                        <li class="mb-2"><a href="#">Partner Program</a></li>
+                        <li class="mb-2"><a href="index.html#contact">Contact Sales</a></li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter -->
+                <div class="col-lg-4 col-md-4">
+                    <h6 class="fw-bold mb-4 font-poppins text-uppercase tracking-wide fs-8">Stay Updated</h6>
+                    <p class="fs-7 text-muted-secondary mb-3">Subscribe for the latest product updates and growth strategies.</p>
+                    <div class="input-group p-1 bg-card border border-light-alpha rounded-pill shadow-sm">
+                        <input type="email" class="form-control border-0 bg-transparent shadow-none fs-7 ms-2" placeholder="Work email address">
+                        <button class="btn btn-premium rounded-pill px-4 fs-7 fw-semibold" type="button">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="border-light-alpha my-3">
+
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center text-muted-secondary fs-8">
+                <p class="mb-0">&copy; <span id="currentYear"></span> ZavioCRM. All rights reserved.</p>
+                <div class="d-flex gap-4 mt-3 mt-md-0">
+                    <a href="#" class="text-muted-secondary text-decoration-none hover-text-main">Privacy Policy</a>
+                    <a href="#" class="text-muted-secondary text-decoration-none hover-text-main">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap & Plugins -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/countup.js/2.8.0/countUp.umd.js"></script>
+
+    <!-- Custom Scripts -->
+    <script src="js/darkmode.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/main.js"></script>
+    <!-- GSAP for smooth animations and transitions -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            AOS.init({ once: true, offset: 50, duration: 800 });
+
+            // Smooth Physics Cursor removed
+
+            // ─── Sticky Blog Scroll Spy ───────────────────────────────────────────────
+            const blogSections = document.querySelectorAll('.blog-content > div[id]');
+            const blogTOCLinks = document.querySelectorAll('.blog-toc-link');
+
+            if (blogSections.length > 0 && blogTOCLinks.length > 0) {
+                const blogObserverOptions = {
+                    root: null,
+                    rootMargin: '-20% 0px -60% 0px',
+                    threshold: 0
+                };
+
+                const blogObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const id = entry.target.getAttribute('id');
+                            blogTOCLinks.forEach(link => {
+                                link.classList.remove('active');
+                                if (link.getAttribute('href') === `#${id}`) {
+                                    link.classList.add('active');
+                                }
+                            });
+                        }
+                    });
+                }, blogObserverOptions);
+
+                blogSections.forEach(section => blogObserver.observe(section));
+            }
+        });
+    </script>
+</body>
+
+</html>

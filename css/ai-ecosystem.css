@@ -58,19 +58,19 @@ body[data-theme='dark'] {
     background-color: var(--bg-ecosystem) !important;
     color: var(--text-ecosystem) !important;
     transition: background-color 0.4s ease, color 0.4s ease;
-    min-height: 850px;
+    min-height: auto;
     padding-top: 5rem;
-    padding-bottom: 5rem;
+    padding-bottom: 2rem;
     z-index: 1;
 }
 
 .ecosystem-container {
     padding-top: 2rem;
-    padding-bottom: 2rem;
+    padding-bottom: 1rem;
 }
 
 #ecosystem-view-wrapper {
-    min-height: 75vh;
+    min-height: auto;
 }
 
 #ai-ecosystem .text-muted-sci-fi {

@@ -26,24 +26,20 @@
     <link href="css/animations.css" rel="stylesheet">
     <link href="css/responsive.css" rel="stylesheet">
     <link href="css/ai-ecosystem.css" rel="stylesheet">
+    <link href="css/blog.css" rel="stylesheet">
 </head>
 
 <body>
-    <!-- Smooth Physics Cursor -->
-    <div id="smooth-cursor" aria-hidden="true">
-        <svg id="smooth-cursor-svg" xmlns="http://www.w3.org/2000/svg" width="24" height="36" viewBox="0 0 24 36" fill="none">
-            <path d="M5.65376 12.3673H5.46026L5.31717 12.4976L0.500002 16.8829L0.500002 1.19841L11.7841 12.3673H5.65376Z" fill="url(#cursor-gradient)" stroke="white" stroke-width="1"/>
-            <defs>
-                <linearGradient id="cursor-gradient" x1="0" y1="0" x2="24" y2="36" gradientUnits="userSpaceOnUse">
-                    <stop offset="0%" stop-color="#3B82F6"/>
-                    <stop offset="100%" stop-color="#1D4ED8"/>
-                </linearGradient>
-            </defs>
-        </svg>
+    <!-- Page Loader / Transition Overlay -->
+    <div id="page-loader" class="page-loader">
+        <div class="loader-content">
+            <img src="image/logo.png" alt="ZavioCRM Logo" class="loader-logo">
+            <div class="loader-spinner"></div>
+        </div>
     </div>
 
     <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg fixed-top premium-nav py-2" id="mainNavbar">
+    <nav class="navbar navbar-expand-lg fixed-top premium-nav py-1" id="mainNavbar">
         <div class="container-fluid d-flex align-items-center justify-content-between">
             <a class="navbar-brand d-flex align-items-center" href="#">
                 <img src="image/logo.png" alt="ZavioCRM Logo" class="brand-logo"
@@ -60,7 +56,7 @@
                     <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="#platform-features">Features</a></li>
                     <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#pricing">Pricing</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#pricing">Package</a></li>
                     <li class="nav-item"><a class="nav-link" href="#blogs">Blogs</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                 </ul>
@@ -68,7 +64,8 @@
                     <button class="btn btn-theme-toggle" id="darkModeToggle" aria-label="Toggle Theme">
                         <i class="fa-solid fa-moon"></i>
                     </button>
-                    <a href="#contact" class="btn btn-accent px-4 py-2 rounded-pill shadow-sm fw-semibold d-none d-sm-inline-block">Book a Call
+                    <a href="#contact"
+                        class="btn btn-accent px-4 py-2 rounded-pill shadow-sm fw-semibold d-none d-sm-inline-block">Try Zavio
                         <i class="fa-solid fa-arrow-right ms-1"></i></a>
                 </div>
             </div>
@@ -107,31 +104,16 @@
                     </p>
 
                     <div class="d-flex flex-column flex-sm-row justify-content-center gap-3 mb-5">
-                        <a href="#demo"
-                            class="btn btn-premium btn-lg px-5 py-3 rounded-pill fw-semibold shadow-lg hover-lift">Book
-                            Demo</a>
+                        <a href="#contact"
+                            class="btn btn-premium btn-lg px-5 py-3 rounded-pill fw-semibold shadow-lg hover-lift">Try Zavio
+                            <i class="fa-solid fa-arrow-right ms-1"></i></a>
                         <a href="#overview"
                             class="btn btn-outline-premium btn-lg bg-glass px-4 py-3 rounded-pill fw-semibold hover-lift">
                             <i class="fa-regular fa-circle-play me-2"></i> Watch Overview
                         </a>
                     </div>
 
-                    <!-- Trust Badges -->
-                    <div
-                        class="trust-metrics d-flex flex-wrap justify-content-center gap-4 gap-xl-5 mt-4 border-top border-light-alpha pt-4">
-                        <div>
-                            <h3 class="fw-bold fs-4 mb-0"><span class="count-up" data-target="10">0</span>k+</h3>
-                            <p class="fs-7 text-muted-secondary mb-0 text-uppercase tracking-wide">Agencies</p>
-                        </div>
-                        <div>
-                            <h3 class="fw-bold fs-4 mb-0"><span class="count-up" data-target="99">0</span>%</h3>
-                            <p class="fs-7 text-muted-secondary mb-0 text-uppercase tracking-wide">Satisfaction</p>
-                        </div>
-                        <div>
-                            <h3 class="fw-bold fs-4 mb-0">$<span class="count-up" data-target="2">0</span>B+</h3>
-                            <p class="fs-7 text-muted-secondary mb-0 text-uppercase tracking-wide">Processed</p>
-                        </div>
-                    </div>
+
                 </div>
 
                 <!-- Dashboard Mockup Below -->
@@ -224,15 +206,6 @@
                         </div>
 
                         <!-- Floating Widgets -->
-                        <div
-                            class="floating-widget widget-1 absolute-floating glass-panel p-3 rounded-4 shadow-lg border border-light-alpha d-flex align-items-center gap-3">
-                            <div class="icon-box rounded-circle bg-success-soft text-success flex-shrink-0"><i
-                                    class="fa-solid fa-check"></i></div>
-                            <div>
-                                <div class="fs-7 fw-bold text-main">New Sale Created</div>
-                                <div class="fs-8 text-muted-secondary">+$2,400 via Stripe</div>
-                            </div>
-                        </div>
 
                         <div
                             class="floating-widget widget-2 absolute-floating glass-panel p-3 rounded-4 shadow-lg border border-light-alpha">
@@ -317,29 +290,36 @@
             </div>
         </div>
     </section>
- 
+
     <!-- About Section -->
     <section id="about" class="py-5 section-padding bg-main-alt">
         <div class="container py-5">
             <div class="row align-items-center g-5">
                 <!-- Left Narrative -->
                 <div class="col-lg-6" data-aos="fade-right">
-                    <span class="top-badge text-primary-dark fw-bold text-uppercase tracking-wide fs-7 mb-3 d-inline-block">About ZavioCRM</span>
+                    <span
+                        class="top-badge text-primary-dark fw-bold text-uppercase tracking-wide fs-7 mb-3 d-inline-block">About
+                        ZavioCRM</span>
                     <h2 class="display-5 fw-extrabold font-poppins mb-4 text-main">
                         Stop Fragmenting.<br><span class="text-gradient">Start Integrating.</span>
                     </h2>
                     <p class="lead font-inter text-muted-secondary mb-4 fs-6">
-                        Born from the realization that businesses are drowning in separate SaaS subscriptions, ZavioCRM was engineered to do the work of ten tools in one single unified environment.
+                        Born from the realization that businesses are drowning in separate SaaS subscriptions, ZavioCRM
+                        was engineered to do the work of ten tools in one single unified environment.
                     </p>
                     <p class="text-muted-secondary font-inter fs-7 mb-5">
-                        We don't just bridge your customer interactions—we optimize them using real-time AI automation and secure, cloud-native pipelines. Our mission is to democratize enterprise-level business scaling, ensuring you keep your data unified and your overhead compressed.
+                        We don't just bridge your customer interactions—we optimize them using real-time AI automation
+                        and secure, cloud-native pipelines. Our mission is to democratize enterprise-level business
+                        scaling, ensuring you keep your data unified and your overhead compressed.
                     </p>
                     <div class="d-flex align-items-center gap-3">
-                         <a href="#contact" class="btn btn-premium px-4 py-2 rounded-pill shadow-sm fw-semibold">Learn Our Story</a>
-                         <div class="d-flex align-items-center gap-2">
-                             <div class="rounded-circle bg-success-soft text-success d-flex align-items-center justify-content-center" style="width: 32px; height: 32px;"><i class="fa-solid fa-check fs-8"></i></div>
-                             <span class="fs-8 fw-semibold text-main">SOC-2 Type II Audited</span>
-                         </div>
+                        <a href="#contact" class="btn btn-premium px-4 py-2 rounded-pill shadow-sm fw-semibold">Learn
+                            Our Story</a>
+                        <div class="d-flex align-items-center gap-2">
+                            <div class="rounded-circle bg-success-soft text-success d-flex align-items-center justify-content-center"
+                                style="width: 32px; height: 32px;"><i class="fa-solid fa-check fs-8"></i></div>
+                            <span class="fs-8 fw-semibold text-main">SOC-2 Type II Audited</span>
+                        </div>
                     </div>
                 </div>
                 <!-- Right Metrics Grid -->
@@ -347,46 +327,58 @@
                     <div class="row g-4">
                         <!-- Metric 1 -->
                         <div class="col-sm-6">
-                            <div class="about-metric-card p-4 rounded-4 bg-card border border-light-alpha shadow-sm hover-lift-shadow h-100">
-                                <div class="metric-icon rounded-3 bg-primary-soft text-primary-dark mb-3 d-flex align-items-center justify-content-center" style="width: 50px; height: 50px; font-size: 1.5rem;">
+                            <div
+                                class="about-metric-card p-4 rounded-4 bg-card border border-light-alpha shadow-sm hover-lift-shadow h-100">
+                                <div class="metric-icon rounded-3 bg-primary-soft text-primary-dark mb-3 d-flex align-items-center justify-content-center"
+                                    style="width: 50px; height: 50px; font-size: 1.5rem;">
                                     <i class="fa-solid fa-server"></i>
                                 </div>
                                 <h3 class="display-6 fw-extrabold font-poppins text-main mb-1">99.9%</h3>
                                 <div class="fw-bold fs-7 text-gradient mb-2">Core System Uptime</div>
-                                <p class="text-muted-secondary fs-8 mb-0">High-availability cluster hosting ensuring your lead ingestion never sleeps.</p>
+                                <p class="text-muted-secondary fs-8 mb-0">High-availability cluster hosting ensuring
+                                    your lead ingestion never sleeps.</p>
                             </div>
                         </div>
                         <!-- Metric 2 -->
                         <div class="col-sm-6">
-                            <div class="about-metric-card p-4 rounded-4 bg-card border border-light-alpha shadow-sm hover-lift-shadow h-100">
-                                <div class="metric-icon rounded-3 bg-accent-soft text-accent mb-3 d-flex align-items-center justify-content-center" style="width: 50px; height: 50px; font-size: 1.5rem;">
+                            <div
+                                class="about-metric-card p-4 rounded-4 bg-card border border-light-alpha shadow-sm hover-lift-shadow h-100">
+                                <div class="metric-icon rounded-3 bg-accent-soft text-accent mb-3 d-flex align-items-center justify-content-center"
+                                    style="width: 50px; height: 50px; font-size: 1.5rem;">
                                     <i class="fa-solid fa-arrows-spin"></i>
                                 </div>
                                 <h3 class="display-6 fw-extrabold font-poppins text-main mb-1">100+</h3>
                                 <div class="fw-bold fs-7 text-gradient mb-2">Integrated Platforms</div>
-                                <p class="text-muted-secondary fs-8 mb-0">Connect all payment, marketing, and analytical tools seamlessly.</p>
+                                <p class="text-muted-secondary fs-8 mb-0">Connect all payment, marketing, and analytical
+                                    tools seamlessly.</p>
                             </div>
                         </div>
                         <!-- Metric 3 -->
                         <div class="col-sm-6">
-                            <div class="about-metric-card p-4 rounded-4 bg-card border border-light-alpha shadow-sm hover-lift-shadow h-100">
-                                <div class="metric-icon rounded-3 bg-success-soft text-success mb-3 d-flex align-items-center justify-content-center" style="width: 50px; height: 50px; font-size: 1.5rem;">
+                            <div
+                                class="about-metric-card p-4 rounded-4 bg-card border border-light-alpha shadow-sm hover-lift-shadow h-100">
+                                <div class="metric-icon rounded-3 bg-success-soft text-success mb-3 d-flex align-items-center justify-content-center"
+                                    style="width: 50px; height: 50px; font-size: 1.5rem;">
                                     <i class="fa-solid fa-shield-halved"></i>
                                 </div>
                                 <h3 class="display-6 fw-extrabold font-poppins text-main mb-1">SOC-2</h3>
                                 <div class="fw-bold fs-7 text-gradient mb-2">Enterprise Security</div>
-                                <p class="text-muted-secondary fs-8 mb-0">End-to-end encryption standards guarding client telemetry securely.</p>
+                                <p class="text-muted-secondary fs-8 mb-0">End-to-end encryption standards guarding
+                                    customer data securely.</p>
                             </div>
                         </div>
                         <!-- Metric 4 -->
                         <div class="col-sm-6">
-                            <div class="about-metric-card p-4 rounded-4 bg-card border border-light-alpha shadow-sm hover-lift-shadow h-100">
-                                <div class="metric-icon rounded-3 bg-info-soft text-info mb-3 d-flex align-items-center justify-content-center" style="width: 50px; height: 50px; font-size: 1.5rem;">
+                            <div
+                                class="about-metric-card p-4 rounded-4 bg-card border border-light-alpha shadow-sm hover-lift-shadow h-100">
+                                <div class="metric-icon rounded-3 bg-info-soft text-info mb-3 d-flex align-items-center justify-content-center"
+                                    style="width: 50px; height: 50px; font-size: 1.5rem;">
                                     <i class="fa-solid fa-headset"></i>
                                 </div>
-                                <h3 class="display-6 fw-extrabold font-poppins text-main mb-1">24/7</h3>
+                                <h3 class="display-6 fw-extrabold font-poppins text-main mb-1">Live</h3>
                                 <div class="fw-bold fs-7 text-gradient mb-2">Priority Support SLA</div>
-                                <p class="text-muted-secondary fs-8 mb-0">Direct engineer-assisted onboarding and real-time custom support response.</p>
+                                <p class="text-muted-secondary fs-8 mb-0">Direct engineer-assisted onboarding and
+                                    real-time custom support response.</p>
                             </div>
                         </div>
                     </div>
@@ -400,140 +392,106 @@
         <!-- Volumetric Ambient Glow Backdrops -->
         <div class="glow-bg glow-cyan position-absolute"></div>
         <div class="glow-bg glow-purple position-absolute"></div>
-        
+
         <div class="container ecosystem-container position-relative z-3">
             <!-- Header Section -->
             <div class="row justify-content-center text-center mb-5" data-aos="fade-up">
                 <div class="col-lg-8">
                     <span class="premium-badge rounded-pill px-3 py-1 d-inline-flex align-items-center mb-3">
                         <span class="badge-dot pulse-dot me-2 bg-gradient-cyan"></span>
-                        <span class="fs-8 fw-semibold text-cyan-glow font-inter tracking-wide text-uppercase">Autonomous Operations Center</span>
+                        <span class="fs-8 fw-semibold text-cyan-glow font-inter tracking-wide text-uppercase">Autonomous
+                            Operations Center</span>
                     </span>
                     <h2 class="display-5 fw-extrabold font-poppins mb-3">
                         The Live <span class="text-neon-gradient">AI Workforce</span> Ecosystem
                     </h2>
                     <p class="lead font-inter text-muted-sci-fi mx-auto" style="max-width: 650px;">
-                        Explore the neural grid of our active AI agents operating in real-time across your entire digital presence. Hover to interact; click to command.
+                        Explore the neural grid of our active AI agents operating in real-time across your entire
+                        digital presence. Hover to interact; click to command.
                     </p>
                 </div>
             </div>
 
             <!-- Ecosystem Visualizer Wrapper -->
-            <div class="row align-items-center justify-content-center position-relative mb-5" id="ecosystem-view-wrapper">
-                <div class="col-12 text-center position-relative d-flex justify-content-center align-items-center" style="height: 600px;">
-                    
+            <div class="row align-items-center justify-content-center position-relative mb-0"
+                id="ecosystem-view-wrapper">
+                <div class="col-12 text-center position-relative d-flex justify-content-center align-items-center"
+                    style="height: 600px;">
+
                     <!-- WebGL Custom Canvas -->
                     <canvas id="globe-canvas" class="position-absolute"></canvas>
 
                     <!-- Orbiting Satellites / Nodes -->
-                    <!-- Node 1: AI Customer Concierge (Omnichannel Chatbot) -->
-                    <div class="satellite-node" id="node-concierge" data-index="0" data-aos="zoom-in" data-aos-delay="100">
+                    <!-- Node 1: AI Lead Capture (Engagement Agent) -->
+                    <div class="satellite-node" id="node-lead" data-index="0" data-aos="zoom-in"
+                        data-aos-delay="100">
                         <div class="satellite-inner glassmorphism shadow-cyan">
                             <div class="pulse-ring pulse-cyan"></div>
-                            <div class="sat-icon bg-cyan"><i class="fa-solid fa-comments"></i></div>
+                            <div class="sat-icon bg-cyan"><i class="fa-solid fa-comments-dollar"></i></div>
                             <div class="sat-info">
-                                <span class="sat-title">Customer Concierge</span>
-                                <span class="sat-subtitle">Conversation AI</span>
+                                <span class="sat-title">AI Lead Capture</span>
+                                <span class="sat-subtitle">Engagement Agent</span>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Node 2: AI Call Executive (Voice AI) -->
-                    <div class="satellite-node" id="node-voice" data-index="1" data-aos="zoom-in" data-aos-delay="200">
+                    <!-- Node 2: AI Voice Executive (Telephony Agent) -->
+                    <div class="satellite-node" id="node-voice-exec" data-index="1" data-aos="zoom-in" data-aos-delay="200">
                         <div class="satellite-inner glassmorphism shadow-purple">
                             <div class="pulse-ring pulse-purple"></div>
-                            <div class="sat-icon bg-purple"><i class="fa-solid fa-phone-volume"></i></div>
+                            <div class="sat-icon bg-purple"><i class="fa-solid fa-microphone-lines"></i></div>
                             <div class="sat-info">
-                                <span class="sat-title">Call Executive</span>
-                                <span class="sat-subtitle">Voice AI</span>
+                                <span class="sat-title">AI Voice Executive</span>
+                                <span class="sat-subtitle">Telephony Agent</span>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Node 3: AI Knowledge Brain (Training Hub) -->
-                    <div class="satellite-node" id="node-knowledge" data-index="2" data-aos="zoom-in" data-aos-delay="300">
+                    <!-- Node 3: AI Knowledge Core (Context Engine) -->
+                    <div class="satellite-node" id="node-knowledge-core" data-index="2" data-aos="zoom-in"
+                        data-aos-delay="300">
                         <div class="satellite-inner glassmorphism shadow-pink">
                             <div class="pulse-ring pulse-pink"></div>
-                            <div class="sat-icon bg-pink"><i class="fa-solid fa-brain"></i></div>
+                            <div class="sat-icon bg-pink"><i class="fa-solid fa-network-wired"></i></div>
                             <div class="sat-info">
-                                <span class="sat-title">Knowledge Brain</span>
-                                <span class="sat-subtitle">Centralized Engine</span>
+                                <span class="sat-title">AI Knowledge Core</span>
+                                <span class="sat-subtitle">Context Engine</span>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Node 4: AI Reputation Guardian (Reviews AI) -->
-                    <div class="satellite-node" id="node-reputation" data-index="3" data-aos="zoom-in" data-aos-delay="400">
+                    <!-- Node 4: AI Review Responder (Sentiment Engine) -->
+                    <div class="satellite-node" id="node-review-responder" data-index="3" data-aos="zoom-in"
+                        data-aos-delay="400">
                         <div class="satellite-inner glassmorphism shadow-orange">
                             <div class="pulse-ring pulse-orange"></div>
-                            <div class="sat-icon bg-orange"><i class="fa-solid fa-shield-heart"></i></div>
+                            <div class="sat-icon bg-orange"><i class="fa-solid fa-star-half-stroke"></i></div>
                             <div class="sat-info">
-                                <span class="sat-title">Reputation Guardian</span>
-                                <span class="sat-subtitle">Reviews AI</span>
+                                <span class="sat-title">AI Review Responder</span>
+                                <span class="sat-subtitle">Sentiment Engine</span>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Node 5: AI Growth Studio (Content Creator) -->
-                    <div class="satellite-node" id="node-growth" data-index="4" data-aos="zoom-in" data-aos-delay="500">
-                        <div class="satellite-inner glassmorphism shadow-green">
-                            <div class="pulse-ring pulse-green"></div>
-                            <div class="sat-icon bg-green"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
-                            <div class="sat-info">
-                                <span class="sat-title">Growth Studio</span>
-                                <span class="sat-subtitle">Content AI</span>
-                            </div>
-                        </div>
-                    </div>
+
 
                     <!-- Glassmorphism Preview Cards (Appear on hover) -->
                     <div id="ecosystem-hover-preview" class="glassmorphism preview-card position-absolute hide">
                         <div class="preview-header">
                             <div class="preview-badge-status"><span class="pulse-dot"></span> Live</div>
-                            <h4 class="preview-title font-poppins mb-1">AI Customer Concierge</h4>
-                            <span class="preview-subtitle text-cyan">Conversation AI</span>
+                            <h4 class="preview-title font-poppins mb-1">AI Lead Capture</h4>
+                            <span class="preview-subtitle text-cyan">Engagement Agent</span>
                         </div>
                         <p class="preview-desc text-muted-sci-fi font-inter my-3">
-                            Seamless customer engagement across SMS, Webchat, Instagram, Messenger, and WhatsApp with real-time sync.
+                            Seamless customer engagement across SMS, Webchat, Instagram, Messenger, and WhatsApp with
+                            real-time sync.
                         </p>
                         <div class="preview-footer text-start">
-                            <span class="btn-command-hint text-cyan"><i class="fa-solid fa-hand-pointer me-2"></i> Click to command department</span>
+                            <span class="btn-command-hint text-cyan"><i class="fa-solid fa-bolt me-2"></i> Autonomous CRM Agent</span>
                         </div>
                     </div>
 
-                    <!-- Glassmorphism Active Command Pop-up Card (Appears on click) -->
-                    <div id="ecosystem-active-pop" class="glassmorphism active-pop-card position-absolute hide">
-                        <div class="pop-header d-flex justify-content-between align-items-start border-bottom border-light-alpha pb-2 mb-3">
-                            <div>
-                                <div class="pop-badge-status d-flex align-items-center gap-2"><span class="pulse-dot"></span> ACTIVE DEPARTMENT</div>
-                                <h4 class="pop-title font-poppins mb-1 fs-6">AI Customer Concierge</h4>
-                                <span class="pop-subtitle text-cyan fs-9 fw-semibold">Conversation AI</span>
-                            </div>
-                            <button class="btn-close-pop border-0 bg-transparent opacity-70 hover-opacity-100 fs-7" id="btn-close-active-pop" aria-label="Close Popup">
-                                <i class="fa-solid fa-xmark"></i>
-                            </button>
-                        </div>
-                        
-                        <div class="pop-body">
-                            <p class="pop-desc text-muted-sci-fi font-inter fs-8 mb-3">
-                                Seamless customer engagement across SMS, Webchat, Instagram, Messenger, and WhatsApp with real-time sync.
-                            </p>
-                            
-                            <!-- Dynamic specifications checklist -->
-                            <div class="pop-specs-box mb-3">
-                                <div class="fw-bold fs-9 mb-2" id="pop-specs-title"><i class="fa-solid fa-terminal text-cyan me-1"></i> Core Operational Specs</div>
-                                <ul class="list-unstyled pop-specs-list d-flex flex-column gap-2 ps-0 mb-0" id="pop-specs-container">
-                                    <!-- Populated dynamically by script to avoid empty elements -->
-                                </ul>
-                            </div>
-                        </div>
-                        
-                        <div class="pop-footer border-top border-light-alpha pt-3 mt-2 text-start">
-                            <a href="#contact" class="btn btn-pop-action w-100 py-2 rounded-3 fw-bold fs-8 text-white text-center d-block">
-                                Deploy AI Employee <i class="fa-solid fa-arrow-right ms-1"></i>
-                            </a>
-                        </div>
-                    </div>
+                    <!-- Active Pop-up removed -->
 
                 </div> <!-- Closes col-12 -->
             </div> <!-- Closes ecosystem-view-wrapper -->
@@ -541,244 +499,299 @@
     </section> <!-- Closes ai-ecosystem -->
 
     <!-- Complete Feature Showcase Dashboard -->
-    <section id="platform-features" class="py-5 section-padding bg-main position-relative">
-        <div class="container py-5">
+    <section id="platform-features" class="section-padding pt-0 bg-main position-relative">
+        <div class="container pb-5">
 
-                <!-- Header Area -->
-                <div class="d-flex flex-column flex-lg-row justify-content-between align-items-lg-start mb-5 gap-4" data-aos="fade-up">
-                    <div style="max-width: 600px;">
-                        <div class="d-flex align-items-center mb-3">
-                            <div class="bg-primary text-white rounded d-flex align-items-center justify-content-center me-3 shadow-sm"
-                                style="width: 45px; height: 45px;">
-                                <i class="fa-solid fa-bolt fs-5 text-accent"></i>
-                            </div>
-                            <span class="text-primary fw-bold text-uppercase tracking-wide fs-8">Platform Showcase</span>
+            <!-- Header Area -->
+            <div class="d-flex flex-column flex-lg-row justify-content-between align-items-lg-start mb-5 gap-4"
+                data-aos="fade-up">
+                <div style="max-width: 600px;">
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="bg-primary text-white rounded d-flex align-items-center justify-content-center me-3 shadow-sm"
+                            style="width: 45px; height: 45px;">
+                            <i class="fa-solid fa-bolt fs-5 text-accent"></i>
                         </div>
-                        <h2 class="display-6 fw-bold font-poppins mb-3 text-main">8 Core Engines.<br>One Seamless Powerhouse.</h2>
-                        <p class="font-inter text-muted-secondary fs-7">Explore our market-leading features. Click any engine on the left to see how it works and why business owners love it.</p>
+                        <span class="text-primary fw-bold text-uppercase tracking-wide fs-8">Platform Showcase</span>
                     </div>
-
-                    <div class="status-badge bg-card border border-light-alpha rounded-3 p-3 shadow-sm d-flex align-items-center gap-3">
-                        <div class="status-icon text-success bg-success-soft rounded-circle d-flex justify-content-center align-items-center"
-                            style="width: 35px; height: 35px;">
-                            <i class="fa-solid fa-circle-check"></i>
-                        </div>
-                        <div>
-                            <div class="fw-bold fs-7 text-main">All Engines Online</div>
-                            <div class="fs-8 text-muted-secondary">Fully integrated & optimized</div>
-                        </div>
-                    </div>
+                    <h2 class="display-6 fw-bold font-poppins mb-3 text-main">8 Core Engines.<br>One Seamless
+                        Powerhouse.</h2>
+                    <p class="font-inter text-muted-secondary fs-7">Explore our market-leading features. Click any
+                        engine on the left to see how it works and why business owners love it.</p>
                 </div>
 
-                <!-- Main Split Layout -->
-                <div class="row g-0 align-items-stretch position-relative mb-5 z-2 bg-main-alt rounded-4 border border-light-alpha p-lg-2 p-1">
-                    <!-- Left Nav Sidebar (Vertical Scroll on Desktop, Horizontal Swipe on Mobile) -->
-                    <div class="col-md-4 col-lg-3 border-end border-light-alpha p-3 d-flex flex-row flex-md-column gap-2 gap-md-2 position-relative feature-nav-sidebar overflow-x-auto overflow-y-hidden"
-                        style="scrollbar-width: none; max-height: 580px; overflow-y: auto !important;">
-
-                        <!-- Feature Nav Items -->
-                        <div class="feature-nav-item active d-flex align-items-center p-2 p-md-3 rounded-4 cursor-pointer position-relative z-2 bg-card border border-light-alpha shadow-sm hover-lift"
-                            data-feature="unified-inbox" style="min-width: 150px; width: 100%;">
-                            <div class="feature-icon-box bg-primary text-white rounded-3 d-flex align-items-center justify-content-center me-3 shadow-sm"
-                                style="width: 40px; height: 40px; font-size: 1.2rem; flex-shrink: 0;">
-                                <i class="fa-solid fa-inbox"></i>
-                            </div>
-                            <span class="fs-8 fw-bold text-main">Unified Inbox</span>
-                        </div>
-                        <div class="nav-connector d-none d-md-block" style="height: 10px; width: 2px; border-left: 2px dashed var(--border-light-alpha); margin: 0 32px;"></div>
-
-                        <div class="feature-nav-item d-flex align-items-center p-2 p-md-3 rounded-4 cursor-pointer position-relative z-2 hover-lift"
-                            data-feature="missed-call" style="min-width: 150px; width: 100%;">
-                            <div class="feature-icon-box bg-success text-white rounded-3 d-flex align-items-center justify-content-center me-3 shadow-sm"
-                                style="width: 40px; height: 40px; font-size: 1.2rem; flex-shrink: 0;">
-                                <i class="fa-solid fa-phone-slash"></i>
-                            </div>
-                            <span class="fs-8 fw-bold text-main">Missed-Call Text-Back</span>
-                        </div>
-                        <div class="nav-connector d-none d-md-block" style="height: 10px; width: 2px; border-left: 2px dashed var(--border-light-alpha); margin: 0 32px;"></div>
-
-                        <div class="feature-nav-item d-flex align-items-center p-2 p-md-3 rounded-4 cursor-pointer position-relative z-2 hover-lift"
-                            data-feature="google-reviews" style="min-width: 150px; width: 100%;">
-                            <div class="feature-icon-box bg-warning text-white rounded-3 d-flex align-items-center justify-content-center me-3 shadow-sm"
-                                style="width: 40px; height: 40px; font-size: 1.2rem; flex-shrink: 0;">
-                                <i class="fa-solid fa-star"></i>
-                            </div>
-                            <span class="fs-8 fw-bold text-main">Google Reviews</span>
-                        </div>
-                        <div class="nav-connector d-none d-md-block" style="height: 10px; width: 2px; border-left: 2px dashed var(--border-light-alpha); margin: 0 32px;"></div>
-
-                        <div class="feature-nav-item d-flex align-items-center p-2 p-md-3 rounded-4 cursor-pointer position-relative z-2 hover-lift"
-                            data-feature="smart-calendars" style="min-width: 150px; width: 100%;">
-                            <div class="feature-icon-box bg-info text-white rounded-3 d-flex align-items-center justify-content-center me-3 shadow-sm"
-                                style="width: 40px; height: 40px; font-size: 1.2rem; flex-shrink: 0;">
-                                <i class="fa-solid fa-calendar-check"></i>
-                            </div>
-                            <span class="fs-8 fw-bold text-main">Smart Calendars</span>
-                        </div>
-                        <div class="nav-connector d-none d-md-block" style="height: 10px; width: 2px; border-left: 2px dashed var(--border-light-alpha); margin: 0 32px;"></div>
-
-                        <div class="feature-nav-item d-flex align-items-center p-2 p-md-3 rounded-4 cursor-pointer position-relative z-2 hover-lift"
-                            data-feature="websites" style="min-width: 150px; width: 100%;">
-                            <div class="feature-icon-box bg-danger text-white rounded-3 d-flex align-items-center justify-content-center me-3 shadow-sm"
-                                style="width: 40px; height: 40px; font-size: 1.2rem; flex-shrink: 0;">
-                                <i class="fa-solid fa-laptop-code"></i>
-                            </div>
-                            <span class="fs-8 fw-bold text-main">Landing Pages</span>
-                        </div>
-                        <div class="nav-connector d-none d-md-block" style="height: 10px; width: 2px; border-left: 2px dashed var(--border-light-alpha); margin: 0 32px;"></div>
-
-                        <div class="feature-nav-item d-flex align-items-center p-2 p-md-3 rounded-4 cursor-pointer position-relative z-2 hover-lift"
-                            data-feature="sales-dashboard" style="min-width: 150px; width: 100%;">
-                            <div class="feature-icon-box text-white rounded-3 d-flex align-items-center justify-content-center me-3 shadow-sm"
-                                style="width: 40px; height: 40px; font-size: 1.2rem; flex-shrink: 0; background-color: #14B8A6;">
-                                <i class="fa-solid fa-chart-pie"></i>
-                            </div>
-                            <span class="fs-8 fw-bold text-main">Sales Dashboard</span>
-                        </div>
-                        <div class="nav-connector d-none d-md-block" style="height: 10px; width: 2px; border-left: 2px dashed var(--border-light-alpha); margin: 0 32px;"></div>
-
-                        <div class="feature-nav-item d-flex align-items-center p-2 p-md-3 rounded-4 cursor-pointer position-relative z-2 hover-lift"
-                            data-feature="social-planner" style="min-width: 150px; width: 100%;">
-                            <div class="feature-icon-box text-white rounded-3 d-flex align-items-center justify-content-center me-3 shadow-sm"
-                                style="width: 40px; height: 40px; font-size: 1.2rem; flex-shrink: 0; background-color: #EF4444;">
-                                <i class="fa-solid fa-share-nodes"></i>
-                            </div>
-                            <span class="fs-8 fw-bold text-main">Social Planner</span>
-                        </div>
-                        <div class="nav-connector d-none d-md-block" style="height: 10px; width: 2px; border-left: 2px dashed var(--border-light-alpha); margin: 0 32px;"></div>
-
-                        <div class="feature-nav-item d-flex align-items-center p-2 p-md-3 rounded-4 cursor-pointer position-relative z-2 hover-lift"
-                            data-feature="custom-branding" style="min-width: 150px; width: 100%;">
-                            <div class="feature-icon-box text-white rounded-3 d-flex align-items-center justify-content-center me-3 shadow-sm"
-                                style="width: 40px; height: 40px; font-size: 1.2rem; flex-shrink: 0; background-color: #6366F1;">
-                                <i class="fa-solid fa-hashtag"></i>
-                            </div>
-                            <span class="fs-8 fw-bold text-main">Custom Branding</span>
-                        </div>
+                <div
+                    class="status-badge bg-card border border-light-alpha rounded-3 p-3 shadow-sm d-flex align-items-center gap-3">
+                    <div class="status-icon text-success bg-success-soft rounded-circle d-flex justify-content-center align-items-center"
+                        style="width: 35px; height: 35px;">
+                        <i class="fa-solid fa-circle-check"></i>
                     </div>
-
-                    <!-- Right Detail Pane -->
-                    <div class="col-md-8 col-lg-9 p-4 p-lg-5 position-relative overflow-hidden feature-detail-pane bg-card rounded-end-4">
-                        <div class="row align-items-center position-relative z-2 h-100">
-                            <!-- Magnifying Glass Area -->
-                            <div class="col-lg-5 text-center position-relative mb-5 mb-lg-0 d-flex justify-content-center align-items-center min-vh-25"
-                                data-aos="zoom-in">
-                                <!-- Ambient Glow -->
-                                <div id="dynamic-feature-glow"
-                                    class="position-absolute top-50 start-50 translate-middle rounded-circle z-1 opacity-25 transition-all"
-                                    style="width: 320px; height: 320px; background: radial-gradient(circle, #3B82F6 0%, transparent 70%); filter: blur(30px);">
-                                </div>
-
-                                <div class="magnifying-glass-fx d-inline-flex justify-content-center align-items-center bg-card rounded-circle border border-4 border-white shadow-super-premium position-relative z-2">
-                                    <div class="glass-reflection rounded-circle position-absolute top-0 start-0 w-100 h-100 opacity-25"></div>
-                                    <div class="magnifying-handle position-absolute bg-white border border-light-alpha rounded-pill shadow-sm"></div>
-                                    <div class="magnifying-handle-grip position-absolute bg-light rounded-pill shadow-sm"></div>
-                                    <!-- Dynamic Icon -->
-                                    <div id="dynamic-feature-icon"
-                                        class="social-icon-box bg-primary transition-all rounded-4 d-flex align-items-center justify-content-center text-white shadow-lg"
-                                        style="width: 140px; height: 140px; font-size: 6rem;">
-                                        <i class="fa-solid fa-inbox"></i>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Content Details Area -->
-                            <div class="col-lg-7 ps-lg-5 pt-5 pt-lg-0 text-center text-lg-start" data-aos="fade-left" data-aos-delay="100">
-                                <div id="dynamic-feature-badge-container" class="mb-4">
-                                    <span id="dynamic-feature-badge" class="d-inline-flex align-items-center gap-2 px-3 py-1 bg-success-soft text-success fs-8 fw-bold rounded-pill">
-                                        <span class="dot bg-success" style="width:8px; height:8px; border-radius:50%;"></span> Active Engine
-                                    </span>
-                                </div>
-
-                                <h3 id="dynamic-feature-title" class="fw-bold font-poppins text-main mb-2 fs-2">The Unified Inbox</h3>
-                                <div id="dynamic-feature-catchphrase" class="d-flex align-items-center gap-2 fw-semibold fs-7 mb-4 transition-all" style="color: #3B82F6;">
-                                    Stop Hunting for Messages.
-                                </div>
-
-                                <p id="dynamic-feature-desc" class="text-muted-secondary font-inter fs-7 mb-4 pe-lg-4">
-                                    Whether a customer messages you on Facebook, Instagram, Google, Email, or Text, it all lands in one single inbox. You can text them back right from your phone without switching apps.
-                                </p>
-
-                                <ul id="dynamic-feature-bullets" class="list-unstyled d-flex flex-column gap-3 mb-5">
-                                    <li class="d-flex align-items-center gap-3 border-bottom border-light-alpha pb-3 px-2">
-                                        <div class="icon-bg p-2 rounded bg-opacity-10 transition-all text-primary" style="background-color: rgba(59, 130, 246, 0.1); color: #3B82F6;"><i class="fa-solid fa-circle-nodes"></i></div>
-                                        <div>
-                                            <div class="fw-bold fs-7 text-main">All channels in one place</div>
-                                            <div class="fs-8 text-muted-secondary">Facebook, Instagram, Email, SMS & Google</div>
-                                        </div>
-                                    </li>
-                                    <li class="d-flex align-items-center gap-3 border-bottom border-light-alpha pb-3 px-2">
-                                        <div class="icon-bg p-2 rounded bg-opacity-10 transition-all text-primary" style="background-color: rgba(59, 130, 246, 0.1); color: #3B82F6;"><i class="fa-solid fa-mobile-screen-button"></i></div>
-                                        <div>
-                                            <div class="fw-bold fs-7 text-main">Respond direct from phone</div>
-                                            <div class="fs-8 text-muted-secondary">No switching between multiple apps</div>
-                                        </div>
-                                    </li>
-                                    <li class="d-flex align-items-center gap-3 px-2">
-                                        <div class="icon-bg p-2 rounded bg-opacity-10 transition-all text-primary" style="background-color: rgba(59, 130, 246, 0.1); color: #3B82F6;"><i class="fa-solid fa-shield-halved"></i></div>
-                                        <div>
-                                            <div class="fw-bold fs-7 text-main">Zero missed opportunities</div>
-                                            <div class="fs-8 text-muted-secondary">Never lose another hot lead in your DMs</div>
-                                        </div>
-                                    </li>
-                                </ul>
-
-                                <div id="dynamic-feature-why-attractive-container" class="why-attractive p-3 rounded-3 bg-accent-soft border border-light-alpha mb-4 text-start">
-                                    <span class="fs-8 fw-bold text-main d-block mb-1"><i class="fa-solid fa-fire text-accent me-1"></i> Why it's attractive:</span>
-                                    <p id="dynamic-feature-why-attractive" class="fs-8 text-muted-secondary mb-0 font-inter" style="line-height: 1.4;">
-                                        Eliminates the stress of missing a DM from a potential buyer because you forgot to check Instagram.
-                                    </p>
-                                </div>
-
-                                <a id="dynamic-feature-btn" href="#contact" class="btn btn-premium w-100 d-flex justify-content-between align-items-center px-4 py-3 rounded-2 fw-semibold border border-light-alpha shadow-sm hover-lift transition-all">
-                                    <span>Get Started with Unified Inbox</span> <i class="fa-solid fa-arrow-right"></i>
-                                </a>
-                            </div>
-                        </div>
+                    <div>
+                        <div class="fw-bold fs-7 text-main">All Engines Online</div>
+                        <div class="fs-8 text-muted-secondary">Fully integrated & optimized</div>
                     </div>
                 </div>
-
-                <!-- Bottom Stats Ribbon -->
-                <div class="row g-4 pt-4 border-top border-light-alpha w-100 mx-0 pb-3" data-aos="fade-up">
-                    <div class="col-sm-6 col-lg-3 d-flex align-items-center gap-3">
-                        <div class="p-2 bg-primary-soft text-primary-dark rounded-circle fs-5 d-flex align-items-center justify-content-center" style="width: 45px; height: 45px;">
-                            <i class="fa-solid fa-shield-halved text-primary"></i>
-                        </div>
-                        <div>
-                            <div class="fw-bold fs-7 text-main">Enterprise Grade</div>
-                            <div class="fs-9 text-muted-secondary line-height-sm">Secure and fully compliant routing.</div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-lg-3 d-flex align-items-center gap-3 border-start-lg border-light-alpha ps-lg-4">
-                        <div class="p-2 bg-success-soft text-success rounded-circle fs-5 d-flex align-items-center justify-content-center" style="width: 45px; height: 45px;">
-                            <i class="fa-solid fa-bolt text-success"></i>
-                        </div>
-                        <div>
-                            <div class="fw-bold fs-7 text-main">Ultra Fast Sync</div>
-                            <div class="fs-9 text-muted-secondary line-height-sm">Real-time instant message processing.</div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-lg-3 d-flex align-items-center gap-3 border-start-lg border-light-alpha ps-lg-4">
-                        <div class="p-2 bg-warning bg-opacity-10 text-warning rounded-circle fs-5 d-flex align-items-center justify-content-center" style="width: 45px; height: 45px;">
-                            <i class="fa-solid fa-chart-simple text-accent"></i>
-                        </div>
-                        <div>
-                            <div class="fw-bold fs-7 text-main">Intelligent Pipelines</div>
-                            <div class="fs-9 text-muted-secondary line-height-sm">Automatically route leads to sales.</div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-lg-3 d-flex align-items-center gap-3 border-start-lg border-light-alpha ps-lg-4">
-                        <div class="p-2 bg-info-soft text-info rounded-circle fs-5 d-flex align-items-center justify-content-center" style="width: 45px; height: 45px;">
-                            <i class="fa-regular fa-clock text-info"></i>
-                        </div>
-                        <div>
-                            <div class="fw-bold fs-7 text-main">Hours Saved</div>
-                            <div class="fs-9 text-muted-secondary line-height-sm">Replace tedious manual work.</div>
-                        </div>
-                    </div>
-                </div>
-
             </div>
+
+            <!-- Main Split Layout -->
+            <div
+                class="row g-0 align-items-stretch position-relative mb-5 z-2 bg-main-alt rounded-4 border border-light-alpha p-lg-2 p-1">
+                <!-- Left Nav Sidebar (Vertical Scroll on Desktop, Horizontal Swipe on Mobile) -->
+                <div class="col-md-4 col-lg-3 border-end border-light-alpha p-3 d-flex flex-row flex-md-column gap-2 gap-md-2 position-relative feature-nav-sidebar overflow-x-auto overflow-y-hidden"
+                    style="scrollbar-width: none; max-height: 580px; overflow-y: auto !important;">
+
+                    <!-- Feature Nav Items -->
+                    <div class="feature-nav-item active d-flex align-items-center p-2 p-md-3 rounded-4 cursor-pointer position-relative z-2 bg-card border border-light-alpha shadow-sm hover-lift"
+                        data-feature="unified-inbox" style="min-width: 150px; width: 100%;">
+                        <div class="feature-icon-box bg-primary text-white rounded-3 d-flex align-items-center justify-content-center me-3 shadow-sm"
+                            style="width: 40px; height: 40px; font-size: 1.2rem; flex-shrink: 0;">
+                            <i class="fa-solid fa-inbox"></i>
+                        </div>
+                        <span class="fs-8 fw-bold text-main">Unified Inbox</span>
+                    </div>
+                    <div class="nav-connector d-none d-md-block"
+                        style="height: 10px; width: 2px; border-left: 2px dashed var(--border-light-alpha); margin: 0 32px;">
+                    </div>
+
+                    <div class="feature-nav-item d-flex align-items-center p-2 p-md-3 rounded-4 cursor-pointer position-relative z-2 hover-lift"
+                        data-feature="missed-call" style="min-width: 150px; width: 100%;">
+                        <div class="feature-icon-box bg-success text-white rounded-3 d-flex align-items-center justify-content-center me-3 shadow-sm"
+                            style="width: 40px; height: 40px; font-size: 1.2rem; flex-shrink: 0;">
+                            <i class="fa-solid fa-phone-slash"></i>
+                        </div>
+                        <span class="fs-8 fw-bold text-main">Missed-Call Text-Back</span>
+                    </div>
+                    <div class="nav-connector d-none d-md-block"
+                        style="height: 10px; width: 2px; border-left: 2px dashed var(--border-light-alpha); margin: 0 32px;">
+                    </div>
+
+                    <div class="feature-nav-item d-flex align-items-center p-2 p-md-3 rounded-4 cursor-pointer position-relative z-2 hover-lift"
+                        data-feature="google-reviews" style="min-width: 150px; width: 100%;">
+                        <div class="feature-icon-box bg-warning text-white rounded-3 d-flex align-items-center justify-content-center me-3 shadow-sm"
+                            style="width: 40px; height: 40px; font-size: 1.2rem; flex-shrink: 0;">
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <span class="fs-8 fw-bold text-main">Google Reviews</span>
+                    </div>
+                    <div class="nav-connector d-none d-md-block"
+                        style="height: 10px; width: 2px; border-left: 2px dashed var(--border-light-alpha); margin: 0 32px;">
+                    </div>
+
+                    <div class="feature-nav-item d-flex align-items-center p-2 p-md-3 rounded-4 cursor-pointer position-relative z-2 hover-lift"
+                        data-feature="smart-calendars" style="min-width: 150px; width: 100%;">
+                        <div class="feature-icon-box bg-info text-white rounded-3 d-flex align-items-center justify-content-center me-3 shadow-sm"
+                            style="width: 40px; height: 40px; font-size: 1.2rem; flex-shrink: 0;">
+                            <i class="fa-solid fa-calendar-check"></i>
+                        </div>
+                        <span class="fs-8 fw-bold text-main">Smart Calendars</span>
+                    </div>
+                    <div class="nav-connector d-none d-md-block"
+                        style="height: 10px; width: 2px; border-left: 2px dashed var(--border-light-alpha); margin: 0 32px;">
+                    </div>
+
+                    <div class="feature-nav-item d-flex align-items-center p-2 p-md-3 rounded-4 cursor-pointer position-relative z-2 hover-lift"
+                        data-feature="websites" style="min-width: 150px; width: 100%;">
+                        <div class="feature-icon-box bg-danger text-white rounded-3 d-flex align-items-center justify-content-center me-3 shadow-sm"
+                            style="width: 40px; height: 40px; font-size: 1.2rem; flex-shrink: 0;">
+                            <i class="fa-solid fa-laptop-code"></i>
+                        </div>
+                        <span class="fs-8 fw-bold text-main">Landing Pages</span>
+                    </div>
+                    <div class="nav-connector d-none d-md-block"
+                        style="height: 10px; width: 2px; border-left: 2px dashed var(--border-light-alpha); margin: 0 32px;">
+                    </div>
+
+                    <div class="feature-nav-item d-flex align-items-center p-2 p-md-3 rounded-4 cursor-pointer position-relative z-2 hover-lift"
+                        data-feature="sales-dashboard" style="min-width: 150px; width: 100%;">
+                        <div class="feature-icon-box text-white rounded-3 d-flex align-items-center justify-content-center me-3 shadow-sm"
+                            style="width: 40px; height: 40px; font-size: 1.2rem; flex-shrink: 0; background-color: #14B8A6;">
+                            <i class="fa-solid fa-chart-pie"></i>
+                        </div>
+                        <span class="fs-8 fw-bold text-main">Sales Dashboard</span>
+                    </div>
+                    <div class="nav-connector d-none d-md-block"
+                        style="height: 10px; width: 2px; border-left: 2px dashed var(--border-light-alpha); margin: 0 32px;">
+                    </div>
+
+                    <div class="feature-nav-item d-flex align-items-center p-2 p-md-3 rounded-4 cursor-pointer position-relative z-2 hover-lift"
+                        data-feature="social-planner" style="min-width: 150px; width: 100%;">
+                        <div class="feature-icon-box text-white rounded-3 d-flex align-items-center justify-content-center me-3 shadow-sm"
+                            style="width: 40px; height: 40px; font-size: 1.2rem; flex-shrink: 0; background-color: #EF4444;">
+                            <i class="fa-solid fa-share-nodes"></i>
+                        </div>
+                        <span class="fs-8 fw-bold text-main">Social Planner</span>
+                    </div>
+                    <div class="nav-connector d-none d-md-block"
+                        style="height: 10px; width: 2px; border-left: 2px dashed var(--border-light-alpha); margin: 0 32px;">
+                    </div>
+
+                    <div class="feature-nav-item d-flex align-items-center p-2 p-md-3 rounded-4 cursor-pointer position-relative z-2 hover-lift"
+                        data-feature="custom-branding" style="min-width: 150px; width: 100%;">
+                        <div class="feature-icon-box text-white rounded-3 d-flex align-items-center justify-content-center me-3 shadow-sm"
+                            style="width: 40px; height: 40px; font-size: 1.2rem; flex-shrink: 0; background-color: #6366F1;">
+                            <i class="fa-solid fa-hashtag"></i>
+                        </div>
+                        <span class="fs-8 fw-bold text-main">Custom Branding</span>
+                    </div>
+                </div>
+
+                <!-- Right Detail Pane -->
+                <div
+                    class="col-md-8 col-lg-9 p-4 p-lg-5 position-relative overflow-hidden feature-detail-pane bg-card rounded-end-4">
+                    <div class="row align-items-center position-relative z-2 h-100">
+                        <!-- Magnifying Glass Area -->
+                        <div class="col-lg-5 text-center position-relative mb-5 mb-lg-0 d-flex justify-content-center align-items-center min-vh-25"
+                            data-aos="zoom-in">
+                            <!-- Ambient Glow -->
+                            <div id="dynamic-feature-glow"
+                                class="position-absolute top-50 start-50 translate-middle rounded-circle z-1 opacity-25 transition-all"
+                                style="width: 320px; height: 320px; background: radial-gradient(circle, #3B82F6 0%, transparent 70%); filter: blur(30px);">
+                            </div>
+
+                            <div
+                                class="magnifying-glass-fx d-inline-flex justify-content-center align-items-center bg-card rounded-circle border border-4 border-white shadow-super-premium position-relative z-2">
+                                <div
+                                    class="glass-reflection rounded-circle position-absolute top-0 start-0 w-100 h-100 opacity-25">
+                                </div>
+                                <div
+                                    class="magnifying-handle position-absolute bg-white border border-light-alpha rounded-pill shadow-sm">
+                                </div>
+                                <div class="magnifying-handle-grip position-absolute bg-light rounded-pill shadow-sm">
+                                </div>
+                                <!-- Dynamic Icon -->
+                                <div id="dynamic-feature-icon"
+                                    class="social-icon-box bg-primary transition-all rounded-4 d-flex align-items-center justify-content-center text-white shadow-lg"
+                                    style="width: 140px; height: 140px; font-size: 6rem;">
+                                    <i class="fa-solid fa-inbox"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Content Details Area -->
+                        <div class="col-lg-7 ps-lg-5 pt-5 pt-lg-0 text-center text-lg-start" data-aos="fade-left"
+                            data-aos-delay="100">
+                            <div id="dynamic-feature-badge-container" class="mb-4">
+                                <span id="dynamic-feature-badge"
+                                    class="d-inline-flex align-items-center gap-2 px-3 py-1 bg-success-soft text-success fs-8 fw-bold rounded-pill">
+                                    <span class="dot bg-success"
+                                        style="width:8px; height:8px; border-radius:50%;"></span> Active Engine
+                                </span>
+                            </div>
+
+                            <h3 id="dynamic-feature-title" class="fw-bold font-poppins text-main mb-2 fs-2">The Unified
+                                Inbox</h3>
+                            <div id="dynamic-feature-catchphrase"
+                                class="d-flex align-items-center gap-2 fw-semibold fs-7 mb-4 transition-all"
+                                style="color: #3B82F6;">
+                                Stop Hunting for Messages.
+                            </div>
+
+                            <p id="dynamic-feature-desc" class="text-muted-secondary font-inter fs-7 mb-4 pe-lg-4">
+                                Whether a customer messages you on Facebook, Instagram, Google, Email, or Text, it all
+                                lands in one single inbox. You can text them back right from your phone without
+                                switching apps.
+                            </p>
+
+                            <ul id="dynamic-feature-bullets" class="list-unstyled d-flex flex-column gap-3 mb-5">
+                                <li class="d-flex align-items-center gap-3 border-bottom border-light-alpha pb-3 px-2">
+                                    <div class="icon-bg p-2 rounded bg-opacity-10 transition-all text-primary"
+                                        style="background-color: rgba(59, 130, 246, 0.1); color: #3B82F6;"><i
+                                            class="fa-solid fa-circle-nodes"></i></div>
+                                    <div>
+                                        <div class="fw-bold fs-7 text-main">All channels in one place</div>
+                                        <div class="fs-8 text-muted-secondary">Facebook, Instagram, Email, SMS & Google
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="d-flex align-items-center gap-3 border-bottom border-light-alpha pb-3 px-2">
+                                    <div class="icon-bg p-2 rounded bg-opacity-10 transition-all text-primary"
+                                        style="background-color: rgba(59, 130, 246, 0.1); color: #3B82F6;"><i
+                                            class="fa-solid fa-mobile-screen-button"></i></div>
+                                    <div>
+                                        <div class="fw-bold fs-7 text-main">Respond direct from phone</div>
+                                        <div class="fs-8 text-muted-secondary">No switching between multiple apps</div>
+                                    </div>
+                                </li>
+                                <li class="d-flex align-items-center gap-3 px-2">
+                                    <div class="icon-bg p-2 rounded bg-opacity-10 transition-all text-primary"
+                                        style="background-color: rgba(59, 130, 246, 0.1); color: #3B82F6;"><i
+                                            class="fa-solid fa-shield-halved"></i></div>
+                                    <div>
+                                        <div class="fw-bold fs-7 text-main">Zero missed opportunities</div>
+                                        <div class="fs-8 text-muted-secondary">Never lose another hot lead in your DMs
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+
+                            <div id="dynamic-feature-why-attractive-container"
+                                class="why-attractive p-3 rounded-3 bg-accent-soft border border-light-alpha mb-4 text-start">
+                                <span class="fs-8 fw-bold text-main d-block mb-1"><i
+                                        class="fa-solid fa-fire text-accent me-1"></i> Why it's attractive:</span>
+                                <p id="dynamic-feature-why-attractive" class="fs-8 text-muted-secondary mb-0 font-inter"
+                                    style="line-height: 1.4;">
+                                    Eliminates the stress of missing a DM from a potential buyer because you forgot to
+                                    check Instagram.
+                                </p>
+                            </div>
+
+                            <a id="dynamic-feature-btn" href="#contact"
+                                class="btn btn-premium w-100 d-flex justify-content-between align-items-center px-4 py-3 rounded-2 fw-semibold border border-light-alpha shadow-sm hover-lift transition-all">
+                                <span>Get Started with Unified Inbox</span> <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Stats Ribbon -->
+            <div class="row g-4 pt-4 border-top border-light-alpha w-100 mx-0 pb-3" data-aos="fade-up">
+                <div class="col-sm-6 col-lg-3 d-flex align-items-center gap-3">
+                    <div class="p-2 bg-primary-soft text-primary-dark rounded-circle fs-5 d-flex align-items-center justify-content-center"
+                        style="width: 45px; height: 45px;">
+                        <i class="fa-solid fa-shield-halved text-primary"></i>
+                    </div>
+                    <div>
+                        <div class="fw-bold fs-7 text-main">Enterprise Grade</div>
+                        <div class="fs-9 text-muted-secondary line-height-sm">Secure and fully compliant routing.</div>
+                    </div>
+                </div>
+                <div
+                    class="col-sm-6 col-lg-3 d-flex align-items-center gap-3 border-start-lg border-light-alpha ps-lg-4">
+                    <div class="p-2 bg-success-soft text-success rounded-circle fs-5 d-flex align-items-center justify-content-center"
+                        style="width: 45px; height: 45px;">
+                        <i class="fa-solid fa-bolt text-success"></i>
+                    </div>
+                    <div>
+                        <div class="fw-bold fs-7 text-main">Ultra Fast Sync</div>
+                        <div class="fs-9 text-muted-secondary line-height-sm">Real-time instant message processing.
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="col-sm-6 col-lg-3 d-flex align-items-center gap-3 border-start-lg border-light-alpha ps-lg-4">
+                    <div class="p-2 bg-warning bg-opacity-10 text-warning rounded-circle fs-5 d-flex align-items-center justify-content-center"
+                        style="width: 45px; height: 45px;">
+                        <i class="fa-solid fa-chart-simple text-accent"></i>
+                    </div>
+                    <div>
+                        <div class="fw-bold fs-7 text-main">Intelligent Pipelines</div>
+                        <div class="fs-9 text-muted-secondary line-height-sm">Automatically route leads to sales.</div>
+                    </div>
+                </div>
+                <div
+                    class="col-sm-6 col-lg-3 d-flex align-items-center gap-3 border-start-lg border-light-alpha ps-lg-4">
+                    <div class="p-2 bg-info-soft text-info rounded-circle fs-5 d-flex align-items-center justify-content-center"
+                        style="width: 45px; height: 45px;">
+                        <i class="fa-regular fa-clock text-info"></i>
+                    </div>
+                    <div>
+                        <div class="fw-bold fs-7 text-main">Hours Saved</div>
+                        <div class="fs-9 text-muted-secondary line-height-sm">Replace tedious manual work.</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
         </div>
     </section>
 
@@ -859,7 +872,7 @@
                 </div>
 
                 <!-- Showcase floating decorative elements -->
-                <div class="position-absolute glass-panel p-3 rounded-3 shadow-lg border border-light-alpha"
+                <div class="position-absolute glass-panel p-3 rounded-3 shadow-lg border border-light-alpha d-none d-md-block"
                     style="bottom:-20px; right:-30px; animation: float 6s ease-in-out infinite;">
                     <div class="d-flex align-items-center gap-3">
                         <div class="bg-success-soft text-success p-2 rounded-circle"><i class="fa-solid fa-bell"></i>
@@ -879,68 +892,14 @@
         <div class="container py-5">
             <div class="row justify-content-center mb-5 text-center" data-aos="fade-up">
                 <div class="col-lg-8">
-                    <span class="top-badge text-accent fw-bold text-uppercase tracking-wide fs-7 mb-3 d-inline-block">Fair & Unique Pricing</span>
+                    <span
+                        class="top-badge text-accent fw-bold text-uppercase tracking-wide fs-7 mb-3 d-inline-block">Unified Platform Package</span>
                     <h2 class="display-5 fw-extrabold font-poppins mb-3 text-main">
-                        Massive Capabilities. <br><span class="text-gradient">Zero Contract Lock-in.</span>
+                        Massive Capabilities. <br><span class="text-gradient">All-In-One Unified Package.</span>
                     </h2>
                     <p class="lead font-inter text-muted-secondary mx-auto" style="max-width: 650px;">
-                        Stop leaking money on a dozen overlapping software subscriptions. Use our interactive slider to calculate your savings when moving to ZavioCRM.
+                        Stop leaking money on a dozen overlapping software subscriptions. Access all features in our unified, flat-rate package with zero hidden fees.
                     </p>
-                </div>
-            </div>
-
-            <!-- Interactive Cost Calculator Widget -->
-            <div class="row justify-content-center mb-5" data-aos="fade-up" data-aos-delay="100">
-                <div class="col-lg-10">
-                    <div class="glass-panel p-4 p-md-5 rounded-4 border border-light-alpha shadow-super-premium">
-                        <h4 class="fw-bold font-poppins mb-4 text-center text-main"><i class="fa-solid fa-calculator text-primary-dark me-2"></i> Real-Time Cost Savings & ROI Calculator</h4>
-                        
-                        <div class="row g-4 align-items-center">
-                            <!-- Slider Input -->
-                            <div class="col-md-6 pe-md-4 border-end-lg">
-                                <label for="leads-range" class="form-label fw-bold text-main fs-7 mb-2 d-flex justify-content-between">
-                                    <span>Estimated Monthly Contacts/Leads:</span>
-                                    <span class="text-gradient fs-6 fw-bold" id="leads-count-badge">2,000</span>
-                                </label>
-                                <input type="range" class="form-range custom-slider my-3" id="leads-range" min="500" max="10000" step="500" value="2000">
-                                <div class="d-flex justify-content-between text-muted-secondary fs-9">
-                                    <span>500 Leads</span>
-                                    <span>5,000 Leads (Tier Threshold)</span>
-                                    <span>10,000 Leads</span>
-                                </div>
-                            </div>
-
-                            <!-- Results Cards -->
-                            <div class="col-md-6 ps-md-4">
-                                <div class="row g-3">
-                                    <!-- Other Tools Combined Cost -->
-                                    <div class="col-6">
-                                        <div class="bg-card p-3 rounded-3 border border-light-alpha shadow-sm">
-                                            <div class="fs-9 text-muted-secondary mb-1 text-uppercase fw-semibold">Other Tools Combined</div>
-                                            <div class="fw-extrabold text-danger fs-4">$<span id="other-tools-cost" class="pricing-counter">610</span>/mo</div>
-                                            <div class="fs-10 text-muted-secondary mt-1" style="font-size: 0.65rem;">Slack + HubSpot + Salesforce + Mailchimp</div>
-                                        </div>
-                                    </div>
-                                    <!-- ZavioCRM Flat Price -->
-                                    <div class="col-6">
-                                        <div class="bg-card p-3 rounded-3 border border-light-alpha shadow-sm position-relative overflow-hidden" style="border-left: 3px solid var(--primary-dark) !important;">
-                                            <div class="fs-9 text-muted-secondary mb-1 text-uppercase fw-semibold">ZavioCRM flat rate</div>
-                                            <div class="fw-extrabold text-success fs-4">$<span id="zavio-cost" class="pricing-counter">97</span>/mo</div>
-                                            <span class="position-absolute top-0 end-0 bg-success text-white px-2 py-0.5 fs-10 rounded-bottom-start" style="font-size: 0.6rem; font-weight: 700;">FLAT RATE</span>
-                                        </div>
-                                    </div>
-                                    <!-- Total Monthly Savings -->
-                                    <div class="col-12">
-                                        <div class="p-3 rounded-3 border border-light-alpha text-center bg-gradient-premium text-white shadow-premium">
-                                            <div class="fs-8 text-white text-opacity-75 mb-1 text-uppercase fw-semibold tracking-wide">Your Net Monthly Savings</div>
-                                            <h3 class="fw-extrabold fs-2 m-0 text-accent">$<span id="savings-amount" class="pricing-counter">513</span>.00/mo</h3>
-                                            <div class="fs-9 text-white text-opacity-50 mt-1">That's $<span id="yearly-savings-amount">6,156</span> saved every single year!</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
 
@@ -948,140 +907,91 @@
             <div class="row g-4 justify-content-center">
                 <!-- Plan 1: Growth Tier -->
                 <div class="col-md-5 col-lg-4" data-aos="fade-up" data-aos-delay="100">
-                    <div class="glass-panel p-4 rounded-4 border border-light-alpha shadow-premium hover-lift-shadow h-100 d-flex flex-column justify-content-between position-relative">
+                    <div
+                        class="glass-panel p-4 rounded-4 border border-light-alpha shadow-premium hover-lift-shadow h-100 d-flex flex-column justify-content-between position-relative">
                         <div>
                             <div class="d-flex justify-content-between align-items-center mb-3">
                                 <h4 class="fw-bold font-poppins mb-0 text-main">Growth Tier</h4>
-                                <span class="badge bg-primary-soft text-primary-dark rounded-pill px-3 py-1 fs-9 fw-semibold">Best Value</span>
+                                <span
+                                    class="badge bg-primary-soft text-primary-dark rounded-pill px-3 py-1 fs-9 fw-semibold">Best
+                                    Value</span>
                             </div>
-                            <p class="text-muted-secondary fs-8 mb-4">Complete CRM suite designed for growing agencies and local businesses.</p>
+                            <p class="text-muted-secondary fs-8 mb-4">Complete CRM suite designed for growing agencies
+                                and local businesses.</p>
                             <div class="mb-4">
-                                <span class="display-5 fw-extrabold font-poppins text-main">$97</span>
-                                <span class="text-muted-secondary fs-8">/ month</span>
+                                <span class="display-6 fw-extrabold font-poppins text-gradient">Included in Package</span>
+                                <span class="text-muted-secondary fs-8 d-block mt-1">Growth Tier Features</span>
                             </div>
                             <ul class="list-unstyled d-flex flex-column gap-3 mb-5 fs-8 text-muted-secondary">
-                                <li class="d-flex align-items-center gap-2"><i class="fa-solid fa-check text-success fs-7"></i> Up to 5,000 Contacts</li>
-                                <li class="d-flex align-items-center gap-2"><i class="fa-solid fa-check text-success fs-7"></i> Missed-Call Text-Back automation</li>
-                                <li class="d-flex align-items-center gap-2"><i class="fa-solid fa-check text-success fs-7"></i> Unified Omni-Channel Inbox</li>
-                                <li class="d-flex align-items-center gap-2"><i class="fa-solid fa-check text-success fs-7"></i> Automated Google Review Campaigner</li>
-                                <li class="d-flex align-items-center gap-2"><i class="fa-solid fa-check text-success fs-7"></i> High-converting Unlimited Landing Pages</li>
-                                <li class="d-flex align-items-center gap-2"><i class="fa-solid fa-check text-success fs-7"></i> Professional Booking & Multi-Calendar sync</li>
+                                <li class="d-flex align-items-center gap-2"><i
+                                        class="fa-solid fa-check text-success fs-7"></i> Up to 5,000 Contacts</li>
+                                <li class="d-flex align-items-center gap-2"><i
+                                        class="fa-solid fa-check text-success fs-7"></i> Missed-Call Text-Back
+                                    automation</li>
+                                <li class="d-flex align-items-center gap-2"><i
+                                        class="fa-solid fa-check text-success fs-7"></i> Unified Omni-Channel Inbox</li>
+                                <li class="d-flex align-items-center gap-2"><i
+                                        class="fa-solid fa-check text-success fs-7"></i> Automated Google Review
+                                    Campaigner</li>
+                                <li class="d-flex align-items-center gap-2"><i
+                                        class="fa-solid fa-check text-success fs-7"></i> High-converting Unlimited
+                                    Landing Pages</li>
+                                <li class="d-flex align-items-center gap-2"><i
+                                        class="fa-solid fa-check text-success fs-7"></i> Professional Booking &
+                                    Multi-Calendar sync</li>
                             </ul>
                         </div>
-                        <a href="#contact" class="btn btn-outline-premium w-100 py-3 rounded-pill fw-semibold hover-lift text-center">Get Started Free</a>
+                        <a href="#contact"
+                            class="btn btn-outline-premium w-100 py-3 rounded-pill fw-semibold hover-lift text-center">Get
+                            Started Free</a>
                     </div>
                 </div>
 
                 <!-- Plan 2: Scale Tier -->
                 <div class="col-md-5 col-lg-4" data-aos="fade-up" data-aos-delay="200">
-                    <div class="glass-panel p-4 rounded-4 border border-light-alpha shadow-super-premium hover-lift-shadow h-100 d-flex flex-column justify-content-between position-relative" style="border: 2px solid var(--primary-dark) !important;">
-                        <div class="position-absolute top-0 end-0 bg-primary-dark text-white px-3 py-1 fs-9 rounded-bottom-start" style="font-weight: 700;">POPULAR</div>
+                    <div class="glass-panel p-4 rounded-4 border border-light-alpha shadow-super-premium hover-lift-shadow h-100 d-flex flex-column justify-content-between position-relative"
+                        style="border: 2px solid var(--primary-dark) !important;">
+                        <div class="position-absolute top-0 end-0 bg-primary-dark text-white px-3 py-1 fs-9 rounded-bottom-start"
+                            style="font-weight: 700;">POPULAR</div>
                         <div>
                             <div class="d-flex justify-content-between align-items-center mb-3">
                                 <h4 class="fw-bold font-poppins mb-0 text-main">Scale Tier</h4>
-                             </div>
-                             <p class="text-muted-secondary fs-8 mb-4">Unconstrained power built for mature operations requiring complex workflows.</p>
-                             <div class="mb-4">
-                                 <span class="display-5 fw-extrabold font-poppins text-main">$297</span>
-                                 <span class="text-muted-secondary fs-8">/ month</span>
-                             </div>
-                             <ul class="list-unstyled d-flex flex-column gap-3 mb-5 fs-8 text-muted-secondary">
-                                 <li class="d-flex align-items-center gap-2"><i class="fa-solid fa-check text-success fs-7"></i> Unlimited Contacts & Leads</li>
-                                 <li class="d-flex align-items-center gap-2"><i class="fa-solid fa-check text-success fs-7"></i> Dynamic autonomous Voice & Chat AI agents</li>
-                                 <li class="d-flex align-items-center gap-2"><i class="fa-solid fa-check text-success fs-7"></i> Dedicated Priority API access integrations</li>
-                                 <li class="d-flex align-items-center gap-2"><i class="fa-solid fa-check text-success fs-7"></i> Custom White-label & Custom Brand Domain routing</li>
-                                 <li class="d-flex align-items-center gap-2"><i class="fa-solid fa-check text-success fs-7"></i> Live dedicated Account Executive SLA response</li>
-                                 <li class="d-flex align-items-center gap-2"><i class="fa-solid fa-check text-success fs-7"></i> Advanced Analytics with real-time ROI Attribution</li>
-                             </ul>
-                         </div>
-                         <a href="#contact" class="btn btn-premium w-100 py-3 rounded-pill fw-semibold hover-lift shadow-premium text-center">Start Scaling Now</a>
+                            </div>
+                            <p class="text-muted-secondary fs-8 mb-4">Unconstrained power built for mature operations
+                                requiring complex workflows.</p>
+                            <div class="mb-4">
+                                <span class="display-6 fw-extrabold font-poppins text-gradient">Included in Package</span>
+                                <span class="text-muted-secondary fs-8 d-block mt-1">Advanced Scale Features</span>
+                            </div>
+                            <ul class="list-unstyled d-flex flex-column gap-3 mb-5 fs-8 text-muted-secondary">
+                                <li class="d-flex align-items-center gap-2"><i
+                                        class="fa-solid fa-check text-success fs-7"></i> Unlimited Contacts & Leads</li>
+                                <li class="d-flex align-items-center gap-2"><i
+                                        class="fa-solid fa-check text-success fs-7"></i> Dynamic autonomous Voice & Chat
+                                    AI agents</li>
+                                <li class="d-flex align-items-center gap-2"><i
+                                        class="fa-solid fa-check text-success fs-7"></i> Dedicated Priority API access
+                                    integrations</li>
+                                <li class="d-flex align-items-center gap-2"><i
+                                        class="fa-solid fa-check text-success fs-7"></i> Custom White-label & Custom
+                                    Brand Domain routing</li>
+                                <li class="d-flex align-items-center gap-2"><i
+                                        class="fa-solid fa-check text-success fs-7"></i> Live dedicated Account
+                                    Executive SLA response</li>
+                                <li class="d-flex align-items-center gap-2"><i
+                                        class="fa-solid fa-check text-success fs-7"></i> Advanced Analytics with
+                                    real-time ROI Attribution</li>
+                            </ul>
+                        </div>
+                        <a href="#contact"
+                            class="btn btn-premium w-100 py-3 rounded-pill fw-semibold hover-lift shadow-premium text-center">Start
+                            Scaling Now</a>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Interactive Cost Calculator Script -->
-        <script>
-            document.addEventListener('DOMContentLoaded', function () {
-                const leadsRange = document.getElementById('leads-range');
-                const leadsCountBadge = document.getElementById('leads-count-badge');
-                
-                const activeAnimations = {};
-                
-                function animateNumber(elementId, targetValue, suffix = '') {
-                    const element = document.getElementById(elementId);
-                    if (!element) return;
-                    
-                    // Parse current value
-                    const startValue = parseInt(element.textContent.replace(/,/g, '')) || 0;
-                    if (startValue === targetValue) {
-                        element.textContent = targetValue.toLocaleString() + suffix;
-                        return;
-                    }
-                    
-                    if (activeAnimations[elementId]) {
-                        cancelAnimationFrame(activeAnimations[elementId].rafId);
-                    }
-                    
-                    const duration = 250; // ms for fast responsive dragging
-                    const startTime = performance.now();
-                    
-                    function update(currentTime) {
-                        const elapsed = currentTime - startTime;
-                        const progress = Math.min(elapsed / duration, 1);
-                        
-                        // Ease out quad
-                        const ease = progress * (2 - progress);
-                        const currentValue = Math.round(startValue + (targetValue - startValue) * ease);
-                        
-                        element.textContent = currentValue.toLocaleString();
-                        
-                        if (progress < 1) {
-                            activeAnimations[elementId].rafId = requestAnimationFrame(update);
-                        } else {
-                            element.textContent = targetValue.toLocaleString() + suffix;
-                            delete activeAnimations[elementId];
-                        }
-                    }
-                    
-                    activeAnimations[elementId] = {
-                        rafId: requestAnimationFrame(update)
-                    };
-                }
-                
-                function updateCalculator() {
-                    const leads = parseInt(leadsRange.value);
-                    leadsCountBadge.textContent = leads.toLocaleString();
-                    
-                    // Dynamic formulas:
-                    // Other tools combined: base $150 + $0.23 per lead.
-                    const otherCost = Math.round(150 + (leads * 0.23));
-                    
-                    // ZavioCRM flat rate: $97/mo up to 5000 leads, $297/mo above.
-                    const zavioCost = leads <= 5000 ? 97 : 297;
-                    
-                    const savingsCost = otherCost - zavioCost;
-                    const yearlySavings = savingsCost * 12;
-                    
-                    // Trigger smooth counting
-                    animateNumber('other-tools-cost', otherCost);
-                    animateNumber('zavio-cost', zavioCost);
-                    animateNumber('savings-amount', savingsCost);
-                    
-                    // Yearly savings uses basic DOM injection
-                    const yearlyEl = document.getElementById('yearly-savings-amount');
-                    if (yearlyEl) {
-                        yearlyEl.textContent = yearlySavings.toLocaleString();
-                    }
-                }
-                
-                if (leadsRange) {
-                    leadsRange.addEventListener('input', updateCalculator);
-                    // Trigger initial calculation
-                    updateCalculator();
-                }
-            });
-        </script>
+
     </section>
 
     <!-- Tool Comparison Section -->
@@ -1090,12 +1000,10 @@
             <div class="text-center mb-5" data-aos="fade-up">
                 <div
                     class="d-inline-flex align-items-center gap-2 px-3 py-1 bg-white bg-opacity-10 text-accent rounded-pill fs-8 fw-semibold mb-3 border border-white border-opacity-10">
-                    <i class="fa-solid fa-dollar-sign"></i> Cost Comparison
+                    <i class="fa-solid fa-layer-group"></i> Feature Comparison
                 </div>
                 <h2 class="display-5 fw-bold font-poppins mb-3 text-white">What's Included with ZavioCRM</h2>
-                <p class="lead font-inter text-white text-opacity-75 mx-auto">Replace expensive subscriptions and save
-                    <span class="text-accent fw-bold">$849</span> every month
-                </p>
+                <p class="lead font-inter text-white text-opacity-75 mx-auto">Replace expensive subscriptions and get everything in one unified package</p>
             </div>
 
             <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="100">
@@ -1131,8 +1039,7 @@
                                 <div class="rounded-circle"
                                     style="width: 22px; height: 22px; background-color: #0EA5E9;"></div>
                             </div>
-                            <div class="col-2 col-md-2 text-warning fw-bold text-center fs-8 fs-md-7">$99<span
-                                    class="d-none d-md-inline">/mo</span></div>
+                            <div class="col-2 col-md-2 text-warning fw-bold text-center fs-8 fs-md-7">Extra</div>
                             <div class="col-2 col-md-3 text-center text-success fs-6 fs-md-5"><i
                                     class="fa-solid fa-circle-check" style="color: #22C55E;"></i></div>
                         </div>
@@ -1149,8 +1056,7 @@
                                 <div class="rounded-circle"
                                     style="width: 22px; height: 22px; background-color: #8B5CF6;"></div>
                             </div>
-                            <div class="col-2 col-md-2 text-warning fw-bold text-center fs-8 fs-md-7">$297<span
-                                    class="d-none d-md-inline">/mo</span></div>
+                            <div class="col-2 col-md-2 text-warning fw-bold text-center fs-8 fs-md-7">Extra</div>
                             <div class="col-2 col-md-3 text-center text-success fs-6 fs-md-5"><i
                                     class="fa-solid fa-circle-check" style="color: #22C55E;"></i></div>
                         </div>
@@ -1166,8 +1072,7 @@
                                     style="width: 22px; height: 22px; background-color: #1E293B; border: 1.5px solid #94A3B8;">
                                 </div>
                             </div>
-                            <div class="col-2 col-md-2 text-warning fw-bold text-center fs-8 fs-md-7">$29<span
-                                    class="d-none d-md-inline">/mo</span></div>
+                            <div class="col-2 col-md-2 text-warning fw-bold text-center fs-8 fs-md-7">Extra</div>
                             <div class="col-2 col-md-3 text-center text-success fs-6 fs-md-5"><i
                                     class="fa-solid fa-circle-check" style="color: #22C55E;"></i></div>
                         </div>
@@ -1184,8 +1089,7 @@
                                 <div class="rounded-circle"
                                     style="width: 22px; height: 22px; background-color: #EF4444;"></div>
                             </div>
-                            <div class="col-2 col-md-2 text-warning fw-bold text-center fs-8 fs-md-7">$99<span
-                                    class="d-none d-md-inline">/mo</span></div>
+                            <div class="col-2 col-md-2 text-warning fw-bold text-center fs-8 fs-md-7">Extra</div>
                             <div class="col-2 col-md-3 text-center text-success fs-6 fs-md-5"><i
                                     class="fa-solid fa-circle-check" style="color: #22C55E;"></i></div>
                         </div>
@@ -1200,8 +1104,7 @@
                                 <div class="rounded-circle"
                                     style="width: 22px; height: 22px; background-color: #334155;"></div>
                             </div>
-                            <div class="col-2 col-md-2 text-warning fw-bold text-center fs-8 fs-md-7">$49<span
-                                    class="d-none d-md-inline">/mo</span></div>
+                            <div class="col-2 col-md-2 text-warning fw-bold text-center fs-8 fs-md-7">Extra</div>
                             <div class="col-2 col-md-3 text-center text-success fs-6 fs-md-5"><i
                                     class="fa-solid fa-circle-check" style="color: #22C55E;"></i></div>
                         </div>
@@ -1209,10 +1112,8 @@
                         <!-- Footer Row -->
                         <div class="row g-0 py-4 px-3 px-md-5 align-items-center text-white"
                             style="background-color: rgba(255, 255, 255, 0.03);">
-                            <div class="col-7 col-md-7 fw-extrabold font-inter fs-6 fs-md-5 text-end pe-3 pe-md-4">Total
-                                Value</div>
-                            <div class="col-3 col-md-2 text-warning fw-bold text-center fs-6 fs-md-5">$573<span
-                                    class="d-none d-md-inline">/mo</span></div>
+                            <div class="col-7 col-md-7 fw-extrabold font-inter fs-6 fs-md-5 text-end pe-3 pe-md-4">Platform Package</div>
+                            <div class="col-3 col-md-2 text-warning fw-bold text-center fs-8 fs-md-7">Separate Fees</div>
                             <div class="col-2 col-md-3 text-center">
                                 <span class="badge px-3 py-2 px-md-4 py-md-2 rounded-pill fs-9 fs-md-8 shadow-sm"
                                     style="background-color: #16A34A; font-weight: 700;">Included</span>
@@ -1232,72 +1133,24 @@
                 data-aos="fade-up">
                 <div>
                     <h2 class="display-6 fw-bold font-poppins mb-2 text-main">Latest from the Blog</h2>
-                    <p class="fs-6 text-muted-secondary mb-0">Insights, strategies, and growth hacks for modern
-                        businesses.</p>
+                    <p class="fs-6 text-muted-secondary mb-0">Insights, strategies, and growth hacks for modern businesses.</p>
                 </div>
-                <a href="#" class="btn btn-outline-premium rounded-pill d-none d-md-inline-block">View All Posts</a>
             </div>
 
-            <div class="row g-4">
-                <!-- Blog 1 -->
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-                    <div
-                        class="bg-card rounded-4 overflow-hidden border border-light-alpha shadow-sm h-100 hover-lift cursor-pointer">
-                        <div class="blog-img-wrapper overflow-hidden" style="height: 220px;">
-                            <img src="image/blog_automation.png" class="w-100 h-100 object-fit-cover transition-all blog-card-img" alt="How to Automate 80% of Daily CRM Tasks">
-                        </div>
-                        <div class="p-4">
-                            <span class="badge bg-primary-soft text-primary-dark mb-3 rounded-pill">Marketing Strategy</span>
-                            <h4 class="fw-bold font-poppins text-main mb-2 fs-5">How to Automate 80% of Your Daily CRM Tasks</h4>
-                            <p class="text-muted-secondary fs-7 mb-4">Discover the exact workflows top agencies use to save 15+ hours per week per employee without writing code.</p>
-                            <div class="d-flex align-items-center gap-3">
-                                <div class="rounded-circle bg-gradient-premium d-flex align-items-center justify-content-center text-white fw-bold fs-9" style="width:36px; height:36px;">SJ</div>
-                                <div>
-                                    <div class="fw-bold text-main fs-8">Sarah Jenkins</div>
-                                    <div class="text-muted-secondary fs-9">May 12, 2026</div>
-                                </div>
+            <div class="row align-items-center justify-content-center">
+                <div class="col-lg-10">
+                    <div class="row g-4 align-items-center cursor-pointer blog-hover-trigger" onclick="window.location.href='blog.html';">
+                        <div class="col-md-5" data-aos="fade-right">
+                            <div class="rounded-4 overflow-hidden shadow-sm" style="height: 240px;">
+                                <img src="image/hero_command_center.png" class="w-100 h-100 object-fit-cover transition-all blog-card-img" alt="Beyond the All-in-One">
                             </div>
                         </div>
-                    </div>
-                </div>
-                <!-- Blog 2 -->
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-                    <div
-                        class="bg-card rounded-4 overflow-hidden border border-light-alpha shadow-sm h-100 hover-lift cursor-pointer">
-                        <div class="blog-img-wrapper overflow-hidden" style="height: 220px;">
-                            <img src="image/blog_funnel.png" class="w-100 h-100 object-fit-cover transition-all blog-card-img" alt="The Anatomy of a Multi-Million Dollar Funnel">
-                        </div>
-                        <div class="p-4">
-                            <span class="badge bg-success-soft text-success mb-3 rounded-pill">Sales Funnels</span>
-                            <h4 class="fw-bold font-poppins text-main mb-2 fs-5">The Anatomy of a Multi-Million Dollar Funnel</h4>
-                            <p class="text-muted-secondary fs-7 mb-4">We tore down the highest-converting B2B SaaS funnels of 2026. Here is exactly what we found.</p>
-                            <div class="d-flex align-items-center gap-3">
-                                <div class="rounded-circle bg-gradient-premium d-flex align-items-center justify-content-center text-white fw-bold fs-9" style="width:36px; height:36px;">DC</div>
-                                <div>
-                                    <div class="fw-bold text-main fs-8">David Chen</div>
-                                    <div class="text-muted-secondary fs-9">May 8, 2026</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Blog 3 -->
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
-                    <div
-                        class="bg-card rounded-4 overflow-hidden border border-light-alpha shadow-sm h-100 hover-lift cursor-pointer">
-                        <div class="blog-img-wrapper overflow-hidden" style="height: 220px;">
-                            <img src="image/blog_whatsapp.png" class="w-100 h-100 object-fit-cover transition-all blog-card-img" alt="ZavioCRM 2.0: Deep WhatsApp Integration">
-                        </div>
-                        <div class="p-4">
-                            <span class="badge bg-accent-soft text-accent mb-3 rounded-pill">Product Update</span>
-                            <h4 class="fw-bold font-poppins text-main mb-2 fs-5">ZavioCRM 2.0: Deep WhatsApp Integration</h4>
-                            <p class="text-muted-secondary fs-7 mb-4">Capture leads directly from WhatsApp Business and drop them straight into your custom automation pipelines.</p>
-                            <div class="d-flex align-items-center gap-3">
-                                <div class="rounded-circle bg-gradient-premium d-flex align-items-center justify-content-center text-white fw-bold fs-9" style="width:36px; height:36px;"><i class="fa-solid fa-bolt"></i></div>
-                                <div>
-                                    <div class="fw-bold text-main fs-8">Zavio Team</div>
-                                    <div class="text-muted-secondary fs-9">May 2, 2026</div>
-                                </div>
+                        <div class="col-md-7" data-aos="fade-left">
+                            <div class="ps-md-3">
+                                <span class="badge bg-primary-soft text-primary-dark rounded-pill mb-3 px-3 py-2 fs-9">Enterprise Marketing</span>
+                                <h3 class="fw-bold font-poppins text-main mb-3 fs-4">Beyond the All-in-One: Why Zavio CRM is the Future of Marketing Automation</h3>
+                                <p class="text-muted-secondary fs-7 mb-4">Discover why the era of the passive "system of record" is over, and how adaptive workflows and multi-agent AI ecosystems are defining 2026.</p>
+                                <span class="text-danger fw-bold fs-7 d-inline-flex align-items-center gap-1 blog-horizontal-readmore">Read more <i class="fa-solid fa-arrow-right fs-8"></i></span>
                             </div>
                         </div>
                     </div>
@@ -1322,12 +1175,12 @@
                         <div class="d-flex align-items-center gap-3 mb-4 fs-6">
                             <div class="bg-white bg-opacity-10 text-white rounded-circle d-flex align-items-center justify-content-center"
                                 style="width:40px; height:40px;"><i class="fa-solid fa-phone"></i></div>
-                            <div>+1 (800) 992-1234</div>
+                            <div><a href="tel:8754246799" class="text-white text-decoration-none">8754246799</a></div>
                         </div>
                         <div class="d-flex align-items-center gap-3 mb-4 fs-6">
                             <div class="bg-white bg-opacity-10 text-white rounded-circle d-flex align-items-center justify-content-center"
                                 style="width:40px; height:40px;"><i class="fa-solid fa-envelope"></i></div>
-                            <div>sales@zaviocrm.com</div>
+                            <div><a href="mailto:support@zaviocrm.com" class="text-white text-decoration-none">support@zaviocrm.com</a></div>
                         </div>
                         <div class="d-flex align-items-center gap-3 mb-4 fs-6">
                             <div class="bg-white bg-opacity-10 text-white rounded-circle d-flex align-items-center justify-content-center"
@@ -1433,7 +1286,7 @@
             <hr class="border-light-alpha my-3">
 
             <div
-                class="d-flex flex-column flex-md-row justify-content-between align-items-center text-muted-secondary fs-8">
+                class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center text-muted-secondary fs-8">
                 <p class="mb-0">&copy; <span id="currentYear"></span> ZavioCRM. All rights reserved.</p>
                 <div class="d-flex gap-4 mt-3 mt-md-0">
                     <a href="#" class="text-muted-secondary text-decoration-none hover-text-main">Privacy Policy</a>
@@ -1459,180 +1312,7 @@
         document.addEventListener('DOMContentLoaded', function () {
             AOS.init({ once: true, offset: 50, duration: 800 });
 
-            // ─── Smooth Physics Cursor ───────────────────────────────────────────────
-            // Only runs on fine-pointer (mouse/trackpad) desktop devices
-            const isFinePointer = window.matchMedia('(pointer: fine)').matches;
-            const cursorEl  = document.getElementById('smooth-cursor');
-            const cursorSvg = document.getElementById('smooth-cursor-svg');
-
-            if (!cursorEl || !isFinePointer || window.innerWidth <= 1024) return;
-
-            // Spring configuration (matching Magic UI defaults)
-            const spring = {
-                damping:   45,
-                stiffness: 400,
-                mass:      1,
-                restDelta: 0.001
-            };
-
-            // State
-            let mouseX = window.innerWidth  / 2;
-            let mouseY = window.innerHeight / 2;
-
-            let posX = mouseX, posY = mouseY;
-            let velX = 0,      velY = 0;
-
-            let prevX = mouseX, prevY = mouseY;
-            let currentRotation = 0;
-            let targetRotation  = 0;
-            let rafId = null;
-            let isHovering = false;
-            let isVisible  = false;
-
-            // Track mouse
-            window.addEventListener('mousemove', (e) => {
-                mouseX = e.clientX;
-                mouseY = e.clientY;
-
-                if (!isVisible) {
-                    // Snap on first appearance
-                    posX = mouseX;
-                    posY = mouseY;
-                    isVisible = true;
-                    cursorEl.style.opacity = '1';
-                }
-            });
-
-            // Hover detection on interactive elements
-            const interactives = document.querySelectorAll(
-                'a, button, .cursor-pointer, [role="button"], .feature-nav-item, .nav-link, .btn'
-            );
-            interactives.forEach(el => {
-                el.addEventListener('mouseenter', () => { isHovering = true;  updateCursorAppearance(); });
-                el.addEventListener('mouseleave', () => { isHovering = false; updateCursorAppearance(); });
-            });
-
-            // Click visual feedback and cybernetic ripples
-            window.addEventListener('mousedown', (e) => {
-                if (!isVisible) return;
-                
-                cursorSvg.style.transform = 'scale(0.85)';
-
-                const ripple = document.createElement('div');
-                ripple.className = 'cursor-click-ripple';
-                ripple.style.left = `${e.clientX}px`;
-                ripple.style.top = `${e.clientY}px`;
-                
-                const isDarkActive = document.body.getAttribute('data-theme') === 'dark';
-                const clr = isDarkActive ? '#06B6D4' : '#3B82F6';
-                ripple.style.borderColor = clr;
-                ripple.style.boxShadow = `0 0 12px ${clr}, inset 0 0 6px ${clr}`;
-                
-                document.body.appendChild(ripple);
-
-                gsap.fromTo(ripple, 
-                    { scale: 0.4, opacity: 0.85 },
-                    { 
-                        scale: 3.5, 
-                        opacity: 0, 
-                        duration: 0.5, 
-                        ease: "power2.out", 
-                        onComplete: () => ripple.remove() 
-                    }
-                );
-            });
-
-            window.addEventListener('mouseup', () => {
-                updateCursorAppearance();
-            });
-
-            function updateCursorAppearance() {
-                if (isHovering) {
-                    cursorSvg.style.filter = 'drop-shadow(0 4px 16px rgba(59,130,246,0.9))';
-                    cursorSvg.style.transform = 'scale(1.35)';
-                } else {
-                    cursorSvg.style.filter = 'drop-shadow(0 2px 8px rgba(59,130,246,0.55))';
-                    cursorSvg.style.transform = 'scale(1)';
-                }
-            }
-
-            // Spring physics tick — called every RAF frame
-            function springStep(dt) {
-                const dtSeconds = Math.min(dt / 1000, 0.064); // cap at ~60fps equivalent
-
-                // Spring force toward mouse
-                const dx = mouseX - posX;
-                const dy = mouseY - posY;
-
-                const springForceX = spring.stiffness * dx;
-                const springForceY = spring.stiffness * dy;
-
-                const dampingForceX = spring.damping * velX;
-                const dampingForceY = spring.damping * velY;
-
-                const accelX = (springForceX - dampingForceX) / spring.mass;
-                const accelY = (springForceY - dampingForceY) / spring.mass;
-
-                velX += accelX * dtSeconds;
-                velY += accelY * dtSeconds;
-
-                posX += velX * dtSeconds;
-                posY += velY * dtSeconds;
-
-                // Rotation: angle from last position to current
-                const moveDx = posX - prevX;
-                const moveDy = posY - prevY;
-                const speed  = Math.sqrt(moveDx * moveDx + moveDy * moveDy);
-
-                if (speed > 0.1) {
-                    // atan2 gives angle of travel; offset by -90deg because SVG arrow points up
-                    targetRotation = Math.atan2(moveDy, moveDx) * (180 / Math.PI) + 90;
-                }
-
-                // Smooth rotation interpolation (avoid gimbal wrap-around)
-                let rotDiff = targetRotation - currentRotation;
-                // Normalise to [-180, 180]
-                while (rotDiff >  180) rotDiff -= 360;
-                while (rotDiff < -180) rotDiff += 360;
-                currentRotation += rotDiff * Math.min(dtSeconds * 14, 1);
-
-                prevX = posX;
-                prevY = posY;
-
-                return Math.abs(dx) < spring.restDelta &&
-                       Math.abs(dy) < spring.restDelta &&
-                       Math.abs(velX) < spring.restDelta &&
-                       Math.abs(velY) < spring.restDelta;
-            }
-
-            // RAF loop
-            let lastTime = null;
-            function loop(timestamp) {
-                if (lastTime === null) lastTime = timestamp;
-                const dt = timestamp - lastTime;
-                lastTime = timestamp;
-
-                springStep(dt);
-
-                cursorEl.style.transform =
-                    `translate(${posX}px, ${posY}px) rotate(${currentRotation}deg)`;
-
-                rafId = requestAnimationFrame(loop);
-            }
-
-            // Start hidden, show on first mousemove
-            cursorEl.style.opacity = '0';
-            cursorEl.style.transition = 'opacity 0.4s ease';
-            rafId = requestAnimationFrame(loop);
-
-            // Hide when mouse leaves window
-            document.addEventListener('mouseleave', () => {
-                cursorEl.style.opacity = '0';
-                isVisible = false;
-            });
-            document.addEventListener('mouseenter', () => {
-                if (isVisible) cursorEl.style.opacity = '1';
-            });
+            // Smooth Physics Cursor removed
         });
     </script>
 </body>

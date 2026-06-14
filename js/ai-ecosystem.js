@@ -17,15 +17,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const closePopBtn = document.getElementById('btn-close-active-pop');
     
     // Preview fields
-    const previewTitle = preview.querySelector('.preview-title');
-    const previewSubtitle = preview.querySelector('.preview-subtitle');
-    const previewDesc = preview.querySelector('.preview-desc');
-    const previewStatusDot = preview.querySelector('.preview-badge-status .pulse-dot');
+    const previewTitle = preview ? preview.querySelector('.preview-title') : null;
+    const previewSubtitle = preview ? preview.querySelector('.preview-subtitle') : null;
+    const previewDesc = preview ? preview.querySelector('.preview-desc') : null;
+    const previewStatusDot = preview ? (preview.querySelector('.preview-badge-status .pulse-dot') || preview.querySelector('.pulse-dot')) : null;
     
     // Active Pop fields
-    const popTitle = activePop.querySelector('.pop-title');
-    const popSubtitle = activePop.querySelector('.pop-subtitle');
-    const popDesc = activePop.querySelector('.pop-desc');
+    const popTitle = activePop ? activePop.querySelector('.pop-title') : null;
+    const popSubtitle = activePop ? activePop.querySelector('.pop-subtitle') : null;
+    const popDesc = activePop ? activePop.querySelector('.pop-desc') : null;
     const popSpecsContainer = document.getElementById('pop-specs-container');
 
     // State Variables
@@ -60,12 +60,12 @@ document.addEventListener('DOMContentLoaded', () => {
     // Node data structure
     const nodeData = [
         {
-            title: "AI Customer Concierge",
-            subtitle: "Conversation AI",
+            title: "AI Lead Capture",
+            subtitle: "Engagement Agent",
             desc: "Omnichannel customer engagement. Syncs SMS, Webchat, Instagram, Messenger, and WhatsApp with live calendars to book leads securely into ZavioCRM on autopilot.",
             color: "var(--clr-cyan)",
             colorRGB: "6, 182, 212",
-            icon: "<i class='fa-solid fa-comments'></i>",
+            icon: "<i class='fa-solid fa-comments-dollar'></i>",
             specs: [
                 "Omnichannel Deployment (SMS, WhatsApp, IG, FB DMs)",
                 "Live Calendar Integration & CRM Widget Sync",
@@ -73,12 +73,12 @@ document.addEventListener('DOMContentLoaded', () => {
             ]
         },
         {
-            title: "AI Call Executive",
-            subtitle: "Voice AI",
+            title: "AI Voice Executive",
+            subtitle: "Telephony Agent",
             desc: "Ultra-low latency inbound & outbound phone calling. Features custom voice branding, sub-1-second audio synthesis, and automated call transcripts synced into CRM.",
             color: "var(--clr-purple)",
             colorRGB: "139, 92, 246",
-            icon: "<i class='fa-solid fa-phone-volume'></i>",
+            icon: "<i class='fa-solid fa-microphone-lines'></i>",
             specs: [
                 "Ultra-Low Latency Calling (<1s response latency)",
                 "Smart Routing & warm-transfers to human managers",
@@ -86,42 +86,29 @@ document.addEventListener('DOMContentLoaded', () => {
             ]
         },
         {
-            title: "AI Knowledge Brain",
-            subtitle: "Centralized Engine",
+            title: "AI Knowledge Core",
+            subtitle: "Context Engine",
             desc: "中央知識ベース. Scrapes and processes public websites, FAQs, and company data. Integrates strict boundary controls to guarantee zero hallucination.",
             color: "var(--clr-pink)",
             colorRGB: "236, 72, 153",
-            icon: "<i class='fa-solid fa-brain'></i>",
+            icon: "<i class='fa-solid fa-network-wired'></i>",
             specs: [
                 "Scrape-and-Learn Website URL & File Crawler",
-                "Strict Boundary Controls (Zero AI pricing hallucinations)",
+                "Strict Boundary Controls (Zero AI knowledge hallucinations)",
                 "Encrypted SOC-2 Isolated Database Vectors"
             ]
         },
         {
-            title: "AI Reputation Guardian",
-            subtitle: "Reviews AI",
+            title: "AI Review Responder",
+            subtitle: "Sentiment Engine",
             desc: "Autopilot review replies for Google Business Profiles and Facebook. Automatically writes context-aware responses with suggestive toggle modes for approvals.",
             color: "var(--clr-orange)",
             colorRGB: "245, 158, 11)",
-            icon: "<i class='fa-solid fa-shield-heart'></i>",
+            icon: "<i class='fa-solid fa-star-half-stroke'></i>",
             specs: [
                 "Autopilot Review Responder (Google & Facebook Sync)",
                 "Suggestive Mode Toggle (Human approval before public post)",
                 "Sentiment Analysis & CRM negative review alerts"
-            ]
-        },
-        {
-            title: "AI Growth Studio",
-            subtitle: "Content AI",
-            desc: "Automated contextual copywriting. Instantly converts simple prompts into blog posts, marketing emails, high-converting copy, and landing pages inside CRM tools.",
-            color: "var(--clr-green)",
-            colorRGB: "16, 185, 129",
-            icon: "<i class='fa-solid fa-wand-magic-sparkles'></i>",
-            specs: [
-                "Contextual Copywriting Core (Web, Blogs, Emails)",
-                "Launch Creative Engine prompt terminal processor",
-                "Multi-Asset content generator (outlines, copy templates)"
             ]
         }
     ];
@@ -131,8 +118,7 @@ document.addEventListener('DOMContentLoaded', () => {
         { left: 16, top: 22 },  // Node 1: Concierge (Top-Left)
         { left: 16, top: 68 },  // Node 2: Voice AI (Bottom-Left)
         { left: 84, top: 22 },  // Node 3: Knowledge Brain (Top-Right)
-        { left: 84, top: 68 },  // Node 4: Reputation Guardian (Bottom-Right)
-        { left: 50, top: 84 }   // Node 5: Growth Studio (Bottom-Center)
+        { left: 84, top: 68 }   // Node 4: Reputation Guardian (Bottom-Right)
     ];
 
     // ─── PARTICLE GLOBE ENGINE (CUSTOM 3D PROJECTION) ───────────────────────────
@@ -170,7 +156,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 px: 0, py: 0,
                 pz: 0,
                 brightness: Math.random() * 0.4 + 0.6,
-                colorType: i % 5,
+                colorType: i % 4,
                 magneticOffset: { x: 0, y: 0, z: 0 }
             });
         }
@@ -479,6 +465,7 @@ document.addEventListener('DOMContentLoaded', () => {
         node.classList.add('cursor-pointer');
 
         node.addEventListener('mouseenter', (e) => {
+            if (window.innerWidth <= 768) return; // Skip hover on mobile
             if (isActivePopOpen) return; // Keep focus locked to active popup
             hoveredNodeIndex = idx;
             inner.classList.add(`sat-inner-bg-active-${idx}`);
@@ -489,34 +476,86 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Update and position temporary hover tooltip next to satellite
             const activeData = nodeData[idx];
-            previewTitle.textContent = activeData.title;
-            previewSubtitle.textContent = activeData.subtitle;
-            previewDesc.textContent = activeData.desc;
-            previewSubtitle.style.color = activeData.color;
-            previewStatusDot.style.backgroundColor = activeData.color;
-            previewStatusDot.style.boxShadow = `0 0 10px ${activeData.color}`;
+            if (previewTitle) previewTitle.textContent = activeData.title;
+            if (previewSubtitle) {
+                previewSubtitle.textContent = activeData.subtitle;
+                previewSubtitle.style.color = activeData.color;
+            }
+            if (previewDesc) previewDesc.textContent = activeData.desc;
+            if (previewStatusDot) {
+                previewStatusDot.style.backgroundColor = activeData.color;
+                previewStatusDot.style.boxShadow = `0 0 10px ${activeData.color}`;
+            }
             
-            const hint = preview.querySelector('.btn-command-hint');
-            hint.style.color = activeData.color;
+            if (preview) {
+                const hint = preview.querySelector('.btn-command-hint');
+                if (hint) hint.style.color = activeData.color;
 
-            alignCardToNode(preview, node);
-            preview.classList.remove('hide');
-            preview.classList.add('show');
+                alignCardToNode(preview, node);
+                preview.classList.remove('hide');
+                preview.classList.add('show');
+            }
 
-            spawnDataStream(parseFloat(node.style.left), parseFloat(node.style.top), activeData.color, 4);
+            spawnDataStream(parseFloat(node.style.left) || 0, parseFloat(node.style.top) || 0, activeData.color, 4);
         });
 
         node.addEventListener('mouseleave', () => {
+            if (window.innerWidth <= 768) return; // Skip hover on mobile
             if (isActivePopOpen) return;
             hoveredNodeIndex = -1;
             inner.classList.remove(`sat-inner-bg-active-${idx}`);
-            preview.classList.remove('show');
-            preview.classList.add('hide');
+            if (preview) {
+                preview.classList.remove('show');
+                preview.classList.add('hide');
+            }
         });
 
-        // Click Trigger (Opens persistent popup and fires explosion ripple effect!)
+        // Mobile tap/click accordion toggling
         node.addEventListener('click', () => {
-            triggerActivePopup(idx, node);
+            if (window.innerWidth <= 768) {
+                const isAlreadyActive = (hoveredNodeIndex === idx && preview && !preview.classList.contains('hide'));
+                
+                if (isAlreadyActive) {
+                    hoveredNodeIndex = -1;
+                    inner.classList.remove(`sat-inner-bg-active-${idx}`);
+                    if (preview) {
+                        preview.classList.remove('show');
+                        preview.classList.add('hide');
+                    }
+                } else {
+                    // Reset all other highlighted states
+                    nodes.forEach((n, i) => {
+                        n.querySelector('.satellite-inner').classList.remove(`sat-inner-bg-active-${i}`);
+                    });
+                    
+                    hoveredNodeIndex = idx;
+                    inner.classList.add(`sat-inner-bg-active-${idx}`);
+                    
+                    const activeData = nodeData[idx];
+                    if (previewTitle) previewTitle.textContent = activeData.title;
+                    if (previewSubtitle) {
+                        previewSubtitle.textContent = activeData.subtitle;
+                        previewSubtitle.style.color = activeData.color;
+                    }
+                    if (previewDesc) previewDesc.textContent = activeData.desc;
+                    if (previewStatusDot) {
+                        previewStatusDot.style.backgroundColor = activeData.color;
+                        previewStatusDot.style.boxShadow = `0 0 10px ${activeData.color}`;
+                    }
+                    
+                    if (preview) {
+                        const hint = preview.querySelector('.btn-command-hint');
+                        if (hint) hint.style.color = activeData.color;
+
+                        // Insert immediately after current node in stacked DOM flow
+                        node.parentNode.insertBefore(preview, node.nextSibling);
+                        
+                        alignCardToNode(preview, node);
+                        preview.classList.remove('hide');
+                        preview.classList.add('show');
+                    }
+                }
+            }
         });
     });
 
@@ -530,21 +569,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const nodeRect = nodeEl.getBoundingClientRect();
         const wrapRect = document.getElementById('ecosystem-view-wrapper').getBoundingClientRect();
-        
         const nodeIndex = parseInt(nodeEl.getAttribute('data-index'));
-        let posX = (nodeRect.left - wrapRect.left) + nodeRect.width / 2;
-        let posY = (nodeRect.top - wrapRect.top) - 160;
+        
+        let posX = 0;
+        let posY = (nodeRect.top - wrapRect.top) - 30; // slightly above vertical center for clean alignment
 
-        // Position bottom node popups above them, and side node popups nicely to the side or top
-        if (nodeIndex === 4) { // Bottom node
-            posY = (nodeRect.top - wrapRect.top) - 275;
-        } else if (posY < 10) {
-            posY = (nodeRect.top - wrapRect.top) + nodeRect.height + 15;
+        if (nodeIndex === 0 || nodeIndex === 1) {
+            // Left side nodes: show preview card on the RIGHT side of the node
+            posX = (nodeRect.left - wrapRect.left) + nodeRect.width + 20;
+        } else {
+            // Right side nodes: show preview card on the LEFT side of the node
+            posX = (nodeRect.left - wrapRect.left) - 310 - 20;
         }
 
         // Side constraints to prevent viewport overflow
-        if (posX < 180) posX = 180;
-        if (posX > wrapRect.width - 180) posX = wrapRect.width - 180;
+        if (posX < 10) posX = 10;
+        if (posX > wrapRect.width - 320) posX = wrapRect.width - 320;
 
         cardEl.style.left = `${posX}px`;
         cardEl.style.top = `${posY}px`;
@@ -552,9 +592,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Trigger persistent active popup next to satellite
     function triggerActivePopup(idx, nodeEl) {
+        if (!activePop) return;
         // Close hover preview
-        preview.classList.remove('show');
-        preview.classList.add('hide');
+        if (preview) {
+            preview.classList.remove('show');
+            preview.classList.add('hide');
+        }
 
         isActivePopOpen = true;
         activeNodeIndex = idx;
@@ -626,6 +669,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Dismiss active popup
     function closeActivePopup() {
+        if (!activePop) return;
         isActivePopOpen = false;
         activeNodeIndex = -1;
         hoveredNodeIndex = -1;
