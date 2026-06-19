@@ -1384,55 +1384,276 @@
                         class="browser-header px-4 py-3 bg-light-alpha border-bottom border-light-alpha d-flex align-items-center">
                         <div class="d-flex gap-2"><span class="dot bg-danger"></span><span
                                 class="dot bg-warning"></span><span class="dot bg-success"></span></div>
-                        <div class="mx-auto rounded-pill bg-card border border-light-alpha px-4 py-1 text-muted-secondary fs-8 font-inter"
-                            style="width:300px;">app.zaviocrm.com <i class="fa-solid fa-lock ms-2 fs-9"></i></div>
+                        <div class="mx-auto rounded-pill bg-card border border-light-alpha px-4 py-1 text-muted-secondary fs-8 font-inter text-center"
+                            style="width:300px;">login.zaviocrm.com <i class="fa-solid fa-lock ms-2 fs-9"></i></div>
                     </div>
                     <div class="browser-body d-flex text-start" style="height: 500px;">
-                        <div class="sidebar p-4 border-end border-light-alpha d-none d-md-block" style="width: 250px;">
-                            <h6 class="text-muted-secondary fw-semibold mb-4 text-uppercase tracking-wide fs-8">
+                        <div class="sidebar p-4 border-end border-light-alpha d-none d-md-block" style="width: 230px; flex-shrink: 0; background: var(--bg-main);">
+                            <h6 class="text-muted-secondary fw-semibold mb-4 text-uppercase tracking-wide fs-9" style="letter-spacing: 0.5px;">
                                 Navigation</h6>
-                            <div
-                                class="d-flex align-items-center p-2 mb-2 rounded bg-primary-soft text-primary-dark fw-semibold">
-                                <i class="fa-solid fa-chart-line me-3"></i> Home
-                            </div>
-                            <div class="d-flex align-items-center p-2 mb-2 rounded text-muted-secondary"><i
-                                    class="fa-solid fa-inbox me-3"></i> Conversations <span
-                                    class="badge bg-danger rounded-pill ms-auto">3</span></div>
-                            <div class="d-flex align-items-center p-2 mb-2 rounded text-muted-secondary"><i
-                                    class="fa-solid fa-calendar me-3"></i> Calendars</div>
-                            <div class="d-flex align-items-center p-2 mb-2 rounded text-muted-secondary"><i
-                                    class="fa-solid fa-bullhorn me-3"></i> Marketing</div>
-                            <div class="d-flex align-items-center p-2 mb-2 rounded text-muted-secondary"><i
-                                    class="fa-solid fa-money-bill-wave me-3"></i> Payments</div>
+                            <ul class="list-unstyled d-flex flex-column gap-2 fs-7 text-muted-secondary mb-0" id="showcase-sidebar-menu">
+                                <li class="showcase-nav-item active-item p-2 rounded text-main fw-semibold bg-light-alpha cursor-pointer" data-showcase-tab="home">
+                                    <i class="fa-solid fa-chart-line me-3"></i> Home
+                                </li>
+                                <li class="showcase-nav-item p-2 rounded hover-bg cursor-pointer d-flex align-items-center" data-showcase-tab="conversations">
+                                    <i class="fa-solid fa-inbox me-3"></i> Inbox <span class="badge bg-danger rounded-pill ms-auto">3</span>
+                                </li>
+                                <li class="showcase-nav-item p-2 rounded hover-bg cursor-pointer" data-showcase-tab="calendars">
+                                    <i class="fa-solid fa-calendar me-3"></i> Calendars
+                                </li>
+                                <li class="showcase-nav-item p-2 rounded hover-bg cursor-pointer" data-showcase-tab="marketing">
+                                    <i class="fa-solid fa-bullhorn me-3"></i> Marketing
+                                </li>
+                                <li class="showcase-nav-item p-2 rounded hover-bg cursor-pointer" data-showcase-tab="payments">
+                                    <i class="fa-solid fa-money-bill-wave me-3"></i> Payments
+                                </li>
+                            </ul>
                         </div>
-                        <div class="content flex-grow-1 p-4 bg-main-alt overflow-hidden">
-                            <h4 class="fw-bold font-poppins mb-4">Performance Overview</h4>
-                            <div class="row g-4 mb-4">
-                                <div class="col-sm-6">
-                                    <div class="bg-card p-3 rounded-3 shadow-sm border border-light-alpha">
-                                        <div class="fs-8 text-muted-secondary mb-2">Total Monthly Recuring</div>
-                                        <h3 class="fw-bold fs-4 m-0 z-text-gradient">$128,450.00</h3>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="bg-card p-3 rounded-3 shadow-sm border border-light-alpha">
-                                        <div class="fs-8 text-muted-secondary mb-2">Active Subscriptions</div>
-                                        <h3 class="fw-bold fs-4 m-0 text-main">342 <span
-                                                class="fs-8 text-success fw-normal ms-2"><i
-                                                    class="fa-solid fa-arrow-up"></i> 12%</span></h3>
-                                    </div>
-                                </div>
+                        <div class="content flex-grow-1 p-4 bg-main-alt overflow-hidden position-relative h-100 d-flex flex-column" style="max-height: 500px; overflow-y: auto !important; scrollbar-width: none;">
+                            <!-- Showcase Mobile Nav Bar (only visible on mobile) -->
+                            <div class="showcase-mobile-nav d-md-none d-flex gap-2 overflow-x-auto pb-3 mb-3 border-bottom border-light-alpha" style="scrollbar-width: none; flex-shrink: 0;">
+                                <button class="btn btn-sm btn-outline-premium showcase-mobile-nav-btn active-btn text-nowrap px-3 py-1 fs-9" data-showcase-tab="home">
+                                    <i class="fa-solid fa-chart-line me-1"></i> Home
+                                </button>
+                                <button class="btn btn-sm btn-outline-premium showcase-mobile-nav-btn text-nowrap position-relative px-3 py-1 fs-9" data-showcase-tab="conversations">
+                                    <i class="fa-solid fa-inbox me-1"></i> Inbox
+                                    <span class="position-absolute top-0 start-100 translate-middle p-1 bg-danger border border-light rounded-circle" style="width: 8px; height: 8px;"></span>
+                                </button>
+                                <button class="btn btn-sm btn-outline-premium showcase-mobile-nav-btn text-nowrap px-3 py-1 fs-9" data-showcase-tab="calendars">
+                                    <i class="fa-solid fa-calendar me-1"></i> Calendars
+                                </button>
+                                <button class="btn btn-sm btn-outline-premium showcase-mobile-nav-btn text-nowrap px-3 py-1 fs-9" data-showcase-tab="marketing">
+                                    <i class="fa-solid fa-bullhorn me-1"></i> Marketing
+                                </button>
+                                <button class="btn btn-sm btn-outline-premium showcase-mobile-nav-btn text-nowrap px-3 py-1 fs-9" data-showcase-tab="payments">
+                                    <i class="fa-solid fa-money-bill-wave me-1"></i> Payments
+                                </button>
                             </div>
-                            <div
-                                class="bg-card p-4 rounded-3 shadow-sm border border-light-alpha h-100 position-relative">
-                                <div class="fs-8 text-muted-secondary mb-4 fw-semibold">Net Growth Trajectory</div>
-                                <!-- CSS Line chart mock -->
-                                <svg width="100%" height="80%" viewBox="0 0 500 150" preserveAspectRatio="none"
-                                    style="stroke:var(--primary-dark); stroke-width:3; fill:none; stroke-linecap:round;">
-                                    <path d="M0,130 Q50,110 100,120 T200,80 T300,90 T400,40 T500,20"></path>
-                                    <path d="M0,130 Q50,110 100,120 T200,80 T300,90 T400,40 T500,20 L500,150 L0,150 Z"
-                                        style="fill:rgba(26, 59, 102, 0.1); stroke:none;"></path>
-                                </svg>
+
+                            <!-- Showcase Viewport Content -->
+                            <div class="showcase-viewport flex-grow-1">
+                                <!-- Tab 1: Home -->
+                                <div id="showcase-tab-home" class="showcase-tab-content">
+                                    <h4 class="fw-bold font-poppins mb-4 text-main fs-5">Performance Overview</h4>
+                                    <div class="row g-4 mb-4">
+                                        <div class="col-sm-6">
+                                            <div class="bg-card p-3 rounded-3 shadow-sm border border-light-alpha">
+                                                <div class="fs-8 text-muted-secondary mb-2">Total Monthly Recurring</div>
+                                                <h3 class="fw-bold fs-4 m-0 z-text-gradient font-poppins">$128,450.00</h3>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="bg-card p-3 rounded-3 shadow-sm border border-light-alpha">
+                                                <div class="fs-8 text-muted-secondary mb-2">Active Subscriptions</div>
+                                                <h3 class="fw-bold fs-4 m-0 text-main font-poppins">342 <span
+                                                        class="fs-8 text-success fw-normal ms-2"><i
+                                                            class="fa-solid fa-arrow-up"></i> 12%</span></h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="bg-card p-4 rounded-3 shadow-sm border border-light-alpha position-relative" style="min-height: 180px;">
+                                        <div class="fs-8 text-muted-secondary mb-4 fw-semibold">Net Growth Trajectory</div>
+                                        <!-- CSS Line chart mock -->
+                                        <svg width="100%" height="100px" viewBox="0 0 500 100" preserveAspectRatio="none"
+                                            style="stroke:var(--primary-dark); stroke-width:3; fill:none; stroke-linecap:round;">
+                                            <path d="M0,80 Q50,70 100,75 T200,50 T300,55 T400,25 T500,10"></path>
+                                            <path d="M0,80 Q50,70 100,75 T200,50 T300,55 T400,25 T500,10 L500,100 L0,100 Z"
+                                                style="fill:rgba(26, 59, 102, 0.1); stroke:none;"></path>
+                                        </svg>
+                                    </div>
+                                </div>
+
+                                <!-- Tab 2: Inbox/Conversations -->
+                                <div id="showcase-tab-conversations" class="showcase-tab-content d-none">
+                                    <div class="d-flex rounded-3 border border-light-alpha overflow-hidden bg-card" style="height: 380px;">
+                                        <!-- Inbox Sidebar -->
+                                        <div class="border-end border-light-alpha d-flex flex-column" style="width: 170px; flex-shrink: 0; background: var(--bg-main);">
+                                            <div class="p-2 border-bottom border-light-alpha fw-bold text-main fs-9 bg-light-alpha">Active DMs</div>
+                                            <div class="flex-grow-1 overflow-y-auto list-unstyled m-0 p-0" id="showcase-chat-list" style="scrollbar-width: none;">
+                                                <div class="chat-list-item active-chat p-2 border-bottom border-light-alpha cursor-pointer" data-chat="john">
+                                                    <div class="d-flex justify-content-between align-items-center mb-1">
+                                                        <span class="fw-bold text-main fs-9 text-truncate" style="max-width: 90px;">John Doe</span>
+                                                        <span class="badge bg-success-soft text-success rounded-pill px-1" style="font-size: 0.55rem;">SMS</span>
+                                                    </div>
+                                                    <div class="text-muted-secondary fs-9 text-truncate" id="showcase-chat-prev-john">Thanks for the update!</div>
+                                                </div>
+                                                <div class="chat-list-item p-2 border-bottom border-light-alpha cursor-pointer" data-chat="sarah">
+                                                    <div class="d-flex justify-content-between align-items-center mb-1">
+                                                        <span class="fw-bold text-main fs-9 text-truncate" style="max-width: 90px;">Sarah Jenkins</span>
+                                                        <span class="badge bg-primary-soft text-primary rounded-pill px-1" style="font-size: 0.55rem;">IG</span>
+                                                    </div>
+                                                    <div class="text-muted-secondary fs-9 text-truncate" id="showcase-chat-prev-sarah">Loved the service, thank you!</div>
+                                                </div>
+                                                <div class="chat-list-item p-2 border-bottom border-light-alpha cursor-pointer" data-chat="amit">
+                                                    <div class="d-flex justify-content-between align-items-center mb-1">
+                                                        <span class="fw-bold text-main fs-9 text-truncate" style="max-width: 90px;">Amit Sharma</span>
+                                                        <span class="badge bg-accent-soft text-accent rounded-pill px-1" style="font-size: 0.55rem;">Web</span>
+                                                    </div>
+                                                    <div class="text-muted-secondary fs-9 text-truncate" id="showcase-chat-prev-amit">Can I get a quote?</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Inbox Chat Box -->
+                                        <div class="flex-grow-1 d-flex flex-column h-100" style="background: var(--bg-main-alt);">
+                                            <div class="p-2 border-bottom border-light-alpha d-flex justify-content-between align-items-center bg-card">
+                                                <div class="d-flex align-items-center gap-2">
+                                                    <div class="avatar bg-gradient-premium rounded-circle text-white d-flex align-items-center justify-content-center fw-bold" style="width: 26px; height: 26px; font-size: 0.75rem;" id="showcase-chat-avatar">JD</div>
+                                                    <div>
+                                                        <div class="fw-bold text-main fs-8" id="showcase-chat-title">John Doe</div>
+                                                        <div class="text-success fs-9" style="font-size: 0.55rem; line-height: 1;"><span class="badge-dot bg-success" style="width:5px; height:5px;"></span> Online</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- Message History -->
+                                            <div class="flex-grow-1 p-3 overflow-y-auto d-flex flex-column gap-2" id="showcase-chat-messages" style="scrollbar-width: none; max-height: 250px;">
+                                                <!-- Populated dynamically via JS -->
+                                            </div>
+                                            <!-- Message Input -->
+                                            <form id="showcase-chat-form" class="p-2 border-top border-light-alpha bg-card d-flex gap-2 align-items-center" style="margin-top: auto;">
+                                                <input type="text" id="showcase-chat-input" class="form-control form-control-sm bg-glass border-light-alpha fs-8 text-main flex-grow-1" placeholder="Type a response..." required autocomplete="off">
+                                                <button type="submit" class="btn btn-accent btn-sm rounded-circle d-flex align-items-center justify-content-center p-0" style="width: 28px; height: 28px; flex-shrink: 0;"><i class="fa-solid fa-paper-plane fs-9"></i></button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Tab 3: Calendars -->
+                                <div id="showcase-tab-calendars" class="showcase-tab-content d-none">
+                                    <div class="d-flex justify-content-between align-items-center mb-3">
+                                        <h4 class="fw-bold font-poppins text-main fs-5 m-0">Smart Booking Calendar</h4>
+                                        <button class="btn btn-accent btn-sm rounded fs-8 shadow-sm px-3 py-1" id="showcase-book-btn">
+                                            <i class="fa-solid fa-plus me-1"></i> Book Appointment
+                                        </button>
+                                    </div>
+                                    <div class="bg-card border border-light-alpha rounded-3 p-3">
+                                        <div class="row g-1 text-center border-bottom border-light-alpha pb-2 mb-2 font-inter text-muted-secondary fs-9 fw-semibold">
+                                            <div class="col">Mon</div>
+                                            <div class="col">Tue</div>
+                                            <div class="col">Wed</div>
+                                            <div class="col">Thu</div>
+                                            <div class="col">Fri</div>
+                                        </div>
+                                        <div class="row g-2 text-center" id="showcase-calendar-grid">
+                                            <div class="col">
+                                                <div class="bg-glass-ui border border-light-alpha rounded p-1 fs-9 d-flex flex-column gap-1" style="min-height: 220px;">
+                                                    <span class="text-muted-secondary font-inter fw-bold">15</span>
+                                                    <div class="bg-primary-soft text-primary-dark rounded p-1 text-truncate" style="font-size: 0.55rem; font-weight: 600;" title="Consultation - John Doe">Cons. John</div>
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="bg-glass-ui border border-light-alpha rounded p-1 fs-9 d-flex flex-column gap-1" style="min-height: 220px;">
+                                                    <span class="text-muted-secondary font-inter fw-bold">16</span>
+                                                    <div class="bg-success-soft text-success rounded p-1 text-truncate" style="font-size: 0.55rem; font-weight: 600;" title="Site Audit - Sarah">Site Sarah</div>
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="bg-glass-ui border border-light-alpha rounded p-1 fs-9 d-flex flex-column gap-1" style="min-height: 220px;">
+                                                    <span class="text-muted-secondary font-inter fw-bold">17</span>
+                                                    <div class="bg-accent-soft text-accent rounded p-1 text-truncate" style="font-size: 0.55rem; font-weight: 600;" title="Follow-up - Amit">Follow Amit</div>
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="bg-glass-ui border border-light-alpha rounded p-1 fs-9 d-flex flex-column gap-1" style="min-height: 220px;">
+                                                    <span class="text-muted-secondary font-inter fw-bold">18</span>
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="bg-glass-ui border border-light-alpha rounded p-1 fs-9 d-flex flex-column gap-1" style="min-height: 220px;">
+                                                    <span class="text-muted-secondary font-inter fw-bold">19</span>
+                                                    <div class="bg-info-soft text-info rounded p-1 text-truncate" style="font-size: 0.55rem; font-weight: 600;" title="Onboarding - client">Onboard Client</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Tab 4: Marketing -->
+                                <div id="showcase-tab-marketing" class="showcase-tab-content d-none">
+                                    <div class="d-flex justify-content-between align-items-center mb-3">
+                                        <h4 class="fw-bold font-poppins text-main fs-5 m-0">Campaign Engine</h4>
+                                        <button class="btn btn-premium btn-sm rounded fs-8 shadow-sm px-3 py-1" id="showcase-campaign-btn">
+                                            <i class="fa-solid fa-paper-plane me-1"></i> Launch Campaign
+                                        </button>
+                                    </div>
+                                    <div class="row g-3 mb-3">
+                                        <div class="col-6">
+                                            <div class="bg-card border border-light-alpha rounded-3 p-3 shadow-sm">
+                                                <div class="fs-9 text-muted-secondary fw-semibold mb-1">Email Delivery</div>
+                                                <div class="d-flex align-items-center justify-content-between">
+                                                    <span class="fw-bold text-main fs-7">98.4%</span>
+                                                    <span class="text-success fs-9"><i class="fa-solid fa-arrow-up me-1"></i>1.2%</span>
+                                                </div>
+                                                <div class="progress rounded-pill mt-2" style="height: 4px; background: var(--border-light-alpha);">
+                                                    <div class="progress-bar bg-success rounded-pill" style="width: 98%;"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="bg-card border border-light-alpha rounded-3 p-3 shadow-sm">
+                                                <div class="fs-9 text-muted-secondary fw-semibold mb-1">SMS Opt-In Rate</div>
+                                                <div class="d-flex align-items-center justify-content-between">
+                                                    <span class="fw-bold text-main fs-7">42.8%</span>
+                                                    <span class="text-success fs-9"><i class="fa-solid fa-arrow-up me-1"></i>3.5%</span>
+                                                </div>
+                                                <div class="progress rounded-pill mt-2" style="height: 4px; background: var(--border-light-alpha);">
+                                                    <div class="progress-bar bg-gradient-premium rounded-pill" style="width: 42.8%;"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="bg-card border border-light-alpha rounded-3 p-4 text-center position-relative overflow-hidden d-flex flex-column align-items-center justify-content-center" id="showcase-marketing-status" style="min-height: 150px;">
+                                        <div class="showcase-radar-wrapper mb-2">
+                                            <i class="fa-solid fa-satellite-dish text-primary fs-3 shadow-sm p-3 bg-primary-soft rounded-circle mb-2" id="showcase-marketing-icon"></i>
+                                        </div>
+                                        <div class="fw-bold text-main fs-7" id="showcase-marketing-text">System Ready</div>
+                                        <div class="text-muted-secondary fs-9" id="showcase-marketing-subtext">Click the launch button above to broadcast messages to all leads.</div>
+                                    </div>
+                                </div>
+
+                                <!-- Tab 5: Payments -->
+                                <div id="showcase-tab-payments" class="showcase-tab-content d-none">
+                                    <div class="d-flex justify-content-between align-items-center mb-3">
+                                        <h4 class="fw-bold font-poppins text-main fs-5 m-0">Invoices & Receipts</h4>
+                                        <button class="btn btn-accent btn-sm rounded fs-8 shadow-sm px-3 py-1" id="showcase-invoice-btn">
+                                            <i class="fa-solid fa-plus me-1"></i> Create Invoice
+                                        </button>
+                                    </div>
+                                    <div class="bg-card border border-light-alpha rounded-3 p-3">
+                                        <div class="table-responsive" style="max-height: 250px; overflow-y: auto; scrollbar-width: none;">
+                                            <table class="table table-hover border-light-alpha mb-0 align-middle" style="font-size: 0.75rem; min-width: 320px;">
+                                                <thead>
+                                                    <tr class="text-muted-secondary border-bottom border-light-alpha" style="font-size: 0.6rem;">
+                                                        <th class="p-2 text-start">Invoice ID</th>
+                                                        <th class="p-2 text-start">Client</th>
+                                                        <th class="p-2 text-end">Amount</th>
+                                                        <th class="p-2 text-end">Status</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="showcase-invoice-tbody">
+                                                    <tr class="border-bottom border-light-alpha">
+                                                        <td class="p-2 text-start text-main text-nowrap fw-bold">#INV-9285</td>
+                                                        <td class="p-2 text-start text-muted-secondary text-nowrap">John Doe</td>
+                                                        <td class="p-2 text-end text-main text-nowrap fw-bold">₹15,000.00</td>
+                                                        <td class="p-2 text-end text-nowrap"><span class="badge bg-success-soft text-success rounded-pill px-2 py-1" style="font-size: 0.6rem;">Paid</span></td>
+                                                    </tr>
+                                                    <tr class="border-bottom border-light-alpha">
+                                                        <td class="p-2 text-start text-main text-nowrap fw-bold">#INV-9284</td>
+                                                        <td class="p-2 text-start text-muted-secondary text-nowrap">Sarah Jenkins</td>
+                                                        <td class="p-2 text-end text-main text-nowrap fw-bold">₹42,500.00</td>
+                                                        <td class="p-2 text-end text-nowrap"><span class="badge bg-success-soft text-success rounded-pill px-2 py-1" style="font-size: 0.6rem;">Paid</span></td>
+                                                    </tr>
+                                                    <tr class="border-bottom border-light-alpha">
+                                                        <td class="p-2 text-start text-main text-nowrap fw-bold">#INV-9283</td>
+                                                        <td class="p-2 text-start text-muted-secondary text-nowrap">Amit Sharma</td>
+                                                        <td class="p-2 text-end text-main text-nowrap fw-bold">₹9,800.00</td>
+                                                        <td class="p-2 text-end text-nowrap"><span class="badge bg-accent-soft text-accent rounded-pill px-2 py-1" style="font-size: 0.6rem;">Pending</span></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

@@ -309,6 +309,325 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    /* 5. Interactive Showcase Dashboard Simulator */
+    const showcaseSidebar = document.getElementById('showcase-sidebar-menu');
+    const showcaseMobileNav = document.querySelector('.showcase-mobile-nav');
+    
+    if (showcaseSidebar || showcaseMobileNav) {
+        // Tab switching logic
+        const sidebarItems = showcaseSidebar ? showcaseSidebar.querySelectorAll('.showcase-nav-item') : [];
+        const mobileNavBtns = showcaseMobileNav ? showcaseMobileNav.querySelectorAll('.showcase-mobile-nav-btn') : [];
+        const showcaseTabs = document.querySelectorAll('.showcase-tab-content');
+
+        function switchShowcaseTab(tabName) {
+            // Update sidebar
+            sidebarItems.forEach(item => {
+                if (item.getAttribute('data-showcase-tab') === tabName) {
+                    item.classList.add('active-item', 'bg-light-alpha', 'text-main', 'fw-semibold');
+                    item.classList.remove('hover-bg');
+                } else {
+                    item.classList.remove('active-item', 'bg-light-alpha', 'text-main', 'fw-semibold');
+                    item.classList.add('hover-bg');
+                }
+            });
+
+            // Update mobile buttons
+            mobileNavBtns.forEach(btn => {
+                if (btn.getAttribute('data-showcase-tab') === tabName) {
+                    btn.classList.add('active-btn');
+                } else {
+                    btn.classList.remove('active-btn');
+                }
+            });
+
+            // Switch content panes
+            showcaseTabs.forEach(tab => {
+                if (tab.id === `showcase-tab-${tabName}`) {
+                    tab.classList.remove('d-none');
+                } else {
+                    tab.classList.add('d-none');
+                }
+            });
+        }
+
+        // Add listeners
+        sidebarItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const tab = item.getAttribute('data-showcase-tab');
+                switchShowcaseTab(tab);
+            });
+        });
+
+        mobileNavBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const tab = btn.getAttribute('data-showcase-tab');
+                switchShowcaseTab(tab);
+            });
+        });
+
+        // ─── CHAT INBOX SYSTEM ───
+        const chatsData = {
+            'john': {
+                name: "John Doe",
+                avatar: "JD",
+                badge: "SMS",
+                badgeCls: "bg-success-soft text-success",
+                messages: [
+                    { sender: 'received', text: "Hey, is the job scheduled for tomorrow?" },
+                    { sender: 'sent', text: "Yes John! Our technician Amit is scheduled to arrive at your location at 10:00 AM." },
+                    { sender: 'received', text: "Perfect, thanks for the update!" }
+                ],
+                autoReplies: [
+                    "No problem at all! Let us know if you need anything else.",
+                    "Rahul (Zavio AI): You're very welcome! Have a great evening.",
+                    "If you need to reschedule, just reply with 'reschedule'!"
+                ],
+                replyIndex: 0
+            },
+            'sarah': {
+                name: "Sarah Jenkins",
+                avatar: "SJ",
+                badge: "IG",
+                badgeCls: "bg-primary-soft text-primary",
+                messages: [
+                    { sender: 'received', text: "Loved the service, thank you!" },
+                    { sender: 'sent', text: "Thank you so much Sarah! We appreciate your business. Would you mind sharing a quick review?" },
+                    { sender: 'received', text: "Yes, sure! Send me the link." }
+                ],
+                autoReplies: [
+                    "Awesome! Here is the link to review us: g.page/zaviocrm/review - Thanks!",
+                    "Sarah (Zavio AI): Thank you for your support, it helps other local businesses find us!",
+                    "Let us know if we can assist you with anything else in the future!"
+                ],
+                replyIndex: 0
+            },
+            'amit': {
+                name: "Amit Sharma",
+                avatar: "AS",
+                badge: "Web",
+                badgeCls: "bg-accent-soft text-accent",
+                messages: [
+                    { sender: 'received', text: "Can I get a quote?" },
+                    { sender: 'sent', text: "Hi Amit! We'd love to help. What services are you looking for?" },
+                    { sender: 'received', text: "Need the premium CRM onboarding for my team." }
+                ],
+                autoReplies: [
+                    "Got it! Our onboarding agent will call you shortly to discuss your custom setup details.",
+                    "Amit (Zavio AI): I've flagged this thread for our sales manager, Rahul.",
+                    "We'll send a custom quote proposal to your email amit.sharma@yahoo.com."
+                ],
+                replyIndex: 0
+            }
+        };
+
+        let activeChatId = 'john';
+        const chatMessagesContainer = document.getElementById('showcase-chat-messages');
+        const chatForm = document.getElementById('showcase-chat-form');
+        const chatInput = document.getElementById('showcase-chat-input');
+        const chatTitle = document.getElementById('showcase-chat-title');
+        const chatAvatar = document.getElementById('showcase-chat-avatar');
+        const chatItems = document.querySelectorAll('#showcase-chat-list .chat-list-item');
+
+        function renderActiveChat() {
+            if (!chatMessagesContainer) return;
+            const data = chatsData[activeChatId];
+            chatTitle.textContent = data.name;
+            chatAvatar.textContent = data.avatar;
+            
+            // Build chat history html
+            let html = '';
+            data.messages.forEach(msg => {
+                const isSent = msg.sender === 'sent';
+                const bubbleCls = isSent ? 'bg-gradient-premium text-white align-self-end text-end' : 'bg-card border border-light-alpha align-self-start text-start';
+                const alignStyle = isSent ? 'align-self: flex-end;' : 'align-self: flex-start;';
+                html += `
+                    <div class="chat-msg p-2 rounded-3 fs-9 ${bubbleCls}" style="width: fit-content; ${alignStyle}">
+                        ${msg.text}
+                    </div>
+                `;
+            });
+            chatMessagesContainer.innerHTML = html;
+            chatMessagesContainer.scrollTop = chatMessagesContainer.scrollHeight;
+        }
+
+        // Initialize John Doe chat
+        renderActiveChat();
+
+        // Chat list selection
+        chatItems.forEach(item => {
+            item.addEventListener('click', () => {
+                chatItems.forEach(i => i.classList.remove('active-chat'));
+                item.classList.add('active-chat');
+                
+                activeChatId = item.getAttribute('data-chat');
+                renderActiveChat();
+            });
+        });
+
+        // Chat submit response
+        if (chatForm && chatInput) {
+            chatForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const text = chatInput.value.trim();
+                if (!text) return;
+
+                const data = chatsData[activeChatId];
+                
+                // Add sent message
+                data.messages.push({ sender: 'sent', text: text });
+                renderActiveChat();
+                chatInput.value = '';
+
+                // Update preview text on list
+                const previewEl = document.getElementById(`showcase-chat-prev-${activeChatId}`);
+                if (previewEl) {
+                    previewEl.textContent = text;
+                    previewEl.style.fontWeight = 'normal';
+                }
+
+                // Simulate AI Auto-Agent response
+                setTimeout(() => {
+                    const autoReplyText = data.autoReplies[data.replyIndex % data.autoReplies.length];
+                    data.replyIndex++;
+                    data.messages.push({ sender: 'received', text: autoReplyText });
+                    renderActiveChat();
+                    
+                    if (previewEl) {
+                        previewEl.textContent = autoReplyText;
+                    }
+                }, 1200);
+            });
+        }
+
+        // ─── CALENDAR BOOKING SYSTEM ───
+        const bookBtn = document.getElementById('showcase-book-btn');
+        const calendarGrid = document.getElementById('showcase-calendar-grid');
+
+        if (bookBtn && calendarGrid) {
+            let bookedCount = 0;
+            bookBtn.addEventListener('click', () => {
+                const clientName = prompt("Enter Client Name for Booking:", bookedCount === 0 ? "Rahul K." : "Deepak S.");
+                if (!clientName) return;
+
+                // Find fourth day (Thursday) or fifth day (Friday) to insert booking
+                const cols = calendarGrid.querySelectorAll('.col');
+                // Let's add to Thursday (index 3) first, then Friday (index 4) if Thursday is filled
+                const targetCol = cols[3];
+                if (targetCol) {
+                    const container = targetCol.querySelector('.bg-glass-ui');
+                    if (container) {
+                        const newEvent = document.createElement('div');
+                        newEvent.className = "bg-accent-soft text-accent rounded p-1 text-truncate mt-1";
+                        newEvent.style.fontSize = "0.55rem";
+                        newEvent.style.fontWeight = "600";
+                        newEvent.style.animation = "chatMsgAppear 0.3s ease-out";
+                        newEvent.title = `Meeting - ${clientName}`;
+                        newEvent.textContent = `Meet ${clientName}`;
+                        container.appendChild(newEvent);
+                        
+                        bookedCount++;
+                        
+                        // Pulse the button green as confirmation
+                        const origHtml = bookBtn.innerHTML;
+                        bookBtn.className = "btn btn-success btn-sm rounded fs-8 shadow-sm px-3 py-1";
+                        bookBtn.innerHTML = `<i class="fa-solid fa-circle-check me-1"></i> Booked!`;
+                        setTimeout(() => {
+                            bookBtn.className = "btn btn-accent btn-sm rounded fs-8 shadow-sm px-3 py-1";
+                            bookBtn.innerHTML = origHtml;
+                        }, 1500);
+                    }
+                }
+            });
+        }
+
+        // ─── MARKETING CAMPAIGN LAUNCHER ───
+        const campaignBtn = document.getElementById('showcase-campaign-btn');
+        const marketingStatus = document.getElementById('showcase-marketing-status');
+        const marketingIcon = document.getElementById('showcase-marketing-icon');
+        const marketingText = document.getElementById('showcase-marketing-text');
+        const marketingSubtext = document.getElementById('showcase-marketing-subtext');
+
+        if (campaignBtn && marketingStatus) {
+            campaignBtn.addEventListener('click', () => {
+                if (campaignBtn.disabled) return;
+                
+                campaignBtn.disabled = true;
+                campaignBtn.innerHTML = `<i class="fa-solid fa-spinner fa-spin me-1"></i> Starting...`;
+                
+                // Active Radar Pulse CSS class
+                if (marketingIcon) {
+                    marketingIcon.className = "fa-solid fa-satellite-dish text-accent fs-3 shadow-sm p-3 bg-accent-soft rounded-circle mb-2 radar-active-accent";
+                }
+                
+                // Simulation sequence
+                setTimeout(() => {
+                    campaignBtn.innerHTML = `<i class="fa-solid fa-spinner fa-spin me-1"></i> Broadcasting...`;
+                    if (marketingText) marketingText.textContent = "Broadcasting SMS & Emails...";
+                    if (marketingSubtext) marketingSubtext.textContent = "Sending autonomous outreach to 35 leads in sales funnel.";
+                }, 1000);
+
+                setTimeout(() => {
+                    campaignBtn.innerHTML = `<i class="fa-solid fa-check me-1"></i> Campaign Sent`;
+                    campaignBtn.className = "btn btn-success btn-sm rounded fs-8 shadow-sm px-3 py-1";
+                    
+                    if (marketingText) marketingText.textContent = "Campaign Completed!";
+                    if (marketingSubtext) marketingSubtext.textContent = "Broadcast delivered. 12 automated replies caught by Zavio AI.";
+                    
+                    if (marketingIcon) {
+                        marketingIcon.className = "fa-solid fa-circle-check text-success fs-3 shadow-sm p-3 bg-success-soft rounded-circle mb-2";
+                    }
+                }, 2800);
+
+                setTimeout(() => {
+                    // Reset button after completed state
+                    campaignBtn.disabled = false;
+                    campaignBtn.className = "btn btn-premium btn-sm rounded fs-8 shadow-sm px-3 py-1";
+                    campaignBtn.innerHTML = `<i class="fa-solid fa-paper-plane me-1"></i> Launch Campaign`;
+                    
+                    if (marketingText) marketingText.textContent = "System Ready";
+                    if (marketingSubtext) marketingSubtext.textContent = "Click the launch button above to broadcast messages to all leads.";
+                    
+                    if (marketingIcon) {
+                        marketingIcon.className = "fa-solid fa-satellite-dish text-primary fs-3 shadow-sm p-3 bg-primary-soft rounded-circle mb-2";
+                    }
+                }, 6000);
+            });
+        }
+
+        // ─── INVOICE GENERATOR ───
+        const invoiceBtn = document.getElementById('showcase-invoice-btn');
+        const invoiceTbody = document.getElementById('showcase-invoice-tbody');
+
+        if (invoiceBtn && invoiceTbody) {
+            const clients = ["Rahul Kapoor", "Devendra Sen", "Neha Mehta", "Ananya Rao", "Vikram Malhotra"];
+            const amounts = ["₹18,500.00", "₹12,400.00", "₹45,000.00", "₹22,000.00", "₹8,500.00"];
+            let invIdSeq = 9286;
+
+            invoiceBtn.addEventListener('click', () => {
+                const randomClient = clients[Math.floor(Math.random() * clients.length)];
+                const randomAmount = amounts[Math.floor(Math.random() * amounts.length)];
+                const currentInvId = `#INV-${invIdSeq++}`;
+
+                const newRow = document.createElement('tr');
+                newRow.className = "border-bottom border-light-alpha new-invoice-row";
+                newRow.innerHTML = `
+                    <td class="p-2 text-start text-main text-nowrap fw-bold">${currentInvId}</td>
+                    <td class="p-2 text-start text-muted-secondary text-nowrap">${randomClient}</td>
+                    <td class="p-2 text-end text-main text-nowrap fw-bold">${randomAmount}</td>
+                    <td class="p-2 text-end text-nowrap"><span class="badge bg-success-soft text-success rounded-pill px-2 py-1" style="font-size: 0.6rem;">Paid</span></td>
+                `;
+
+                invoiceTbody.insertBefore(newRow, invoiceTbody.firstChild);
+
+                // Quick flash animation reset
+                setTimeout(() => {
+                    newRow.classList.remove('new-invoice-row');
+                }, 1000);
+            });
+        }
+    }
+
     // Smooth Physics Cursor removed
 
 });
+
