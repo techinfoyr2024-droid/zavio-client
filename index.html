@@ -65,7 +65,8 @@
                         <i class="fa-solid fa-moon"></i>
                     </button>
                     <a href="#contact"
-                        class="btn btn-accent px-4 py-2 rounded-pill shadow-sm fw-semibold d-none d-sm-inline-block">Try Zavio
+                        class="btn btn-accent px-4 py-2 rounded-pill shadow-sm fw-semibold d-none d-sm-inline-block">Try
+                        Zavio
                         <i class="fa-solid fa-arrow-right ms-1"></i></a>
                 </div>
             </div>
@@ -105,7 +106,8 @@
 
                     <div class="d-flex flex-column flex-sm-row justify-content-center gap-3 mb-5">
                         <a href="#contact"
-                            class="btn btn-premium btn-lg px-5 py-3 rounded-pill fw-semibold shadow-lg hover-lift">Try Zavio
+                            class="btn btn-premium btn-lg px-5 py-3 rounded-pill fw-semibold shadow-lg hover-lift">Try
+                            Zavio
                             <i class="fa-solid fa-arrow-right ms-1"></i></a>
                         <a href="#overview"
                             class="btn btn-outline-premium btn-lg bg-glass px-4 py-3 rounded-pill fw-semibold hover-lift">
@@ -143,63 +145,626 @@
                                                 class="fa-solid fa-bolt text-white fs-6"></i></div>
                                         <span class="fw-bold text-main fs-7">ZavioCRM</span>
                                     </div>
-                                    <ul class="list-unstyled d-flex flex-column gap-2 fs-7 text-muted-secondary mb-0">
-                                        <li class="active-item p-2 rounded text-main fw-semibold bg-light-alpha"><i
-                                                class="fa-solid fa-house me-2"></i> Dashboard</li>
-                                        <li class="p-2 rounded hover-bg"><i class="fa-solid fa-users me-2"></i> Contacts
+                                    <ul class="list-unstyled d-flex flex-column gap-2 fs-7 text-muted-secondary mb-0"
+                                        id="mockup-sidebar-menu">
+                                        <li class="active-item p-2 rounded text-main fw-semibold bg-light-alpha cursor-pointer"
+                                            data-tab="dashboard">
+                                            <i class="fa-solid fa-house me-2"></i> Dashboard
                                         </li>
-                                        <li class="p-2 rounded hover-bg"><i class="fa-solid fa-filter me-2"></i>
-                                            Pipelines</li>
-                                        <li class="p-2 rounded hover-bg"><i class="fa-solid fa-envelope me-2"></i>
-                                            Campaigns</li>
-                                        <li class="p-2 rounded hover-bg"><i class="fa-solid fa-chart-pie me-2"></i>
-                                            Analytics</li>
+                                        <li class="p-2 rounded hover-bg cursor-pointer" data-tab="contacts">
+                                            <i class="fa-solid fa-users me-2"></i> Contacts
+                                        </li>
+                                        <li class="p-2 rounded hover-bg cursor-pointer" data-tab="pipelines">
+                                            <i class="fa-solid fa-filter me-2"></i> Pipelines
+                                        </li>
+                                        <li class="p-2 rounded hover-bg cursor-pointer" data-tab="campaigns">
+                                            <i class="fa-solid fa-envelope me-2"></i> Campaigns
+                                        </li>
+                                        <li class="p-2 rounded hover-bg cursor-pointer" data-tab="analytics">
+                                            <i class="fa-solid fa-chart-pie me-2"></i> Analytics
+                                        </li>
                                     </ul>
                                 </div>
 
                                 <!-- Main Content Area -->
-                                <div class="mockup-content p-4 flex-grow-1 bg-main-alt">
-                                    <div class="d-flex justify-content-between align-items-center mb-4">
-                                        <h6 class="fw-bold mb-0 text-main">Revenue Pipeline</h6>
-                                        <span class="badge bg-success-soft text-success rounded-pill px-3 py-1">+24%
-                                            this week</span>
+                                <div class="mockup-content p-3 flex-grow-1 bg-main-alt"
+                                    style="overflow-y: auto; max-height: 460px; scrollbar-width: none;">
+
+                                    <!-- Tab 1: Dashboard -->
+                                    <div id="tab-dashboard" class="mockup-tab-content">
+                                        <!-- Dashboard Header -->
+                                        <div class="d-flex justify-content-between align-items-center mb-3">
+                                            <div>
+                                                <h6 class="fw-bold mb-0 text-main font-poppins fs-7">Dashboard</h6>
+                                                <span class="fs-9 text-muted-secondary">Live CRM Overview</span>
+                                            </div>
+                                            <div class="d-flex align-items-center gap-2">
+                                                <div class="bg-glass border border-light-alpha rounded px-2 py-1 fs-9 text-muted-secondary d-none d-sm-block"
+                                                    style="font-size: 0.65rem;">
+                                                    <i class="fa-regular fa-calendar me-1"></i> Last 30 Days
+                                                </div>
+                                                <button class="btn btn-accent btn-sm rounded px-2 py-1 fs-9 shadow-sm"
+                                                    style="font-size: 0.65rem; border-radius: 6px; padding: 0.2rem 0.5rem;">
+                                                    <i class="fa-solid fa-sliders me-1"></i> Manage
+                                                </button>
+                                            </div>
+                                        </div>
+
+                                        <!-- Row 1: KPI Cards -->
+                                        <div class="row g-2 mb-3">
+                                            <!-- Card 1: Opportunity Status -->
+                                            <div class="col-12 col-sm-4">
+                                                <div
+                                                    class="mini-card p-2 rounded-3 bg-card border border-light-alpha h-100 d-flex flex-column justify-content-between">
+                                                    <div class="text-muted-secondary fs-9 fw-semibold mb-2">Opportunity
+                                                        status</div>
+                                                    <div class="d-flex align-items-center justify-content-between">
+                                                        <!-- Circular doughnut chart -->
+                                                        <svg width="45" height="45" viewBox="0 0 36 36">
+                                                            <circle cx="18" cy="18" r="15.915" fill="none"
+                                                                stroke="var(--border-light-alpha)" stroke-width="3" />
+                                                            <circle cx="18" cy="18" r="15.915" fill="none"
+                                                                stroke="#2B579A" stroke-width="3.2"
+                                                                stroke-dasharray="60, 100" stroke-dashoffset="25" />
+                                                            <circle cx="18" cy="18" r="15.915" fill="none"
+                                                                stroke="#10B981" stroke-width="3.2"
+                                                                stroke-dasharray="20, 100" stroke-dashoffset="-35" />
+                                                            <circle cx="18" cy="18" r="15.915" fill="none"
+                                                                stroke="#F59E0B" stroke-width="3.2"
+                                                                stroke-dasharray="20, 100" stroke-dashoffset="-55" />
+                                                            <text x="18" y="21" text-anchor="middle" font-size="9"
+                                                                font-weight="bold" fill="var(--text-main)">5</text>
+                                                        </svg>
+                                                        <div class="fs-9 text-start ps-1"
+                                                            style="font-size: 0.6rem; line-height: 1.1;">
+                                                            <div class="text-nowrap"><span class="badge-dot"
+                                                                    style="width:5px; height:5px; background-color:#2B579A; display:inline-block; border-radius:50%;"></span>
+                                                                3 Open</div>
+                                                            <div class="text-nowrap"><span class="badge-dot"
+                                                                    style="width:5px; height:5px; background-color:#10B981; display:inline-block; border-radius:50%;"></span>
+                                                                1 Won</div>
+                                                            <div class="text-nowrap"><span class="badge-dot"
+                                                                    style="width:5px; height:5px; background-color:#F59E0B; display:inline-block; border-radius:50%;"></span>
+                                                                1 Aband.</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- Card 2: Opportunity Value -->
+                                            <div class="col-12 col-sm-4">
+                                                <div
+                                                    class="mini-card p-2 rounded-3 bg-card border border-light-alpha h-100 d-flex flex-column justify-content-between">
+                                                    <div class="text-muted-secondary fs-9 fw-semibold mb-1">Opportunity
+                                                        value</div>
+                                                    <div class="py-1">
+                                                        <div class="fw-bold text-main fs-6"
+                                                            style="font-size: 1.1rem; line-height: 1.2;">₹10.01M</div>
+                                                        <div class="text-success fs-9" style="font-size: 0.65rem;"><i
+                                                                class="fa-solid fa-arrow-trend-up me-1"></i>+₹10.0M open
+                                                        </div>
+                                                    </div>
+                                                    <div class="progress rounded-pill"
+                                                        style="height: 4px; background: var(--border-light-alpha);">
+                                                        <div class="progress-bar bg-gradient-premium rounded-pill"
+                                                            style="width: 85%;"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- Card 3: Conversion Rate -->
+                                            <div class="col-12 col-sm-4">
+                                                <div
+                                                    class="mini-card p-2 rounded-3 bg-card border border-light-alpha h-100 d-flex flex-column justify-content-between">
+                                                    <div class="text-muted-secondary fs-9 fw-semibold mb-2">Conversion
+                                                        rate</div>
+                                                    <div class="d-flex align-items-center justify-content-between">
+                                                        <svg width="45" height="45" viewBox="0 0 36 36">
+                                                            <circle cx="18" cy="18" r="15.915" fill="none"
+                                                                stroke="var(--border-light-alpha)" stroke-width="3" />
+                                                            <circle cx="18" cy="18" r="15.915" fill="none"
+                                                                stroke="#10B981" stroke-width="3.2"
+                                                                stroke-dasharray="20, 100" stroke-dashoffset="25" />
+                                                            <text x="18" y="21" text-anchor="middle" font-size="8"
+                                                                font-weight="bold" fill="var(--text-main)">20%</text>
+                                                        </svg>
+                                                        <div class="fs-9 ps-1 text-start"
+                                                            style="font-size: 0.6rem; line-height: 1.1;">
+                                                            <div class="fw-bold text-main">₹3.93K</div>
+                                                            <div class="text-muted-secondary">Won revenue</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Row 2: Funnel & Lead Source Report -->
+                                        <div class="row g-2 mb-3">
+                                            <!-- Column 1: Funnel -->
+                                            <div class="col-12 col-md-6">
+                                                <div
+                                                    class="mini-card p-2 rounded-3 bg-card border border-light-alpha h-100">
+                                                    <div class="text-muted-secondary fs-9 fw-semibold mb-2">Funnel Stage
+                                                        Distribution</div>
+                                                    <div class="d-flex flex-column gap-1">
+                                                        <div style="font-size: 0.65rem;">
+                                                            <div
+                                                                class="d-flex justify-content-between text-muted-secondary px-1">
+                                                                <span>New Lead (5)</span>
+                                                                <span class="fw-bold text-main">100%</span>
+                                                            </div>
+                                                            <div class="progress"
+                                                                style="height: 5px; background: var(--border-light-alpha);">
+                                                                <div class="progress-bar bg-info"
+                                                                    style="width: 100%; background-color: #3B82F6 !important;">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div style="font-size: 0.65rem;">
+                                                            <div
+                                                                class="d-flex justify-content-between text-muted-secondary px-1">
+                                                                <span>Contacted (3)</span>
+                                                                <span class="fw-bold text-main">60%</span>
+                                                            </div>
+                                                            <div class="progress"
+                                                                style="height: 5px; background: var(--border-light-alpha);">
+                                                                <div class="progress-bar bg-accent"
+                                                                    style="width: 60%; background-color: #F59E0B !important;">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div style="font-size: 0.65rem;">
+                                                            <div
+                                                                class="d-flex justify-content-between text-muted-secondary px-1">
+                                                                <span>Qualified / Won (2)</span>
+                                                                <span class="fw-bold text-main">20%</span>
+                                                            </div>
+                                                            <div class="progress"
+                                                                style="height: 5px; background: var(--border-light-alpha);">
+                                                                <div class="progress-bar bg-success"
+                                                                    style="width: 20%; background-color: #10B981 !important;">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- Column 2: Lead Source Table -->
+                                            <div class="col-12 col-md-6">
+                                                <div
+                                                    class="mini-card p-2 rounded-3 bg-card border border-light-alpha h-100">
+                                                    <div class="text-muted-secondary fs-9 fw-semibold mb-1">Lead Source
+                                                        Report</div>
+                                                    <div class="table-responsive" style="overflow-x: hidden;">
+                                                        <table class="table table-borderless mb-0"
+                                                            style="font-size: 0.6rem; line-height: 1.1;">
+                                                            <thead>
+                                                                <tr class="text-muted-secondary border-bottom border-light-alpha"
+                                                                    style="font-size: 0.55rem;">
+                                                                    <th class="p-1 text-start">Source</th>
+                                                                    <th class="p-1 text-center">Leads</th>
+                                                                    <th class="p-1 text-end">Value</th>
+                                                                    <th class="p-1 text-end">Win%</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr class="border-bottom border-light-alpha">
+                                                                    <td class="p-1 text-start text-main text-truncate"
+                                                                        style="max-width: 75px;">roundrobin test</td>
+                                                                    <td class="p-1 text-center text-main">1</td>
+                                                                    <td class="p-1 text-end text-main">₹10.0M</td>
+                                                                    <td class="p-1 text-end text-main">0%</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="p-1 text-start text-main text-truncate"
+                                                                        style="max-width: 75px;">email campaign</td>
+                                                                    <td class="p-1 text-center text-main">3</td>
+                                                                    <td class="p-1 text-end text-main">₹6.3K</td>
+                                                                    <td class="p-1 text-end text-main">33%</td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Row 3: GBP Metrics & Active Tasks -->
+                                        <div class="row g-2">
+                                            <!-- GBP Metrics -->
+                                            <div class="col-12 col-md-6">
+                                                <div
+                                                    class="mini-card p-2 rounded-3 bg-card border border-light-alpha h-100">
+                                                    <div class="text-muted-secondary fs-9 fw-semibold mb-2">Google
+                                                        Business Profile</div>
+                                                    <div class="row g-1 text-center" style="font-size: 0.65rem;">
+                                                        <div class="col-4 border-end border-light-alpha">
+                                                            <div class="fw-bold text-main fs-8">2.4k</div>
+                                                            <div class="text-muted-secondary"
+                                                                style="font-size: 0.55rem;">Views</div>
+                                                        </div>
+                                                        <div class="col-4 border-end border-light-alpha">
+                                                            <div class="fw-bold text-main fs-8">15</div>
+                                                            <div class="text-muted-secondary"
+                                                                style="font-size: 0.55rem;">Calls</div>
+                                                        </div>
+                                                        <div class="col-4">
+                                                            <div class="fw-bold text-main fs-8">8</div>
+                                                            <div class="text-muted-secondary"
+                                                                style="font-size: 0.55rem;">Bookings</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- Active Tasks -->
+                                            <div class="col-12 col-md-6">
+                                                <div
+                                                    class="mini-card p-2 rounded-3 bg-card border border-light-alpha h-100">
+                                                    <div class="text-muted-secondary fs-9 fw-semibold mb-2">Pending
+                                                        Tasks</div>
+                                                    <div class="d-flex flex-column gap-1" style="font-size: 0.6rem;">
+                                                        <div class="d-flex align-items-center gap-1 text-truncate">
+                                                            <span
+                                                                class="badge bg-danger-soft text-danger px-1 py-05 rounded"
+                                                                style="font-size: 0.5rem; line-height: 1.1;">Overdue</span>
+                                                            <span class="text-main fw-medium text-truncate">Send Welcome
+                                                                Email</span>
+                                                        </div>
+                                                        <div class="d-flex align-items-center gap-1 text-truncate">
+                                                            <span
+                                                                class="badge bg-danger-soft text-danger px-1 py-05 rounded"
+                                                                style="font-size: 0.5rem; line-height: 1.1;">Overdue</span>
+                                                            <span class="text-main fw-medium text-truncate">Discuss Next
+                                                                Steps</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
 
-                                    <!-- Analytics Cards -->
-                                    <div class="row g-3 mb-4">
-                                        <div class="col-4">
-                                            <div
-                                                class="mini-card p-3 rounded-3 shadow-sm bg-card border border-light-alpha">
-                                                <div class="text-muted-secondary fs-8 mb-1">Total Sales</div>
-                                                <div class="fw-bold text-main fs-5">$45,230</div>
+                                    <!-- Tab 2: Contacts -->
+                                    <div id="tab-contacts" class="mockup-tab-content d-none">
+                                        <div class="d-flex justify-content-between align-items-center mb-3">
+                                            <div>
+                                                <h6 class="fw-bold mb-0 text-main font-poppins fs-7">Contacts</h6>
+                                                <span class="fs-9 text-muted-secondary">5 Total Contacts</span>
+                                            </div>
+                                            <div class="d-flex align-items-center gap-2">
+                                                <input type="text"
+                                                    class="form-control form-control-sm bg-glass border-light-alpha fs-9 text-main"
+                                                    placeholder="Search..."
+                                                    style="width: 100px; height: 24px; font-size: 0.65rem;">
+                                                <button class="btn btn-accent btn-sm rounded px-2 py-1 fs-9 shadow-sm"
+                                                    style="font-size: 0.65rem; border-radius: 6px; padding: 0.2rem 0.5rem;">
+                                                    <i class="fa-solid fa-plus me-1"></i> Add
+                                                </button>
                                             </div>
                                         </div>
-                                        <div class="col-4">
-                                            <div
-                                                class="mini-card p-3 rounded-3 shadow-sm bg-card border border-light-alpha">
-                                                <div class="text-muted-secondary fs-8 mb-1">New Leads</div>
-                                                <div class="fw-bold text-main fs-5">1,204</div>
-                                            </div>
+                                        <div class="table-responsive" style="overflow-x: auto; scrollbar-width: none;">
+                                            <table class="table table-hover border-light-alpha mb-0 align-middle"
+                                                style="font-size: 0.65rem; min-width: 320px;">
+                                                <thead>
+                                                    <tr class="text-muted-secondary border-bottom border-light-alpha"
+                                                        style="font-size: 0.55rem;">
+                                                        <th class="p-2 text-start">Name</th>
+                                                        <th class="p-2 text-start">Phone</th>
+                                                        <th class="p-2 text-start">Email</th>
+                                                        <th class="p-2 text-end">Stage</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr class="border-bottom border-light-alpha">
+                                                        <td class="p-2 text-start fw-semibold text-main text-nowrap">
+                                                            John Doe</td>
+                                                        <td class="p-2 text-start text-muted-secondary text-nowrap">+91
+                                                            98765 43210</td>
+                                                        <td class="p-2 text-start text-muted-secondary text-nowrap">
+                                                            john.doe@gmail.com</td>
+                                                        <td class="p-2 text-end text-nowrap"><span
+                                                                class="badge bg-primary-soft text-primary"
+                                                                style="font-size: 0.55rem; padding: 0.15rem 0.4rem;">New
+                                                                Lead</span></td>
+                                                    </tr>
+                                                    <tr class="border-bottom border-light-alpha">
+                                                        <td class="p-2 text-start fw-semibold text-main text-nowrap">
+                                                            Sarah Jenkins</td>
+                                                        <td class="p-2 text-start text-muted-secondary text-nowrap">+91
+                                                            87654 32109</td>
+                                                        <td class="p-2 text-start text-muted-secondary text-nowrap">
+                                                            sarah.j@outlook.com</td>
+                                                        <td class="p-2 text-end text-nowrap"><span
+                                                                class="badge bg-accent-soft text-accent"
+                                                                style="font-size: 0.55rem; padding: 0.15rem 0.4rem;">Contacted</span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="border-bottom border-light-alpha">
+                                                        <td class="p-2 text-start fw-semibold text-main text-nowrap">
+                                                            Amit Sharma</td>
+                                                        <td class="p-2 text-start text-muted-secondary text-nowrap">+91
+                                                            76543 21098</td>
+                                                        <td class="p-2 text-start text-muted-secondary text-nowrap">
+                                                            amit.sharma@yahoo.com</td>
+                                                        <td class="p-2 text-end text-nowrap"><span
+                                                                class="badge bg-success-soft text-success"
+                                                                style="font-size: 0.55rem; padding: 0.15rem 0.4rem;">Won</span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="border-bottom border-light-alpha">
+                                                        <td class="p-2 text-start fw-semibold text-main text-nowrap">
+                                                            Michael Scott</td>
+                                                        <td class="p-2 text-start text-muted-secondary text-nowrap">+91
+                                                            65432 10987</td>
+                                                        <td class="p-2 text-start text-muted-secondary text-nowrap">
+                                                            m.scott@dunder.com</td>
+                                                        <td class="p-2 text-end text-nowrap"><span
+                                                                class="badge bg-danger-soft text-danger"
+                                                                style="font-size: 0.55rem; padding: 0.15rem 0.4rem;">Abandoned</span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="p-2 text-start fw-semibold text-main text-nowrap">
+                                                            David Miller</td>
+                                                        <td class="p-2 text-start text-muted-secondary text-nowrap">+91
+                                                            99988 87766</td>
+                                                        <td class="p-2 text-start text-muted-secondary text-nowrap">
+                                                            david@zaviocrm.com</td>
+                                                        <td class="p-2 text-end text-nowrap"><span
+                                                                class="badge bg-primary-soft text-primary"
+                                                                style="font-size: 0.55rem; padding: 0.15rem 0.4rem;">New
+                                                                Lead</span></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
                                         </div>
-                                        <div class="col-4">
-                                            <div
-                                                class="mini-card p-3 rounded-3 shadow-sm bg-card border border-light-alpha">
-                                                <div class="text-muted-secondary fs-8 mb-1">Conversion</div>
-                                                <div class="fw-bold text-main fs-5">14.6%</div>
+                                    </div>
+
+                                    <!-- Tab 3: Pipelines -->
+                                    <div id="tab-pipelines" class="mockup-tab-content d-none">
+                                        <div class="d-flex justify-content-between align-items-center mb-3">
+                                            <div>
+                                                <h6 class="fw-bold mb-0 text-main font-poppins fs-7">Pipelines</h6>
+                                                <span class="fs-9 text-muted-secondary">Sales Pipeline Board</span>
+                                            </div>
+                                            <button class="btn btn-accent btn-sm rounded px-2 py-1 fs-9 shadow-sm"
+                                                style="font-size: 0.65rem; border-radius: 6px; padding: 0.2rem 0.5rem;">
+                                                <i class="fa-solid fa-plus me-1"></i> Stage
+                                            </button>
+                                        </div>
+                                        <div class="d-flex gap-2 pb-2"
+                                            style="overflow-x: auto; min-height: 250px; scrollbar-width: none;">
+                                            <!-- Column 1: New Lead -->
+                                            <div class="flex-shrink-0" style="width: 110px;">
+                                                <div class="bg-glass-ui border border-light-alpha rounded p-2 h-100">
+                                                    <div class="fw-bold text-main mb-2 d-flex justify-content-between"
+                                                        style="font-size: 0.6rem;">
+                                                        <span>New Lead</span>
+                                                        <span class="text-muted-secondary">(2)</span>
+                                                    </div>
+                                                    <div class="d-flex flex-column gap-2">
+                                                        <div class="bg-card border border-light-alpha rounded p-1.5 shadow-sm"
+                                                            style="font-size: 0.55rem;">
+                                                            <div class="fw-semibold text-main text-truncate">David
+                                                                Miller</div>
+                                                            <div class="text-accent fw-bold mt-1">₹10.0M</div>
+                                                        </div>
+                                                        <div class="bg-card border border-light-alpha rounded p-1.5 shadow-sm"
+                                                            style="font-size: 0.55rem;">
+                                                            <div class="fw-semibold text-main text-truncate">John Doe
+                                                            </div>
+                                                            <div class="text-accent fw-bold mt-1">₹5.0K</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- Column 2: Contacted -->
+                                            <div class="flex-shrink-0" style="width: 110px;">
+                                                <div class="bg-glass-ui border border-light-alpha rounded p-2 h-100">
+                                                    <div class="fw-bold text-main mb-2 d-flex justify-content-between"
+                                                        style="font-size: 0.6rem;">
+                                                        <span>Contacted</span>
+                                                        <span class="text-muted-secondary">(1)</span>
+                                                    </div>
+                                                    <div class="d-flex flex-column gap-2">
+                                                        <div class="bg-card border border-light-alpha rounded p-1.5 shadow-sm"
+                                                            style="font-size: 0.55rem;">
+                                                            <div class="fw-semibold text-main text-truncate">Sarah
+                                                                Jenkins</div>
+                                                            <div class="text-accent fw-bold mt-1">₹6.3K</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- Column 3: Won -->
+                                            <div class="flex-shrink-0" style="width: 110px;">
+                                                <div class="bg-glass-ui border border-light-alpha rounded p-2 h-100">
+                                                    <div class="fw-bold text-main mb-2 d-flex justify-content-between"
+                                                        style="font-size: 0.6rem;">
+                                                        <span>Closed Won</span>
+                                                        <span class="text-muted-secondary">(1)</span>
+                                                    </div>
+                                                    <div class="d-flex flex-column gap-2">
+                                                        <div class="bg-card border border-light-alpha rounded p-1.5 shadow-sm"
+                                                            style="font-size: 0.55rem;">
+                                                            <div class="fw-semibold text-main text-truncate">Amit Sharma
+                                                            </div>
+                                                            <div class="text-accent fw-bold mt-1">₹3.9K</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- Column 4: Abandoned -->
+                                            <div class="flex-shrink-0" style="width: 110px;">
+                                                <div class="bg-glass-ui border border-light-alpha rounded p-2 h-100">
+                                                    <div class="fw-bold text-main mb-2 d-flex justify-content-between"
+                                                        style="font-size: 0.6rem;">
+                                                        <span>Abandoned</span>
+                                                        <span class="text-muted-secondary">(1)</span>
+                                                    </div>
+                                                    <div class="d-flex flex-column gap-2">
+                                                        <div class="bg-card border border-light-alpha rounded p-1.5 shadow-sm"
+                                                            style="font-size: 0.55rem;">
+                                                            <div class="fw-semibold text-main text-truncate">Michael
+                                                                Scott</div>
+                                                            <div class="text-accent fw-bold mt-1">₹1.5K</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
 
-                                    <!-- Chart Placeholder -->
-                                    <div class="chart-area rounded-3 bg-card border border-light-alpha p-3 mb-3 d-flex align-items-end gap-2"
-                                        style="height: 120px;">
-                                        <div class="bar bg-primary-soft w-100 rounded-top" style="height: 40%"></div>
-                                        <div class="bar bg-primary-soft w-100 rounded-top" style="height: 60%"></div>
-                                        <div class="bar bg-gradient-premium w-100 rounded-top" style="height: 90%">
+                                    <!-- Tab 4: Campaigns -->
+                                    <div id="tab-campaigns" class="mockup-tab-content d-none">
+                                        <div class="d-flex justify-content-between align-items-center mb-3">
+                                            <div>
+                                                <h6 class="fw-bold mb-0 text-main font-poppins fs-7">Campaigns</h6>
+                                                <span class="fs-9 text-muted-secondary">Marketing Outreach Stats</span>
+                                            </div>
+                                            <button class="btn btn-accent btn-sm rounded px-2 py-1 fs-9 shadow-sm"
+                                                style="font-size: 0.65rem; border-radius: 6px; padding: 0.2rem 0.5rem;">
+                                                <i class="fa-solid fa-paper-plane me-1"></i> Send
+                                            </button>
                                         </div>
-                                        <div class="bar bg-primary-soft w-100 rounded-top" style="height: 75%"></div>
-                                        <div class="bar bg-primary-soft w-100 rounded-top" style="height: 50%"></div>
-                                        <div class="bar bg-primary-soft w-100 rounded-top" style="height: 85%"></div>
+
+                                        <!-- Email Health Alert -->
+                                        <div class="alert bg-primary-soft border border-light-alpha rounded p-2 mb-3 d-flex align-items-start gap-2"
+                                            style="font-size: 0.6rem; color: var(--text-main);">
+                                            <i class="fa-solid fa-circle-info text-primary mt-05"
+                                                style="font-size: 0.7rem;"></i>
+                                            <div>
+                                                <strong class="text-main">Email health report:</strong> You must send at
+                                                least 500 emails within the last 30 days. Start sending now to track
+                                                your deliverability performance!
+                                            </div>
+                                        </div>
+
+                                        <div class="d-flex flex-column gap-2">
+                                            <!-- Campaign 1 -->
+                                            <div
+                                                class="bg-card border border-light-alpha rounded p-2 shadow-sm d-flex justify-content-between align-items-center">
+                                                <div>
+                                                    <div class="fw-semibold text-main fs-8">email campaign</div>
+                                                    <div class="text-muted-secondary" style="font-size: 0.55rem;">
+                                                        Started 2 days ago &bull; Email</div>
+                                                </div>
+                                                <div class="d-flex gap-3 text-center" style="font-size: 0.6rem;">
+                                                    <div>
+                                                        <div class="fw-bold text-main">3</div>
+                                                        <div class="text-muted-secondary" style="font-size: 0.5rem;">
+                                                            Sent</div>
+                                                    </div>
+                                                    <div>
+                                                        <div class="fw-bold text-success">66%</div>
+                                                        <div class="text-muted-secondary" style="font-size: 0.5rem;">
+                                                            Open</div>
+                                                    </div>
+                                                    <div>
+                                                        <span class="badge bg-success-soft text-success px-1"
+                                                            style="font-size: 0.5rem; border-radius: 4px;">Active</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- Campaign 2 -->
+                                            <div
+                                                class="bg-card border border-light-alpha rounded p-2 shadow-sm d-flex justify-content-between align-items-center">
+                                                <div>
+                                                    <div class="fw-semibold text-main fs-8">demo roundrobin test</div>
+                                                    <div class="text-muted-secondary" style="font-size: 0.55rem;">
+                                                        Started 5 days ago &bull; SMS</div>
+                                                </div>
+                                                <div class="d-flex gap-3 text-center" style="font-size: 0.6rem;">
+                                                    <div>
+                                                        <div class="fw-bold text-main">1</div>
+                                                        <div class="text-muted-secondary" style="font-size: 0.5rem;">
+                                                            Sent</div>
+                                                    </div>
+                                                    <div>
+                                                        <div class="fw-bold text-success">100%</div>
+                                                        <div class="text-muted-secondary" style="font-size: 0.5rem;">
+                                                            Open</div>
+                                                    </div>
+                                                    <div>
+                                                        <span class="badge bg-light-alpha text-muted-secondary px-1"
+                                                            style="font-size: 0.5rem; border-radius: 4px;">Ended</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Tab 5: Analytics -->
+                                    <div id="tab-analytics" class="mockup-tab-content d-none">
+                                        <div class="d-flex justify-content-between align-items-center mb-3">
+                                            <div>
+                                                <h6 class="fw-bold mb-0 text-main font-poppins fs-7">Analytics</h6>
+                                                <span class="fs-9 text-muted-secondary">Integration & Ads reports</span>
+                                            </div>
+                                            <button class="btn btn-accent btn-sm rounded px-2 py-1 fs-9 shadow-sm"
+                                                style="font-size: 0.65rem; border-radius: 6px; padding: 0.2rem 0.5rem;">
+                                                <i class="fa-solid fa-arrows-rotate me-1"></i> Refresh
+                                            </button>
+                                        </div>
+
+                                        <div class="row g-2 mb-2">
+                                            <!-- FB Ads -->
+                                            <div class="col-6">
+                                                <div class="bg-card border border-light-alpha rounded p-2 text-center shadow-sm"
+                                                    style="min-height: 70px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                                                    <i class="fa-solid fa-circle-exclamation text-danger mb-1"
+                                                        style="font-size: 0.85rem;"></i>
+                                                    <div class="fw-semibold text-main" style="font-size: 0.55rem;">
+                                                        Facebook Ads report</div>
+                                                    <div class="text-muted-secondary" style="font-size: 0.5rem;">Error
+                                                        while loading data</div>
+                                                </div>
+                                            </div>
+                                            <!-- Google Ads -->
+                                            <div class="col-6">
+                                                <div class="bg-card border border-light-alpha rounded p-2 text-center shadow-sm"
+                                                    style="min-height: 70px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                                                    <i class="fa-solid fa-circle-exclamation text-danger mb-1"
+                                                        style="font-size: 0.85rem;"></i>
+                                                    <div class="fw-semibold text-main" style="font-size: 0.55rem;">
+                                                        Google Ads report</div>
+                                                    <div class="text-muted-secondary" style="font-size: 0.5rem;">Error
+                                                        while loading data</div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="bg-card border border-light-alpha rounded p-2 shadow-sm">
+                                            <div class="fw-semibold text-main mb-2" style="font-size: 0.65rem;">Google
+                                                Analytics Report (Last 12 Months)</div>
+                                            <!-- SVG Line Chart matching screenshot -->
+                                            <svg viewBox="0 0 100 35" class="w-100" style="max-height: 100px;">
+                                                <defs>
+                                                    <linearGradient id="chartGradient" x1="0" y1="0" x2="0" y2="1">
+                                                        <stop offset="0%" stop-color="#3B82F6" stop-opacity="0.3" />
+                                                        <stop offset="100%" stop-color="#3B82F6" stop-opacity="0.0" />
+                                                    </linearGradient>
+                                                </defs>
+                                                <path
+                                                    d="M 0 35 L 0 25 Q 10 23 20 20 T 40 10 Q 50 12 60 8 T 80 5 T 100 4 L 100 35 Z"
+                                                    fill="url(#chartGradient)"></path>
+                                                <path d="M 0 25 Q 10 23 20 20 T 40 10 Q 50 12 60 8 T 80 5 T 100 4"
+                                                    fill="none" stroke="#3B82F6" stroke-width="0.8"></path>
+                                                <!-- Points -->
+                                                <circle cx="20" cy="20" r="0.8" fill="#3B82F6"></circle>
+                                                <circle cx="40" cy="10" r="0.8" fill="#3B82F6"></circle>
+                                                <circle cx="60" cy="8" r="0.8" fill="#3B82F6"></circle>
+                                                <circle cx="80" cy="5" r="0.8" fill="#3B82F6"></circle>
+                                                <circle cx="100" cy="4" r="0.8" fill="#3B82F6"></circle>
+                                            </svg>
+                                            <div class="d-flex justify-content-between text-muted-secondary mt-1"
+                                                style="font-size: 0.5rem;">
+                                                <span>Jun 2025</span>
+                                                <span>Dec 2025</span>
+                                                <span>Jun 2026</span>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -210,11 +775,12 @@
                         <div
                             class="floating-widget widget-2 absolute-floating glass-panel p-3 rounded-4 shadow-lg border border-light-alpha">
                             <div class="d-flex justify-content-between align-items-center mb-2">
-                                <div class="fs-8 fw-semibold text-muted-secondary">Target Reached</div>
-                                <i class="fa-solid fa-arrow-trend-up text-success fs-8"></i>
+                                <div class="fs-8 fw-semibold text-muted-secondary">Total pipeline value</div>
+                                <i class="fa-solid fa-chart-line text-success fs-8"></i>
                             </div>
+                            <div class="fw-bold text-main fs-5 mb-1">₹10.01M</div>
                             <div class="progress" style="height: 6px;">
-                                <div class="progress-bar bg-gradient-premium w-75 rounded-pill" role="progressbar">
+                                <div class="progress-bar bg-gradient-premium w-80 rounded-pill" role="progressbar">
                                 </div>
                             </div>
                         </div>
@@ -422,21 +988,21 @@
                     <canvas id="globe-canvas" class="position-absolute"></canvas>
 
                     <!-- Orbiting Satellites / Nodes -->
-                    <!-- Node 1: AI Lead Capture (Engagement Agent) -->
-                    <div class="satellite-node" id="node-lead" data-index="0" data-aos="zoom-in"
-                        data-aos-delay="100">
+                    <!-- Node 1: Lead Response AI (Engagement Agent) -->
+                    <div class="satellite-node" id="node-lead" data-index="0" data-aos="zoom-in" data-aos-delay="100">
                         <div class="satellite-inner glassmorphism shadow-cyan">
                             <div class="pulse-ring pulse-cyan"></div>
                             <div class="sat-icon bg-cyan"><i class="fa-solid fa-comments-dollar"></i></div>
                             <div class="sat-info">
-                                <span class="sat-title">AI Lead Capture</span>
+                                <span class="sat-title">Lead Response AI</span>
                                 <span class="sat-subtitle">Engagement Agent</span>
                             </div>
                         </div>
                     </div>
 
                     <!-- Node 2: AI Voice Executive (Telephony Agent) -->
-                    <div class="satellite-node" id="node-voice-exec" data-index="1" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="satellite-node" id="node-voice-exec" data-index="1" data-aos="zoom-in"
+                        data-aos-delay="200">
                         <div class="satellite-inner glassmorphism shadow-purple">
                             <div class="pulse-ring pulse-purple"></div>
                             <div class="sat-icon bg-purple"><i class="fa-solid fa-microphone-lines"></i></div>
@@ -479,7 +1045,7 @@
                     <div id="ecosystem-hover-preview" class="glassmorphism preview-card position-absolute hide">
                         <div class="preview-header">
                             <div class="preview-badge-status"><span class="pulse-dot"></span> Live</div>
-                            <h4 class="preview-title font-poppins mb-1">AI Lead Capture</h4>
+                            <h4 class="preview-title font-poppins mb-1">Lead Response AI</h4>
                             <span class="preview-subtitle text-cyan">Engagement Agent</span>
                         </div>
                         <p class="preview-desc text-muted-sci-fi font-inter my-3">
@@ -487,7 +1053,8 @@
                             real-time sync.
                         </p>
                         <div class="preview-footer text-start">
-                            <span class="btn-command-hint text-cyan"><i class="fa-solid fa-bolt me-2"></i> Autonomous CRM Agent</span>
+                            <span class="btn-command-hint text-cyan"><i class="fa-solid fa-bolt me-2"></i> Autonomous
+                                CRM Agent</span>
                         </div>
                     </div>
 
@@ -893,12 +1460,14 @@
             <div class="row justify-content-center mb-5 text-center" data-aos="fade-up">
                 <div class="col-lg-8">
                     <span
-                        class="top-badge text-accent fw-bold text-uppercase tracking-wide fs-7 mb-3 d-inline-block">Unified Platform Package</span>
+                        class="top-badge text-accent fw-bold text-uppercase tracking-wide fs-7 mb-3 d-inline-block">Unified
+                        Platform Package</span>
                     <h2 class="display-5 fw-extrabold font-poppins mb-3 text-main">
                         Massive Capabilities. <br><span class="text-gradient">All-In-One Unified Package.</span>
                     </h2>
                     <p class="lead font-inter text-muted-secondary mx-auto" style="max-width: 650px;">
-                        Stop leaking money on a dozen overlapping software subscriptions. Access all features in our unified, flat-rate package with zero hidden fees.
+                        Stop leaking money on a dozen overlapping software subscriptions. Access all features in our
+                        unified, flat-rate package with zero hidden fees.
                     </p>
                 </div>
             </div>
@@ -919,7 +1488,8 @@
                             <p class="text-muted-secondary fs-8 mb-4">Complete CRM suite designed for growing agencies
                                 and local businesses.</p>
                             <div class="mb-4">
-                                <span class="display-6 fw-extrabold font-poppins text-gradient">Included in Package</span>
+                                <span class="display-6 fw-extrabold font-poppins text-gradient">Included in
+                                    Package</span>
                                 <span class="text-muted-secondary fs-8 d-block mt-1">Growth Tier Features</span>
                             </div>
                             <ul class="list-unstyled d-flex flex-column gap-3 mb-5 fs-8 text-muted-secondary">
@@ -960,7 +1530,8 @@
                             <p class="text-muted-secondary fs-8 mb-4">Unconstrained power built for mature operations
                                 requiring complex workflows.</p>
                             <div class="mb-4">
-                                <span class="display-6 fw-extrabold font-poppins text-gradient">Included in Package</span>
+                                <span class="display-6 fw-extrabold font-poppins text-gradient">Included in
+                                    Package</span>
                                 <span class="text-muted-secondary fs-8 d-block mt-1">Advanced Scale Features</span>
                             </div>
                             <ul class="list-unstyled d-flex flex-column gap-3 mb-5 fs-8 text-muted-secondary">
@@ -1003,7 +1574,8 @@
                     <i class="fa-solid fa-layer-group"></i> Feature Comparison
                 </div>
                 <h2 class="display-5 fw-bold font-poppins mb-3 text-white">What's Included with ZavioCRM</h2>
-                <p class="lead font-inter text-white text-opacity-75 mx-auto">Replace expensive subscriptions and get everything in one unified package</p>
+                <p class="lead font-inter text-white text-opacity-75 mx-auto">Replace expensive subscriptions and get
+                    everything in one unified package</p>
             </div>
 
             <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="100">
@@ -1112,8 +1684,10 @@
                         <!-- Footer Row -->
                         <div class="row g-0 py-4 px-3 px-md-5 align-items-center text-white"
                             style="background-color: rgba(255, 255, 255, 0.03);">
-                            <div class="col-7 col-md-7 fw-extrabold font-inter fs-6 fs-md-5 text-end pe-3 pe-md-4">Platform Package</div>
-                            <div class="col-3 col-md-2 text-warning fw-bold text-center fs-8 fs-md-7">Separate Fees</div>
+                            <div class="col-7 col-md-7 fw-extrabold font-inter fs-6 fs-md-5 text-end pe-3 pe-md-4">
+                                Platform Package</div>
+                            <div class="col-3 col-md-2 text-warning fw-bold text-center fs-8 fs-md-7">Separate Fees
+                            </div>
                             <div class="col-2 col-md-3 text-center">
                                 <span class="badge px-3 py-2 px-md-4 py-md-2 rounded-pill fs-9 fs-md-8 shadow-sm"
                                     style="background-color: #16A34A; font-weight: 700;">Included</span>
@@ -1133,24 +1707,35 @@
                 data-aos="fade-up">
                 <div>
                     <h2 class="display-6 fw-bold font-poppins mb-2 text-main">Latest from the Blog</h2>
-                    <p class="fs-6 text-muted-secondary mb-0">Insights, strategies, and growth hacks for modern businesses.</p>
+                    <p class="fs-6 text-muted-secondary mb-0">Insights, strategies, and growth hacks for modern
+                        businesses.</p>
                 </div>
             </div>
 
             <div class="row align-items-center justify-content-center">
                 <div class="col-lg-10">
-                    <div class="row g-4 align-items-center cursor-pointer blog-hover-trigger" onclick="window.location.href='blog.html';">
+                    <div class="row g-4 align-items-center cursor-pointer blog-hover-trigger"
+                        onclick="window.location.href='blog.html';">
                         <div class="col-md-5" data-aos="fade-right">
                             <div class="rounded-4 overflow-hidden shadow-sm" style="height: 240px;">
-                                <img src="image/hero_command_center.png" class="w-100 h-100 object-fit-cover transition-all blog-card-img" alt="Beyond the All-in-One">
+                                <img src="image/hero_command_center.png"
+                                    class="w-100 h-100 object-fit-cover transition-all blog-card-img"
+                                    alt="Beyond the All-in-One">
                             </div>
                         </div>
                         <div class="col-md-7" data-aos="fade-left">
                             <div class="ps-md-3">
-                                <span class="badge bg-primary-soft text-primary-dark rounded-pill mb-3 px-3 py-2 fs-9">Enterprise Marketing</span>
-                                <h3 class="fw-bold font-poppins text-main mb-3 fs-4">Beyond the All-in-One: Why Zavio CRM is the Future of Marketing Automation</h3>
-                                <p class="text-muted-secondary fs-7 mb-4">Discover why the era of the passive "system of record" is over, and how adaptive workflows and multi-agent AI ecosystems are defining 2026.</p>
-                                <span class="text-danger fw-bold fs-7 d-inline-flex align-items-center gap-1 blog-horizontal-readmore">Read more <i class="fa-solid fa-arrow-right fs-8"></i></span>
+                                <span
+                                    class="badge bg-primary-soft text-primary-dark rounded-pill mb-3 px-3 py-2 fs-9">Enterprise
+                                    Marketing</span>
+                                <h3 class="fw-bold font-poppins text-main mb-3 fs-4">Beyond the All-in-One: Why Zavio
+                                    CRM is the Future of Marketing Automation</h3>
+                                <p class="text-muted-secondary fs-7 mb-4">Discover why the era of the passive "system of
+                                    record" is over, and how adaptive workflows and multi-agent AI ecosystems are
+                                    defining 2026.</p>
+                                <span
+                                    class="text-danger fw-bold fs-7 d-inline-flex align-items-center gap-1 blog-horizontal-readmore">Read
+                                    more <i class="fa-solid fa-arrow-right fs-8"></i></span>
                             </div>
                         </div>
                     </div>
@@ -1180,7 +1765,8 @@
                         <div class="d-flex align-items-center gap-3 mb-4 fs-6">
                             <div class="bg-white bg-opacity-10 text-white rounded-circle d-flex align-items-center justify-content-center"
                                 style="width:40px; height:40px;"><i class="fa-solid fa-envelope"></i></div>
-                            <div><a href="mailto:support@zaviocrm.com" class="text-white text-decoration-none">support@zaviocrm.com</a></div>
+                            <div><a href="mailto:support@zaviocrm.com"
+                                    class="text-white text-decoration-none">support@zaviocrm.com</a></div>
                         </div>
                         <div class="d-flex align-items-center gap-3 mb-4 fs-6">
                             <div class="bg-white bg-opacity-10 text-white rounded-circle d-flex align-items-center justify-content-center"

@@ -278,6 +278,37 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    /* 4. Mockup Dashboard Tab Switcher */
+    const mockSidebarMenu = document.getElementById('mockup-sidebar-menu');
+    if (mockSidebarMenu) {
+        const menuItems = mockSidebarMenu.querySelectorAll('li');
+        menuItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const targetTab = item.getAttribute('data-tab');
+                if (!targetTab) return;
+                
+                // Update active sidebar item
+                menuItems.forEach(menuItem => {
+                    menuItem.classList.remove('active-item', 'bg-light-alpha', 'text-main', 'fw-semibold');
+                    menuItem.classList.add('hover-bg');
+                });
+                item.classList.add('active-item', 'bg-light-alpha', 'text-main', 'fw-semibold');
+                item.classList.remove('hover-bg');
+                
+                // Switch tab content views
+                const tabContents = document.querySelectorAll('.mockup-tab-content');
+                tabContents.forEach(tab => {
+                    tab.classList.add('d-none');
+                });
+                
+                const activeTabEl = document.getElementById(`tab-${targetTab}`);
+                if (activeTabEl) {
+                    activeTabEl.classList.remove('d-none');
+                }
+            });
+        });
+    }
+
     // Smooth Physics Cursor removed
 
 });

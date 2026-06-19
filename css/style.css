@@ -217,6 +217,19 @@ body {
 }
 
 /* Sections */
+.hero-section {
+    position: relative;
+}
+.hero-bg-shapes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+}
 .section-padding { padding: 120px 0; }
 
 /* Badges */

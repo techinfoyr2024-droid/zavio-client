@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Node data structure
     const nodeData = [
         {
-            title: "AI Lead Capture",
+            title: "Lead Response AI",
             subtitle: "Engagement Agent",
             desc: "Omnichannel customer engagement. Syncs SMS, Webchat, Instagram, Messenger, and WhatsApp with live calendars to book leads securely into ZavioCRM on autopilot.",
             color: "var(--clr-cyan)",
