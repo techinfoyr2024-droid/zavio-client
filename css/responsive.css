@@ -47,7 +47,10 @@ section {
     }
 
     .brand-logo { 
-        height: 38px !important; 
+        height: 60px !important; 
+        transform: scale(1.6) !important;
+        transform-origin: left center !important;
+        margin: -15px 0 !important;
     }
 
     .navbar-toggler {
@@ -184,5 +187,10 @@ section {
 /* 8. Smallest Screens Fix (320px) */
 @media (max-width: 360px) {
     .display-3, .hero-title { font-size: 2.2rem !important; }
-    .brand-logo { height: 30px !important; }
+    .brand-logo { 
+        height: 50px !important; 
+        transform: scale(1.5) !important;
+        transform-origin: left center !important;
+        margin: -12px 0 !important;
+    }
 }

@@ -31,7 +31,16 @@
     <!-- Page Loader / Transition Overlay -->
     <div id="page-loader" class="page-loader">
         <div class="loader-content">
-            <img src="image/logo.png" alt="ZavioCRM Logo" class="loader-logo">
+            <img src="image/logo_light.png" alt="ZavioCRM Logo" class="loader-logo logo-theme-aware" id="loader-logo-img">
+            <script>
+                (function() {
+                    const theme = localStorage.getItem('theme') || 'light';
+                    if (theme === 'dark') {
+                        document.body.setAttribute('data-theme', 'dark');
+                        document.getElementById('loader-logo-img').src = 'image/logo_dark.png';
+                    }
+                })();
+            </script>
             <div class="loader-spinner"></div>
         </div>
     </div>
@@ -40,7 +49,7 @@
     <nav class="navbar navbar-expand-lg fixed-top premium-nav py-1" id="mainNavbar">
         <div class="container-fluid d-flex align-items-center justify-content-between">
             <a class="navbar-brand d-flex align-items-center" href="index.html">
-                <img src="image/logo.png" alt="ZavioCRM Logo" class="brand-logo"
+                <img src="image/logo_light.png" alt="ZavioCRM Logo" class="brand-logo logo-theme-aware"
                     onerror="this.src=''; this.alt='ZavioCRM'; this.style.fontSize='1.5rem'; this.style.fontWeight='bold'; this.style.color='var(--primary-dark)';">
             </a>
 
@@ -371,7 +380,7 @@
             <div class="row g-4 mb-4">
                 <!-- Info -->
                 <div class="col-lg-4 pe-lg-5">
-                    <img src="image/logo.png" alt="ZavioCRM" class="mb-4" style="height:32px; border-radius: 4px;"
+                    <img src="image/logo_light.png" alt="ZavioCRM" class="mb-4 logo-theme-aware" style="height: 60px; margin-top: -15px; margin-bottom: -15px; transform: scale(1.4); transform-origin: left center; border-radius: 4px;"
                         onerror="this.src=''; this.alt='ZavioCRM'; this.style.fontSize='1.5rem'; this.style.fontWeight='bold'; this.style.color='var(--primary-dark)';">
                     <p class="text-muted-secondary mb-4 fs-7">Enterprise-grade marketing, sales, and CRM platform built to scale businesses efficiently organically without friction.</p>
                     <div class="d-flex gap-3 social-icons">

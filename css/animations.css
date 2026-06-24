@@ -228,7 +228,7 @@ footer .container {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: #FFFFFF; /* Clean white loading background */
+    background-color: var(--bg-main); /* Theme-aware background */
     z-index: 99999;
     display: flex;
     align-items: center;
@@ -248,11 +248,13 @@ footer .container {
 }
 
 .loader-logo {
-    height: 70px;
+    height: 130px;
     width: auto;
     object-fit: contain;
     border-radius: 8px;
     filter: drop-shadow(0 4px 12px rgba(43, 87, 154, 0.08));
+    transform: scale(1.5);
+    margin: -30px 0;
 }
 
 .loader-spinner {

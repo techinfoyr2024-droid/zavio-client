@@ -32,6 +32,13 @@ document.addEventListener('DOMContentLoaded', () => {
             icon.classList.add('fa-moon');
         }
 
+        // Update all theme-aware logos
+        const logoSrc = theme === 'dark' ? 'image/logo_dark.png' : 'image/logo_light.png';
+        const logos = document.querySelectorAll('.logo-theme-aware');
+        logos.forEach(logo => {
+            logo.src = logoSrc;
+        });
+
         if (animate) {
             icon.classList.remove('spin-anim');
             // Trigger reflow to restart CSS animation

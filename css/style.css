@@ -169,10 +169,13 @@ body {
     padding-right: 24px !important;
 }
 .brand-logo {
-    height: 48px; /* Compacted from 65px */
+    height: 80px;
     width: auto;
     object-fit: contain;
     border-radius: 6px;
+    transform: scale(1.6);
+    transform-origin: left center;
+    margin: -20px 0;
 }
 .premium-nav .nav-link {
     color: var(--text-muted-secondary);
