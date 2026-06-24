@@ -167,13 +167,14 @@ body {
 .premium-nav .container-fluid {
     padding-left: 24px !important;
     padding-right: 24px !important;
+    overflow: visible !important;
 }
 .brand-logo {
     height: 80px;
     width: auto;
     object-fit: contain;
     border-radius: 6px;
-    transform: scale(1.6);
+    transform: scale(1.6) translateY(4px); /* Shift down 4px for perfect vertical centering */
     transform-origin: left center;
     margin: -20px 0;
 }

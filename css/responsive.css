@@ -44,11 +44,12 @@ section {
         display: flex !important;
         justify-content: space-between !important;
         align-items: center !important;
+        overflow: visible !important;
     }
 
     .brand-logo { 
         height: 60px !important; 
-        transform: scale(1.6) !important;
+        transform: scale(1.6) translateY(3px) !important;
         transform-origin: left center !important;
         margin: -15px 0 !important;
     }
@@ -189,7 +190,7 @@ section {
     .display-3, .hero-title { font-size: 2.2rem !important; }
     .brand-logo { 
         height: 50px !important; 
-        transform: scale(1.5) !important;
+        transform: scale(1.5) translateY(2px) !important;
         transform-origin: left center !important;
         margin: -12px 0 !important;
     }
