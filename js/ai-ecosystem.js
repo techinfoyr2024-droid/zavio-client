@@ -60,65 +60,93 @@ document.addEventListener('DOMContentLoaded', () => {
     // Node data structure
     const nodeData = [
         {
-            title: "Lead Response AI",
-            subtitle: "Engagement Agent",
-            desc: "Omnichannel customer engagement. Syncs SMS, Webchat, Instagram, Messenger, and WhatsApp with live calendars to book leads securely into ZavioCRM on autopilot.",
+            title: "Zavio Inbox AI",
+            subtitle: "Conversation AI",
+            desc: "Automates customer chats and messaging across WhatsApp, email, SMS, and web chat.",
             color: "var(--clr-cyan)",
             colorRGB: "6, 182, 212",
-            icon: "<i class='fa-solid fa-comments-dollar'></i>",
+            icon: "<i class='fa-solid fa-message'></i>",
             specs: [
-                "Omnichannel Deployment (SMS, WhatsApp, IG, FB DMs)",
-                "Live Calendar Integration & CRM Widget Sync",
-                "Auto Follow-Up Logic to capture lost leads"
+                "Omnichannel Messaging (WhatsApp, SMS, Email, Web Chat)",
+                "AI-driven auto-replies with sentiment analysis",
+                "Unified inbox routing to human agents when needed"
             ]
         },
         {
-            title: "AI Voice Executive",
-            subtitle: "Telephony Agent",
-            desc: "Ultra-low latency inbound & outbound phone calling. Features custom voice branding, sub-1-second audio synthesis, and automated call transcripts synced into CRM.",
+            title: "Zavio Forge AI",
+            subtitle: "Content AI",
+            desc: "Generates engaging content, marketing copy, blogs, emails, and social media posts.",
             color: "var(--clr-purple)",
             colorRGB: "139, 92, 246",
-            icon: "<i class='fa-solid fa-microphone-lines'></i>",
+            icon: "<i class='fa-solid fa-pen-nib'></i>",
             specs: [
-                "Ultra-Low Latency Calling (<1s response latency)",
-                "Smart Routing & warm-transfers to human managers",
-                "Custom Voice branding & automated call transcriptions"
+                "Automated blog & social media post generation",
+                "AI marketing copywriter with custom brand voice",
+                "High-converting email sequence architect"
             ]
         },
         {
-            title: "AI Knowledge Core",
-            subtitle: "Context Engine",
-            desc: "中央知識ベース. Scrapes and processes public websites, FAQs, and company data. Integrates strict boundary controls to guarantee zero hallucination.",
+            title: "Zavio Echo AI",
+            subtitle: "Voice AI",
+            desc: "AI voice agent for inbound/outbound calls, customer support, and appointment booking.",
             color: "var(--clr-pink)",
             colorRGB: "236, 72, 153",
-            icon: "<i class='fa-solid fa-network-wired'></i>",
+            icon: "<i class='fa-solid fa-phone'></i>",
             specs: [
-                "Scrape-and-Learn Website URL & File Crawler",
-                "Strict Boundary Controls (Zero AI knowledge hallucinations)",
-                "Encrypted SOC-2 Isolated Database Vectors"
+                "Ultra-low latency voice response (<1 second delay)",
+                "Direct calendar booking via natural speech",
+                "Inbound support & outbound campaign logic"
             ]
         },
         {
-            title: "AI Review Responder",
-            subtitle: "Sentiment Engine",
-            desc: "Autopilot review replies for Google Business Profiles and Facebook. Automatically writes context-aware responses with suggestive toggle modes for approvals.",
+            title: "Zavio Flow AI",
+            subtitle: "Workflow AI",
+            desc: "Automates business processes and connects apps to streamline repetitive tasks.",
             color: "var(--clr-orange)",
             colorRGB: "245, 158, 11)",
-            icon: "<i class='fa-solid fa-star-half-stroke'></i>",
+            icon: "<i class='fa-solid fa-gears'></i>",
             specs: [
-                "Autopilot Review Responder (Google & Facebook Sync)",
-                "Suggestive Mode Toggle (Human approval before public post)",
-                "Sentiment Analysis & CRM negative review alerts"
+                "Multi-app integration triggers and actions",
+                "Visual flowchart designer for custom logic",
+                "Automatic database updates & status syncing"
+            ]
+        },
+        {
+            title: "Zavio Reputation AI",
+            subtitle: "Review AI",
+            desc: "Tracks customer feedback, responds to reviews, and enhances brand reputation.",
+            color: "var(--clr-green)",
+            colorRGB: "16, 185, 129",
+            icon: "<i class='fa-solid fa-star'></i>",
+            specs: [
+                "Automatic review response (Google, Facebook, etc.)",
+                "Customer sentiment scoring & negative alert triggers",
+                "Review generation campaigns via SMS/Email"
+            ]
+        },
+        {
+            title: "Zavio Build AI",
+            subtitle: "Funnel & Website AI",
+            desc: "Builds landing pages, websites, and sales funnels optimized for conversions.",
+            color: "var(--clr-blue)",
+            colorRGB: "59, 130, 246",
+            icon: "<i class='fa-solid fa-globe'></i>",
+            specs: [
+                "Drag-and-drop AI website builder",
+                "High-converting funnel templates & analytics",
+                "SEO-optimized layout generation on autopilot"
             ]
         }
     ];
 
     // Symmetrical, balanced screen coordinate positions (percentages)
     const basePositions = [
-        { left: 16, top: 22 },  // Node 1: Concierge (Top-Left)
-        { left: 16, top: 68 },  // Node 2: Voice AI (Bottom-Left)
-        { left: 84, top: 22 },  // Node 3: Knowledge Brain (Top-Right)
-        { left: 84, top: 68 }   // Node 4: Reputation Guardian (Bottom-Right)
+        { left: 16, top: 18 },  // Node 0: Zavio Inbox AI (Top-Left)
+        { left: 12, top: 50 },  // Node 1: Zavio Forge AI (Middle-Left)
+        { left: 16, top: 82 },  // Node 2: Zavio Echo AI (Bottom-Left)
+        { left: 84, top: 18 },  // Node 3: Zavio Flow AI (Top-Right)
+        { left: 88, top: 50 },  // Node 4: Zavio Reputation AI (Middle-Right)
+        { left: 84, top: 82 }   // Node 5: Zavio Build AI (Bottom-Right)
     ];
 
     // ─── PARTICLE GLOBE ENGINE (CUSTOM 3D PROJECTION) ───────────────────────────
@@ -156,7 +184,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 px: 0, py: 0,
                 pz: 0,
                 brightness: Math.random() * 0.4 + 0.6,
-                colorType: i % 4,
+                colorType: i % 6,
                 magneticOffset: { x: 0, y: 0, z: 0 }
             });
         }
@@ -293,7 +321,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     const activeQuadrant = activeNodeIndex !== -1 ? activeNodeIndex : hoveredNodeIndex;
                     if (activeQuadrant !== -1 && p1.colorType === activeQuadrant && p2.colorType === activeQuadrant) {
                         opacity *= 2.8;
-                        ctx.strokeStyle = `rgba(${p1.colorType === 0 ? '6, 182, 212' : p1.colorType === 1 ? '139, 92, 246' : p1.colorType === 2 ? '236, 72, 153' : p1.colorType === 3 ? '245, 158, 11' : '16, 185, 129'}, ${opacity})`;
+                        ctx.strokeStyle = `rgba(${p1.colorType === 0 ? '6, 182, 212' : p1.colorType === 1 ? '139, 92, 246' : p1.colorType === 2 ? '236, 72, 153' : p1.colorType === 3 ? '245, 158, 11' : p1.colorType === 4 ? '16, 185, 129' : '59, 130, 246'}, ${opacity})`;
                     } else {
                         ctx.strokeStyle = themeColors.neuralLine;
                     }
@@ -322,6 +350,7 @@ document.addEventListener('DOMContentLoaded', () => {
             else if (p.colorType === 2) clr = "rgba(236, 72, 153,";
             else if (p.colorType === 3) clr = "rgba(245, 158, 11,";
             else if (p.colorType === 4) clr = "rgba(16, 185, 129,";
+            else if (p.colorType === 5) clr = "rgba(59, 130, 246,";
 
             let mult = 1.0;
             const activeQuadrant = activeNodeIndex !== -1 ? activeNodeIndex : hoveredNodeIndex;
@@ -470,9 +499,9 @@ document.addEventListener('DOMContentLoaded', () => {
             hoveredNodeIndex = idx;
             inner.classList.add(`sat-inner-bg-active-${idx}`);
 
-            const angles = [Math.PI*0.75, Math.PI*1.25, Math.PI*0.25, Math.PI*1.75, Math.PI];
+            const angles = [Math.PI*0.75, Math.PI, Math.PI*1.25, Math.PI*0.25, Math.PI*1.75, Math.PI];
             rotation.targetY = -angles[idx] * 0.45;
-            rotation.targetX = idx < 2 ? 0.35 : 0.15;
+            rotation.targetX = idx < 3 ? 0.35 : 0.15;
 
             // Update and position temporary hover tooltip next to satellite
             const activeData = nodeData[idx];
@@ -574,7 +603,7 @@ document.addEventListener('DOMContentLoaded', () => {
         let posX = 0;
         let posY = (nodeRect.top - wrapRect.top) - 30; // slightly above vertical center for clean alignment
 
-        if (nodeIndex === 0 || nodeIndex === 1) {
+        if (nodeIndex < 3) {
             // Left side nodes: show preview card on the RIGHT side of the node
             posX = (nodeRect.left - wrapRect.left) + nodeRect.width + 20;
         } else {
@@ -692,7 +721,7 @@ document.addEventListener('DOMContentLoaded', () => {
         nodes.forEach(n => {
             const inner = n.querySelector('.satellite-inner');
             inner.classList.remove('active');
-            inner.classList.remove('sat-inner-bg-active-0', 'sat-inner-bg-active-1', 'sat-inner-bg-active-2', 'sat-inner-bg-active-3', 'sat-inner-bg-active-4');
+            inner.classList.remove('sat-inner-bg-active-0', 'sat-inner-bg-active-1', 'sat-inner-bg-active-2', 'sat-inner-bg-active-3', 'sat-inner-bg-active-4', 'sat-inner-bg-active-5');
         });
 
         // Restore canvas and nodes displays
