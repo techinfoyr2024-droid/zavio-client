@@ -567,3 +567,190 @@ body[data-theme='dark'] .chat-list-item.active-chat {
     to { opacity: 1; transform: translateX(0); }
 }
 
+/* --- PRICING SECTION STYLES --- */
+.billing-toggle-container {
+    background: var(--bg-card) !important;
+    border: 1px solid var(--border-light-alpha);
+    padding: 4px;
+    border-radius: 50px;
+}
+.billing-toggle-btn {
+    border: none;
+    background: transparent;
+    color: var(--text-muted-secondary) !important;
+    font-weight: 600;
+    font-size: 0.8rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: none !important;
+}
+.billing-toggle-btn:hover {
+    color: var(--text-main) !important;
+}
+.billing-toggle-btn.active {
+    background: #0060FF !important;
+    color: #FFFFFF !important;
+    box-shadow: 0 4px 10px rgba(0, 96, 255, 0.25) !important;
+}
+
+.pricing-card {
+    background: var(--glass-bg) !important;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--border-light-alpha) !important;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.pricing-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-super-premium) !important;
+}
+
+/* Card layout decorations */
+.pricing-card-header-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 120px;
+    z-index: 1;
+    border-radius: 0 0 100% 100% / 0 0 40% 40%;
+    opacity: 0.1;
+    pointer-events: none;
+}
+.header-blue {
+    background: linear-gradient(180deg, #0060FF 0%, transparent 100%);
+}
+.header-green {
+    background: linear-gradient(180deg, #10B981 0%, transparent 100%);
+}
+.header-orange {
+    background: linear-gradient(180deg, #f97316 0%, transparent 100%);
+}
+
+.pricing-icon {
+    width: 48px;
+    height: 48px;
+    z-index: 2;
+    position: relative;
+    font-size: 1.1rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+.bg-blue { background-color: #0060FF !important; }
+.bg-green { background-color: #10B981 !important; }
+.bg-orange { background-color: #ff7300 !important; }
+
+.shadow-blue-sm { box-shadow: 0 8px 20px rgba(0, 96, 255, 0.2); }
+.shadow-green-sm { box-shadow: 0 8px 20px rgba(16, 185, 129, 0.2); }
+.shadow-orange-sm { box-shadow: 0 8px 20px rgba(255, 115, 0, 0.2); }
+
+.text-blue { color: #0060FF !important; }
+.text-green { color: #10B981 !important; }
+.text-orange { color: #ff7300 !important; }
+
+.bg-blue-soft { background-color: rgba(0, 96, 255, 0.08) !important; }
+.bg-green-soft { background-color: rgba(16, 185, 129, 0.08) !important; }
+.bg-orange-soft { background-color: rgba(255, 115, 0, 0.08) !important; }
+
+.btn-blue-theme {
+    background-color: #0060FF;
+    color: white !important;
+    border: none;
+    transition: all 0.3s ease;
+}
+.btn-blue-theme:hover {
+    background-color: #0052cc;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 96, 255, 0.2);
+}
+
+.btn-green-theme {
+    background-color: #10B981;
+    color: white !important;
+    border: none;
+    transition: all 0.3s ease;
+}
+.btn-green-theme:hover {
+    background-color: #0d9488;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(16, 185, 129, 0.2);
+}
+
+.btn-orange-theme {
+    background-color: #ff7300;
+    color: white !important;
+    border: none;
+    transition: all 0.3s ease;
+}
+.btn-orange-theme:hover {
+    background-color: #e66700;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(255, 115, 0, 0.2);
+}
+
+.popular-border {
+    border: 2px solid #10B981 !important;
+}
+
+.custom-highlight-border {
+    border: 2.5px solid #ff7300 !important;
+    box-shadow: 0 30px 60px -15px rgba(255, 115, 0, 0.2), var(--shadow-super-premium) !important;
+}
+
+.card-intro {
+    background: var(--glass-bg) !important;
+}
+
+.plan-badge {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid var(--border-light-alpha);
+}
+
+/* Custom Checkbox Design for Custom Enterprise Plan */
+.checkbox-grid {
+    max-height: 180px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    padding-right: 4px;
+}
+.checkbox-grid::-webkit-scrollbar {
+    width: 4px;
+}
+.checkbox-grid::-webkit-scrollbar-thumb {
+    background-color: var(--border-light-alpha);
+    border-radius: 4px;
+}
+.checkbox-container {
+    position: relative;
+    padding: 8px 10px;
+    border-radius: 6px;
+    background: var(--bg-main);
+    border: 1px solid var(--border-light-alpha);
+    transition: all 0.2s ease;
+    user-select: none;
+}
+.checkbox-container:hover {
+    background: var(--bg-main-alt);
+    border-color: #ff7300;
+    color: var(--text-main) !important;
+}
+.checkbox-container input {
+    accent-color: #ff7300;
+    width: 14px;
+    height: 14px;
+    cursor: pointer;
+}
+.checkbox-container span {
+    font-size: 0.7rem;
+    transition: color 0.2s ease;
+}
+body[data-theme='dark'] .checkbox-container {
+    background: var(--bg-main-alt);
+}
+body[data-theme='dark'] .checkbox-container:hover {
+    background: var(--bg-card);
+}
+
+/* Pricing compact override */
+#pricing.section-padding {
+    padding: 35px 0 !important;
+}

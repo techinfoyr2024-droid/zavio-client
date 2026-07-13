@@ -195,3 +195,21 @@ section {
         margin: -12px 0 !important;
     }
 }
+
+/* 9. Pricing Section Mobile Adjustments */
+@media (max-width: 767.98px) {
+    #pricing.section-padding {
+        padding: 40px 0 !important;
+    }
+    #pricing .container {
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+    }
+    .pricing-card {
+        margin-bottom: 20px;
+        padding: 1.5rem !important; /* Make card padding slightly more compact on mobile */
+    }
+    #pricing h2 {
+        font-size: 1.6rem !important;
+    }
+}
