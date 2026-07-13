@@ -208,6 +208,9 @@ section {
     .pricing-card {
         margin-bottom: 20px;
         padding: 1.5rem !important; /* Make card padding slightly more compact on mobile */
+        max-width: 380px;
+        margin-left: auto;
+        margin-right: auto;
     }
     #pricing h2 {
         font-size: 1.6rem !important;
