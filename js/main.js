@@ -631,30 +631,22 @@ document.addEventListener('DOMContentLoaded', () => {
     const billingMonthly = document.getElementById('billing-monthly');
     const billingYearly = document.getElementById('billing-yearly');
     
-    const priceBasicEl = document.getElementById('price-basic');
-    const periodBasicEl = document.getElementById('billing-period-basic');
-
-    function animatePriceChange(el, newPrice) {
-        if (!el) return;
-        el.style.transition = 'opacity 0.15s ease-in-out';
-        el.style.opacity = 0;
-        setTimeout(() => {
-            el.textContent = newPrice;
-            el.style.opacity = 1;
-        }, 150);
-    }
-
     function updatePricingDisplay() {
         if (!billingYearly) return;
         const isYearly = billingYearly.classList.contains('active');
         
-        const priceBasic = isYearly ? '$239' : '$299';
-        const periodText = isYearly 
-            ? '/mo ($2,868/yr) Billed yearly - Save 20%' 
-            : '/mo Billed monthly';
-
-        animatePriceChange(priceBasicEl, priceBasic);
-        if (periodBasicEl) periodBasicEl.textContent = periodText;
+        const monthlyBlock = document.getElementById('price-launch-monthly-block');
+        const yearlyBlock = document.getElementById('price-launch-yearly-block');
+        
+        if (monthlyBlock && yearlyBlock) {
+            if (isYearly) {
+                monthlyBlock.classList.add('d-none');
+                yearlyBlock.classList.remove('d-none');
+            } else {
+                monthlyBlock.classList.remove('d-none');
+                yearlyBlock.classList.add('d-none');
+            }
+        }
     }
 
     if (billingMonthly && billingYearly) {
@@ -672,9 +664,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Action button handlers with form pre-population
-    const btnBasic = document.getElementById('btn-select-basic');
-    const btnAdvanced = document.getElementById('btn-select-advanced');
-    const btnCustom = document.getElementById('btn-select-custom');
+    const btnLaunch = document.getElementById('btn-select-launch');
+    const btnScale = document.getElementById('btn-select-scale');
+    const btnElevate = document.getElementById('btn-select-elevate');
     const btnCustomSales = document.getElementById('pricing-custom-sales-link');
     const contactMessage = document.getElementById('contact-message');
 
@@ -703,36 +695,36 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    if (btnBasic) {
-        btnBasic.addEventListener('click', (e) => {
+    if (btnLaunch) {
+        btnLaunch.addEventListener('click', (e) => {
             e.preventDefault();
             const billingPeriod = billingYearly && billingYearly.classList.contains('active') ? 'Yearly' : 'Monthly';
-            const price = billingPeriod === 'Yearly' ? '$239/mo (Billed Yearly)' : '$299/mo (Billed Monthly)';
-            const msg = `Hi ZavioCRM Team,\n\nI would like to get started with the Basic Plan at ${price}. Please guide me through the onboarding and account creation process.\n\nThank you!`;
-            handlePlanSelection('Basic', msg);
+            const price = billingPeriod === 'Yearly' ? '$269/Month (Billed Annually)' : '$299/Month';
+            const msg = `Hi ZavioCRM Team,\n\nI would like to start a free trial of the Launch Plan at ${price}. Please guide me through the onboarding and account creation process.\n\nThank you!`;
+            handlePlanSelection('Launch', msg);
         });
     }
 
-    if (btnAdvanced) {
-        btnAdvanced.addEventListener('click', (e) => {
+    if (btnScale) {
+        btnScale.addEventListener('click', (e) => {
             e.preventDefault();
-            const msg = `Hi ZavioCRM Team,\n\nI would like to book a demo to discuss the Advanced Plan. We are interested in setting up automated workflows, Review & Resolution AI, and custom dashboard features for our business.\n\nBest regards,`;
-            handlePlanSelection('Advanced', msg);
+            const msg = `Hi ZavioCRM Team,\n\nI'm interested in the Scale Plan. We'd like to get a Custom Quote for our business. Please contact me with details.\n\nBest regards,`;
+            handlePlanSelection('Scale', msg);
         });
     }
 
-    if (btnCustom) {
-        btnCustom.addEventListener('click', (e) => {
+    if (btnElevate) {
+        btnElevate.addEventListener('click', (e) => {
             e.preventDefault();
-            const msg = `Hi ZavioCRM Team,\n\nI'm interested in the Custom Enterprise Plan. Please contact me with a formal quote and details about custom onboarding, integrations, and enterprise feature options.\n\nThank you!`;
-            handlePlanSelection('Custom Enterprise', msg);
+            const msg = `Hi ZavioCRM Team,\n\nI want to discuss the Elevate Plan for our business. We are looking for a customized, enterprise CRM solution with tailored features and support. Let's build together!\n\nBest regards,`;
+            handlePlanSelection('Elevate', msg);
         });
     }
 
     if (btnCustomSales) {
         btnCustomSales.addEventListener('click', (e) => {
             e.preventDefault();
-            const msg = `Hi ZavioCRM Team,\n\nI am interested in a Custom Enterprise Plan. I'd love to chat with a sales representative to design a tailor-made AI package for our scale.\n\nBest regards,`;
+            const msg = `Hi ZavioCRM Team,\n\nI am interested in a Custom Elevate Plan. I'd love to chat with a sales representative to design a tailor-made AI package for our scale.\n\nBest regards,`;
             handlePlanSelection('Custom Sales', msg);
         });
     }

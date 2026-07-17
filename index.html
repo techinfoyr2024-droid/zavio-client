@@ -18,6 +18,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
     <!-- AOS Animation -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
@@ -1816,216 +1818,403 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Pricing Section -->
-    <section id="pricing" class="py-3 section-padding bg-main border-top border-bottom border-light-alpha">
-        <div class="container py-2">
-            <!-- Top Header with Title and Trust Badges -->
-            <div class="d-flex flex-column flex-lg-row justify-content-between align-items-center mb-4 gap-3 border-bottom border-light-alpha pb-3" data-aos="fade-up">
-                <div class="text-center text-lg-start">
-                    <h2 class="fs-3 fw-extrabold font-poppins mb-1 text-main">
-                        Choose the Perfect Plan <span class="text-gradient">for Your Business</span>
-                    </h2>
-                    <p class="fs-8 text-muted-secondary mb-0">Scale your business with AI-powered automation. Start with the essentials or build a custom solution.</p>
-                </div>
-                <!-- Trust capsule badge -->
-                <div class="d-flex flex-wrap gap-2 justify-content-center bg-card border border-light-alpha rounded-pill px-3 py-1.5 shadow-sm fs-9 text-muted-secondary align-items-center">
-                    <span class="d-flex align-items-center gap-1"><i class="fa-solid fa-shield-halved text-success"></i> No Hidden Fees</span>
-                    <span class="d-flex align-items-center gap-1"><i class="fa-solid fa-headset text-primary"></i> Customer Support</span>
-                    <span class="d-flex align-items-center gap-1"><i class="fa-solid fa-rotate text-info"></i> Cancel Anytime</span>
-                    <span class="d-flex align-items-center gap-1"><i class="fa-solid fa-lock text-warning"></i> Secure</span>
-                </div>
-            </div>
-
-            <!-- Horizontal 4-Column Row Layout -->
-            <div class="row g-4 align-items-stretch justify-content-center">
-                <!-- Column 1: Choose smarter intro panel -->
-                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="50">
-                    <div class="pricing-card card-intro p-3 rounded-4 border border-light-alpha bg-glass-card h-100 d-flex flex-column justify-content-between text-start position-relative overflow-hidden">
-                         <div>
-                             <div class="mb-2">
-                                 <span class="badge bg-primary-soft text-primary rounded-pill px-3 py-1 fs-9 fw-semibold text-uppercase">Choose Smarter</span>
-                             </div>
-                             <h3 class="fw-bold font-poppins text-main mb-2 fs-5">
-                                 Choose the perfect plan for <span class="text-gradient">your business</span>
-                             </h3>
-                             <p class="text-muted-secondary fs-9 mb-3">
-                                 Scale your business with AI-powered automation. Start with the essentials or build a custom solution.
-                             </p>
-                             
-                             <!-- Toggle button -->
-                             <div class="billing-toggle-container d-inline-flex align-items-center p-1 bg-card border border-light-alpha rounded-pill shadow-sm mb-3 w-100 justify-content-between">
-                                 <button class="btn btn-sm py-1 px-2 rounded-pill billing-toggle-btn active w-50" style="font-size: 0.75rem;" id="billing-monthly">Monthly</button>
-                                 <button class="btn btn-sm py-1 px-2 rounded-pill billing-toggle-btn w-50" style="font-size: 0.75rem;" id="billing-yearly">
-                                     Yearly <span style="font-size: 0.5rem; padding: 1.5px 3px;" class="badge bg-primary text-white ms-1 rounded-pill fw-medium">Save 20%</span>
-                                 </button>
-                             </div>
-                             
-                             <ul class="list-unstyled d-flex flex-column gap-2 mb-3 fs-9 text-muted-secondary" style="padding-left: 0;">
-                                 <li class="d-flex align-items-center gap-2"><i class="fa-solid fa-circle-check text-success fs-9"></i> 14-Day Free Trial</li>
-                                 <li class="d-flex align-items-center gap-2"><i class="fa-solid fa-circle-check text-success fs-9"></i> No Credit Card Required</li>
-                             </ul>
-                         </div>
-                    </div>
-                </div>
-
-                <!-- Column 2: Basic Card (Blue) -->
-                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
-                    <div class="pricing-card card-blue p-3 rounded-4 border border-light-alpha bg-glass-card h-100 d-flex flex-column justify-content-between position-relative overflow-hidden text-center">
-                        <!-- Curved header BG -->
-                        <div class="pricing-card-header-bg header-blue"></div>
-                        <div class="position-relative z-2">
-                            <!-- Circle Icon -->
-                            <div class="pricing-icon bg-blue text-white rounded-circle d-flex align-items-center justify-content-center mx-auto mb-2 mt-1 shadow-blue-sm">
-                                <i class="fa-solid fa-comments"></i>
-                            </div>
-                            <h4 class="fw-bold font-poppins text-main mb-1 fs-5">Basic</h4>
-                            <p class="text-muted-secondary fs-9 mb-2">Perfect for startups to automate customer communication.</p>
-                            
-                            <div class="price-box my-2">
-                                <span class="fs-9 text-muted-secondary d-block">Starting at</span>
-                                <h2 class="fs-2 fw-extrabold font-poppins text-main m-0" id="price-basic">$299</h2>
-                                <span class="fs-9 text-muted-secondary d-block mt-0.5" id="billing-period-basic">/mo Billed monthly</span>
-                            </div>
-
-                            <span class="badge badge-contacts bg-blue-soft text-blue rounded-pill px-3 py-1 fs-9 fw-semibold mb-2.5">Up to 5,000 Contacts</span>
-
-                            <div style="max-height: 120px; overflow-y: auto; scrollbar-width: thin; padding-right: 4px;">
-                                <ul class="list-unstyled text-start d-flex flex-column gap-2 mb-0 fs-9 text-muted-secondary" style="padding-left: 10px;">
-                                    <li class="d-flex align-items-center gap-2"><i class="fa-solid fa-circle-check text-blue fs-9"></i> Zavio Echo AI</li>
-                                    <li class="d-flex align-items-center gap-2"><i class="fa-solid fa-circle-check text-blue fs-9"></i> Zavio Inbox AI</li>
-                                    <li class="d-flex align-items-center gap-2"><i class="fa-solid fa-circle-check text-blue fs-9"></i> WhatsApp Integration</li>
-                                    <li class="d-flex align-items-center gap-2"><i class="fa-solid fa-circle-check text-blue fs-9"></i> SMS Integration</li>
-                                    <li class="d-flex align-items-center gap-2"><i class="fa-solid fa-circle-check text-blue fs-9"></i> AI PDF Generation</li>
-                                    <li class="d-flex align-items-center gap-2"><i class="fa-solid fa-circle-check text-blue fs-9"></i> AI Content Gen</li>
-                                    <li class="d-flex align-items-center gap-2"><i class="fa-solid fa-circle-check text-blue fs-9"></i> Email Support</li>
-                                    <li class="d-flex align-items-center gap-2"><i class="fa-solid fa-circle-check text-blue fs-9"></i> Up to 5 Users</li>
-                                </ul>
-                            </div>
+            <!-- Pricing Section -->
+            <section id="pricing" class="py-3 section-padding bg-main border-top border-bottom border-light-alpha">
+                <div class="container py-2">
+                    <!-- Top Header with Title and Trust Badges -->
+                    <div class="d-flex flex-column flex-lg-row justify-content-between align-items-center mb-5 gap-3 border-bottom border-light-alpha pb-3"
+                        data-aos="fade-up">
+                        <div class="text-center text-lg-start">
+                            <h2 class="display-6 fw-extrabold font-poppins mb-1 text-main"
+                                style="font-size: 2.25rem !important;">
+                                Choose the Perfect Plan for <span class="text-gradient">Your Business</span>
+                            </h2>
+                            <p class="fs-8 text-muted-secondary mb-0">Scale your business with AI-powered automation.
+                                Start with the essentials or build a custom solution.</p>
                         </div>
-                        <div class="mt-3 position-relative z-2">
-                            <a href="#contact" class="btn btn-blue-theme w-100 py-2 rounded-pill fw-semibold hover-lift text-center fs-8" id="btn-select-basic">Get Started</a>
+                        <!-- Trust capsule badge -->
+                        <div
+                            class="d-flex flex-wrap gap-2 justify-content-center bg-card border border-light-alpha rounded-pill px-3 py-1.5 shadow-sm fs-9 text-muted-secondary align-items-center">
+                            <span class="d-flex align-items-center gap-1"><i data-lucide="shield"
+                                    class="pricing-check-icon text-success"></i> No Hidden Fees</span>
+                            <span class="d-flex align-items-center gap-1"><i data-lucide="headphones"
+                                    class="pricing-check-icon text-primary"></i> Customer Support</span>
+                            <span class="d-flex align-items-center gap-1"><i data-lucide="refresh-cw"
+                                    class="pricing-check-icon text-info"></i> Cancel Anytime</span>
+                            <span class="d-flex align-items-center gap-1"><i data-lucide="lock"
+                                    class="pricing-check-icon text-warning"></i> Secure Payments</span>
                         </div>
                     </div>
-                </div>
 
-                <!-- Column 3: Advanced Card (Green) -->
-                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
-                    <div class="pricing-card card-green p-3 rounded-4 border border-light-alpha bg-glass-card h-100 d-flex flex-column justify-content-between position-relative overflow-hidden text-center">
-                        <!-- Curved header BG -->
-                        <div class="pricing-card-header-bg header-green"></div>
-                        <div class="position-relative z-2">
-                            <!-- Circle Icon -->
-                            <div class="pricing-icon bg-green text-white rounded-circle d-flex align-items-center justify-content-center mx-auto mb-2 mt-1 shadow-green-sm">
-                                <i class="fa-solid fa-star"></i>
-                            </div>
-                            <h4 class="fw-bold font-poppins text-main mb-1 fs-5">Advanced</h4>
-                            <p class="text-muted-secondary fs-9 mb-2">Designed for growing businesses that need powerful AI.</p>
-                            
-                            <div class="price-box my-2">
-                                <h2 class="fs-2 fw-extrabold font-poppins text-main m-0" style="background: linear-gradient(135deg, #10B981, #06B6D4); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Contact Us</h2>
-                                <span class="fs-9 text-muted-secondary d-block mt-0.5">Most Popular</span>
-                            </div>
+                    <!-- Horizontal 4-Column Row Layout -->
+                    <div class="row g-4 align-items-stretch justify-content-center">
+                        <!-- Column 1: Pricing Information Panel -->
+                        <div class="col-xl-3 col-lg-6 d-flex" data-aos="fade-up" data-aos-delay="50">
+                            <div
+                                class="pricing-card p-4 bg-glass-card w-100 d-flex flex-column justify-content-between text-start position-relative">
+                                <div class="d-flex flex-column align-items-stretch">
+                                    <!-- CHOOSE SMARTER Badge -->
+                                    <div class="mb-3">
+                                        <span
+                                            class="badge bg-blue-soft text-blue rounded-pill px-3 py-1.5 fs-9 fw-bold uppercase tracking-wider">CHOOSE
+                                            SMARTER</span>
+                                    </div>
+                                    <!-- Large Title -->
+                                    <h3 class="pricing-title text-main mb-3"
+                                        style="line-height: 1.35; font-size: 1.625rem !important;">
+                                        Choose the perfect plan for <span class="text-blue">your business</span>
+                                    </h3>
+                                    <!-- Description -->
+                                    <p class="pricing-desc mb-4">
+                                        Scale your business with AI-powered automation. Start with the essentials or
+                                        build a custom solution.
+                                    </p>
 
-                            <span class="badge badge-contacts bg-green-soft text-green rounded-pill px-3 py-1 fs-9 fw-semibold mb-2.5">Includes Basic, plus:</span>
+                                    <!-- Monthly / Yearly Toggle Inside Column 1 -->
+                                    <div class="billing-toggle-container d-inline-flex align-items-center p-1 bg-card border border-light-alpha rounded-3 shadow-sm mb-4"
+                                        style="width: 100%;">
+                                        <button class="btn btn-sm py-2 px-3 billing-toggle-btn active w-50"
+                                            id="billing-monthly">Monthly</button>
+                                        <button class="btn btn-sm py-2 px-3 billing-toggle-btn w-50"
+                                            style="position: relative;" id="billing-yearly">
+                                            Yearly <span class="badge bg-success text-white ms-1 fw-bold"
+                                                style="font-size: 0.55rem; padding: 2px 4px; border-radius: 4px;">Save
+                                                10%</span>
+                                        </button>
+                                    </div>
+                                </div>
 
-                            <div style="max-height: 120px; overflow-y: auto; scrollbar-width: thin; padding-right: 4px;">
-                                <ul class="list-unstyled text-start d-flex flex-column gap-2 mb-0 fs-9 text-muted-secondary" style="padding-left: 10px;">
-                                    <li class="d-flex align-items-center gap-2"><i class="fa-solid fa-circle-check text-green fs-9"></i> Zavio Flow AI</li>
-                                    <li class="d-flex align-items-center gap-2"><i class="fa-solid fa-circle-check text-green fs-9"></i> Zavio Forge AI</li>
-                                    <li class="d-flex align-items-center gap-2"><i class="fa-solid fa-circle-check text-green fs-9"></i> Zavio Reputation AI</li>
-                                    <li class="d-flex align-items-center gap-2"><i class="fa-solid fa-circle-check text-green fs-9"></i> Zavio Build AI</li>
-                                    <li class="d-flex align-items-center gap-2"><i class="fa-solid fa-circle-check text-green fs-9"></i> Workflow Automation</li>
-                                    <li class="d-flex align-items-center gap-2"><i class="fa-solid fa-circle-check text-green fs-9"></i> Review & Resolution AI</li>
-                                    <li class="d-flex align-items-center gap-2"><i class="fa-solid fa-circle-check text-green fs-9"></i> Conversion AI</li>
-                                    <li class="d-flex align-items-center gap-2"><i class="fa-solid fa-circle-check text-green fs-9"></i> Priority Support</li>
-                                    <li class="d-flex align-items-center gap-2"><i class="fa-solid fa-circle-check text-green fs-9"></i> Mobile App</li>
-                                    <li class="d-flex align-items-center gap-2"><i class="fa-solid fa-circle-check text-green fs-9"></i> Custom Dashboard</li>
-                                    <li class="d-flex align-items-center gap-2"><i class="fa-solid fa-circle-check text-green fs-9"></i> User Options</li>
-                                    <li class="d-flex align-items-center gap-2"><i class="fa-solid fa-circle-check text-green fs-9"></i> Contact Packs</li>
-                                    <li class="d-flex align-items-center gap-2"><i class="fa-solid fa-circle-check text-green fs-9"></i> Email Volume</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="mt-3 position-relative z-2">
-                            <a href="#contact" class="btn btn-green-theme w-100 py-2 rounded-pill fw-semibold hover-lift text-center fs-8" id="btn-select-advanced">Book a Demo</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Column 4: Custom Enterprise Card (Orange - HIGHLIGHTED!) -->
-                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
-                    <div class="pricing-card card-orange p-3 rounded-4 border border-light-alpha bg-glass-card h-100 d-flex flex-column justify-content-between position-relative overflow-hidden text-center custom-highlight-border">
-                        <!-- Curved header BG -->
-                        <div class="pricing-card-header-bg header-orange"></div>
-                        <!-- Top recommended badge centered -->
-                        <div class="position-absolute top-0 start-50 translate-middle-x bg-accent text-white px-3 py-0.5 fs-9 rounded-pill shadow-sm fw-bold tracking-wide d-flex align-items-center gap-1 z-3" style="top: 10px; background-color: #ff7300 !important; font-size: 0.65rem !important;">
-                            <i class="fa-solid fa-wand-magic-sparkles fs-9"></i> HIGHLIGHTED
-                        </div>
-
-                        <div class="position-relative z-2">
-                            <!-- Circle Icon -->
-                            <div class="pricing-icon bg-orange text-white rounded-circle d-flex align-items-center justify-content-center mx-auto mb-2 mt-3 shadow-orange-sm">
-                                <i class="fa-solid fa-rocket"></i>
-                            </div>
-                            <h4 class="fw-bold font-poppins text-main mb-1 fs-5">Custom Enterprise</h4>
-                            <p class="text-muted-secondary fs-9 mb-2">Need a customized AI solution? Build a package that fits your business.</p>
-                            
-                            <div class="price-box my-2">
-                                <h2 class="fs-2 fw-extrabold font-poppins text-main m-0" style="background: linear-gradient(135deg, var(--accent), #EF4444); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Contact Sales</h2>
-                            </div>
-
-                            <div class="customization-section p-2.5 rounded-3 bg-light-alpha border border-light-alpha mb-2.5">
-                                <h6 class="fw-bold font-poppins fs-9 text-main mb-1.5 text-start">
-                                    <i class="fa-solid fa-gem text-accent me-2"></i>Included Features
-                                </h6>
-                                
-                                <div style="max-height: 120px; overflow-y: auto; scrollbar-width: thin; padding-right: 4px;">
-                                    <ul class="list-unstyled text-start d-flex flex-column gap-2 mb-0 fs-9 text-muted-secondary" style="padding-left: 10px;">
-                                        <li class="d-flex align-items-center gap-2"><i class="fa-solid fa-circle-check text-orange fs-9"></i> Zavio Echo AI</li>
-                                        <li class="d-flex align-items-center gap-2"><i class="fa-solid fa-circle-check text-orange fs-9"></i> Zavio Inbox AI</li>
-                                        <li class="d-flex align-items-center gap-2"><i class="fa-solid fa-circle-check text-orange fs-9"></i> Zavio Forge AI</li>
-                                        <li class="d-flex align-items-center gap-2"><i class="fa-solid fa-circle-check text-orange fs-9"></i> Zavio Flow AI</li>
-                                        <li class="d-flex align-items-center gap-2"><i class="fa-solid fa-circle-check text-orange fs-9"></i> Zavio Reputation AI</li>
-                                        <li class="d-flex align-items-center gap-2"><i class="fa-solid fa-circle-check text-orange fs-9"></i> Zavio Build AI</li>
-                                        <li class="d-flex align-items-center gap-2"><i class="fa-solid fa-circle-check text-orange fs-9"></i> Mobile App</li>
-                                        <li class="d-flex align-items-center gap-2"><i class="fa-solid fa-circle-check text-orange fs-9"></i> WhatsApp</li>
-                                        <li class="d-flex align-items-center gap-2"><i class="fa-solid fa-circle-check text-orange fs-9"></i> SMS Integration</li>
-                                        <li class="d-flex align-items-center gap-2"><i class="fa-solid fa-circle-check text-orange fs-9"></i> Additional Users</li>
-                                        <li class="d-flex align-items-center gap-2"><i class="fa-solid fa-circle-check text-orange fs-9"></i> Additional Contacts</li>
-                                        <li class="d-flex align-items-center gap-2"><i class="fa-solid fa-circle-check text-orange fs-9"></i> Email Volume</li>
-                                        <li class="d-flex align-items-center gap-2"><i class="fa-solid fa-circle-check text-orange fs-9"></i> Custom Integrations</li>
-                                        <li class="d-flex align-items-center gap-2"><i class="fa-solid fa-circle-check text-orange fs-9"></i> Account Manager</li>
-                                        <li class="d-flex align-items-center gap-2"><i class="fa-solid fa-circle-check text-orange fs-9"></i> Enterprise Security</li>
-                                        <li class="d-flex align-items-center gap-2"><i class="fa-solid fa-circle-check text-orange fs-9"></i> SLA & Priority Support</li>
-                                    </ul>
+                                <!-- Trial checks at bottom of Column 1 -->
+                                <div
+                                    class="d-flex flex-column gap-2.5 text-start pt-3 border-top border-light-alpha mt-3">
+                                    <span class="d-flex align-items-center gap-2 fs-9 text-muted-secondary">
+                                        <i data-lucide="check-circle" class="pricing-check-icon text-success"></i>
+                                        14-Day Free Trial
+                                    </span>
+                                    <span class="d-flex align-items-center gap-2 fs-9 text-muted-secondary">
+                                        <i data-lucide="check-circle" class="pricing-check-icon text-success"></i> No
+                                        Credit Card Required
+                                    </span>
                                 </div>
                             </div>
                         </div>
-                        <div class="mt-3 position-relative z-2">
-                            <a href="#contact" class="btn btn-orange-theme w-100 py-2 rounded-pill fw-semibold hover-lift text-center fs-8" id="btn-select-custom">Contact Sales</a>
+
+                        <!-- Column 2: Launch Card (Blue Accent) -->
+                        <div class="col-xl-3 col-lg-6 col-md-6 col-12 d-flex mb-3 mb-xl-0" data-aos="fade-up"
+                            data-aos-delay="100">
+                            <div
+                                class="pricing-card card-blue bg-glass-card w-100 d-flex flex-column justify-content-between text-center position-relative">
+                                <div class="d-flex flex-column align-items-stretch">
+                                    <!-- Circle Icon -->
+                                    <div class="pricing-icon bg-blue text-white rounded-circle d-flex align-items-center justify-content-center mx-auto mb-2 mt-1 shadow-blue-sm"
+                                        style="width: 44px; height: 44px;">
+                                        <i data-lucide="message-square" style="width: 20px; height: 20px;"></i>
+                                    </div>
+                                    <h4 class="pricing-title text-main mb-0 fs-5">Launch</h4>
+                                    <p class="pricing-desc text-muted-secondary mb-2 fs-9">Perfect for startups and
+                                        growing businesses.</p>
+
+                                    <!-- Price Block -->
+                                    <div class="price-box my-2 py-2 border-top border-bottom border-light-alpha text-center"
+                                        style="min-height: 94px; display: flex; flex-direction: column; justify-content: center;">
+                                        <!-- Monthly Block -->
+                                        <div id="price-launch-monthly-block" class="transition-all duration-300">
+                                            <div class="d-flex justify-content-center align-items-baseline mb-0">
+                                                <span class="price-amount text-main m-0"
+                                                    style="font-size: 2.1rem !important; font-weight: 755 !important;">$299</span>
+                                                <span class="fs-8 text-muted-secondary ms-1">/ month</span>
+                                            </div>
+                                            <span class="fs-9 text-muted-secondary d-block">or $269/month billed
+                                                annually</span>
+                                        </div>
+                                        <!-- Yearly Block -->
+                                        <div id="price-launch-yearly-block" class="transition-all duration-300 d-none">
+                                            <div class="d-flex justify-content-center align-items-baseline mb-0">
+                                                <span class="price-amount text-main m-0"
+                                                    style="font-size: 2.1rem !important; font-weight: 755 !important;">$269</span>
+                                                <span class="fs-8 text-muted-secondary ms-1">/ month</span>
+                                            </div>
+                                            <span class="fs-9 text-muted-secondary d-block">Billed annually
+                                                ($3,228/year)</span>
+                                            <span class="fs-9 text-success fw-bold d-block mt-0.5">Save $360 every
+                                                year</span>
+                                        </div>
+                                    </div>
+
+                                    <!-- Contacts Badge -->
+                                    <span
+                                        class="badge bg-blue-soft text-blue rounded-pill px-3 py-1 fs-9 fw-bold mx-auto mb-2"
+                                        style="width: fit-content;">
+                                        Up to 5,000 Contacts
+                                    </span>
+
+                                    <!-- Scrollable Features Area -->
+                                    <div class="pricing-features-scroll text-start mb-1">
+                                        <ul class="list-unstyled d-flex flex-column gap-2 mb-0"
+                                            style="padding-left: 0;">
+                                            <li
+                                                class="d-flex align-items-center gap-1.5 fs-9 text-muted-secondary mb-1">
+                                                <i data-lucide="check" class="pricing-check-icon text-blue me-2"></i>
+                                                <span class="feature-text">10+ CRM Features</span>
+                                            </li>
+                                            <li
+                                                class="d-flex align-items-center gap-1.5 fs-9 text-muted-secondary mb-1">
+                                                <i data-lucide="check" class="pricing-check-icon text-blue me-2"></i>
+                                                <span class="feature-text">2 AI Modules (Inbox & Forge)</span>
+                                            </li>
+                                            <li
+                                                class="d-flex align-items-center gap-1.5 fs-9 text-muted-secondary mb-1">
+                                                <i data-lucide="check" class="pricing-check-icon text-blue me-2"></i>
+                                                <span class="feature-text">Unified Inbox Suite</span>
+                                            </li>
+                                            <li
+                                                class="d-flex align-items-center gap-1.5 fs-9 text-muted-secondary mb-1">
+                                                <i data-lucide="check" class="pricing-check-icon text-blue me-2"></i>
+                                                <span class="feature-text">Workflow Automation</span>
+                                            </li>
+                                            <li
+                                                class="d-flex align-items-center gap-1.5 fs-9 text-muted-secondary mb-1">
+                                                <i data-lucide="check" class="pricing-check-icon text-blue me-2"></i>
+                                                <span class="feature-text">Smart Calendars</span>
+                                            </li>
+                                            <li
+                                                class="d-flex align-items-center gap-1.5 fs-9 text-muted-secondary mb-1">
+                                                <i data-lucide="check" class="pricing-check-icon text-blue me-2"></i>
+                                                <span class="feature-text">Marketing Landing Pages</span>
+                                            </li>
+                                            <li
+                                                class="d-flex align-items-center gap-1.5 fs-9 text-muted-secondary mb-1">
+                                                <i data-lucide="check" class="pricing-check-icon text-blue me-2"></i>
+                                                <span class="feature-text">Interactive Forms & Surveys</span>
+                                            </li>
+                                            <li
+                                                class="d-flex align-items-center gap-1.5 fs-9 text-muted-secondary mb-1">
+                                                <i data-lucide="check" class="pricing-check-icon text-blue me-2"></i>
+                                                <span class="feature-text">Contact Management</span>
+                                            </li>
+                                            <li
+                                                class="d-flex align-items-center gap-1.5 fs-9 text-muted-secondary mb-1">
+                                                <i data-lucide="check" class="pricing-check-icon text-blue me-2"></i>
+                                                <span class="feature-text">Team Collaboration Tools</span>
+                                            </li>
+                                            <li class="d-flex align-items-center gap-1.5 fs-9 text-muted-secondary">
+                                                <i data-lucide="check" class="pricing-check-icon text-blue me-2"></i>
+                                                <span class="feature-text">Standard Support</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="mt-3">
+                                    <a href="#contact" class="btn btn-blue-theme btn-pricing w-100 text-center"
+                                        id="btn-select-launch">Start Free Trial</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Column 3: Scale Card (Green Accent, Clean Premium) -->
+                        <div class="col-xl-3 col-lg-6 col-md-6 col-12 d-flex mb-3 mb-xl-0" data-aos="fade-up"
+                            data-aos-delay="200">
+                            <div
+                                class="pricing-card card-neutral bg-glass-card w-100 d-flex flex-column justify-content-between text-center position-relative">
+                                <div class="d-flex flex-column align-items-stretch">
+                                    <!-- Circle Icon -->
+                                    <div class="pricing-icon bg-green text-white rounded-circle d-flex align-items-center justify-content-center mx-auto mb-2 mt-1 shadow-green-sm"
+                                        style="width: 44px; height: 44px;">
+                                        <i data-lucide="trending-up" style="width: 20px; height: 20px;"></i>
+                                    </div>
+                                    <h4 class="pricing-title text-main mb-0 fs-5">Scale</h4>
+                                    <p class="pricing-desc text-muted-secondary mb-2 fs-9">Advanced AI & Automation</p>
+
+                                    <!-- Price Block -->
+                                    <div class="price-box my-2 py-2 border-top border-bottom border-light-alpha text-center d-flex flex-column justify-content-center"
+                                        style="min-height: 94px;">
+                                        <h2 class="price-amount text-main m-0"
+                                            style="font-size: 1.5rem !important; font-weight: 700 !important; line-height: 1.25 !important; letter-spacing: -0.01em;">
+                                            Advanced solutions</h2>
+                                        <span class="fs-9 text-muted-secondary d-block mt-1">tailored to your business
+                                            goals.</span>
+                                    </div>
+
+                                    <!-- Extra Items Badge -->
+                                    <span
+                                        class="badge bg-green-soft text-green rounded-pill px-3 py-1 fs-9 fw-bold mx-auto mb-2"
+                                        style="width: fit-content;">
+                                        Everything in Launch, plus:
+                                    </span>
+
+                                    <!-- Scrollable Features Area -->
+                                    <div class="pricing-features-scroll text-start mb-1">
+                                        <ul class="list-unstyled d-flex flex-column gap-2 mb-0"
+                                            style="padding-left: 0;">
+                                            <li
+                                                class="d-flex align-items-center gap-1.5 fs-9 text-muted-secondary mb-1">
+                                                <i data-lucide="check" class="pricing-check-icon text-green me-2"></i>
+                                                <span class="feature-text">Zavio Flow AI Integration</span>
+                                            </li>
+                                            <li
+                                                class="d-flex align-items-center gap-1.5 fs-9 text-muted-secondary mb-1">
+                                                <i data-lucide="check" class="pricing-check-icon text-green me-2"></i>
+                                                <span class="feature-text">Zavio Echo AI Agent</span>
+                                            </li>
+                                            <li
+                                                class="d-flex align-items-center gap-1.5 fs-9 text-muted-secondary mb-1">
+                                                <i data-lucide="check" class="pricing-check-icon text-green me-2"></i>
+                                                <span class="feature-text">Zavio Reputation AI Module</span>
+                                            </li>
+                                            <li
+                                                class="d-flex align-items-center gap-1.5 fs-9 text-muted-secondary mb-1">
+                                                <i data-lucide="check" class="pricing-check-icon text-green me-2"></i>
+                                                <span class="feature-text">Zavio Build Custom AI</span>
+                                            </li>
+                                            <li
+                                                class="d-flex align-items-center gap-1.5 fs-9 text-muted-secondary mb-1">
+                                                <i data-lucide="check" class="pricing-check-icon text-green me-2"></i>
+                                                <span class="feature-text">Reviews & Social Planner</span>
+                                            </li>
+                                            <li
+                                                class="d-flex align-items-center gap-1.5 fs-9 text-muted-secondary mb-1">
+                                                <i data-lucide="check" class="pricing-check-icon text-green me-2"></i>
+                                                <span class="feature-text">Custom White Branding</span>
+                                            </li>
+                                            <li
+                                                class="d-flex align-items-center gap-1.5 fs-9 text-muted-secondary mb-1">
+                                                <i data-lucide="check" class="pricing-check-icon text-green me-2"></i>
+                                                <span class="feature-text">API & Webhook Access</span>
+                                            </li>
+                                            <li
+                                                class="d-flex align-items-center gap-1.5 fs-9 text-muted-secondary mb-1">
+                                                <i data-lucide="check" class="pricing-check-icon text-green me-2"></i>
+                                                <span class="feature-text">Advanced BI Analytics</span>
+                                            </li>
+                                            <li class="d-flex align-items-center gap-1.5 fs-9 text-muted-secondary">
+                                                <i data-lucide="check" class="pricing-check-icon text-green me-2"></i>
+                                                <span class="feature-text">24/7 Priority Support</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="mt-3">
+                                    <a href="#contact" class="btn btn-green-theme btn-pricing w-100 text-center"
+                                        id="btn-select-scale">Explore Scale</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Column 4: Elevate Card (Orange Accent, HERO CARD!) -->
+                        <div class="col-xl-3 col-lg-6 col-md-6 col-12 d-flex" data-aos="fade-up" data-aos-delay="300">
+                            <div
+                                class="pricing-card card-orange bg-glass-card w-100 d-flex flex-column justify-content-between text-center position-relative elevate-hero-card">
+                                <!-- Top recommended badge centered -->
+                                <div class="position-absolute top-0 start-50 translate-middle-x text-white px-3 py-1.5 rounded-bottom fw-bold text-uppercase tracking-wider"
+                                    style="top: 0; background-color: #ff7300 !important; font-size: 0.65rem !important; letter-spacing: 0.05em; border-radius: 0 0 6px 6px;">
+                                    Build Your Suite
+                                </div>
+
+                                <div class="d-flex flex-column align-items-stretch mt-2">
+                                    <!-- Circle Icon -->
+                                    <div class="pricing-icon bg-orange text-white rounded-circle d-flex align-items-center justify-content-center mx-auto mb-2 mt-1 shadow-orange-sm"
+                                        style="width: 44px; height: 44px;">
+                                        <i data-lucide="gem" style="width: 20px; height: 20px;"></i>
+                                    </div>
+                                    <h4 class="pricing-title text-main mb-0 fs-5">Elevate</h4>
+                                    <p class="pricing-desc text-muted-secondary mb-2 fs-9">Built around your business.
+                                    </p>
+
+                                    <!-- Price Block -->
+                                    <div class="price-box my-2 py-2 border-top border-bottom border-light-alpha text-center d-flex flex-column justify-content-center"
+                                        style="min-height: 94px;">
+                                        <h2 class="price-amount text-main m-0"
+                                            style="font-size: 1.5rem !important; font-weight: 700 !important; line-height: 1.25 !important; letter-spacing: -0.01em; background: linear-gradient(135deg, var(--accent), #EF4444); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                                            Built around your</h2>
+                                        <span class="fs-9 text-muted-secondary d-block mt-1">unique business
+                                            needs.</span>
+                                    </div>
+
+                                    <!-- Extra Items Badge -->
+                                    <span
+                                        class="badge bg-orange-soft text-orange rounded-pill px-3 py-1 fs-9 fw-bold mx-auto mb-2"
+                                        style="width: fit-content;">
+                                        Designed For
+                                    </span>
+
+                                    <!-- Scrollable Features Area -->
+                                    <div class="pricing-features-scroll text-start mb-1">
+                                        <ul class="list-unstyled d-flex flex-column gap-2 mb-0"
+                                            style="padding-left: 0;">
+                                            <li
+                                                class="d-flex align-items-center gap-1.5 fs-9 text-muted-secondary mb-1">
+                                                <i data-lucide="check" class="pricing-check-icon text-orange me-2"></i>
+                                                <span class="feature-text">Enterprise Businesses</span>
+                                            </li>
+                                            <li
+                                                class="d-flex align-items-center gap-1.5 fs-9 text-muted-secondary mb-1">
+                                                <i data-lucide="check" class="pricing-check-icon text-orange me-2"></i>
+                                                <span class="feature-text">Growing Agencies</span>
+                                            </li>
+                                            <li
+                                                class="d-flex align-items-center gap-1.5 fs-9 text-muted-secondary mb-1">
+                                                <i data-lucide="check" class="pricing-check-icon text-orange me-2"></i>
+                                                <span class="feature-text">Multi-location Teams</span>
+                                            </li>
+                                            <li
+                                                class="d-flex align-items-center gap-1.5 fs-9 text-muted-secondary mb-1">
+                                                <i data-lucide="check" class="pricing-check-icon text-orange me-2"></i>
+                                                <span class="feature-text">Custom AI Solutions</span>
+                                            </li>
+                                            <li
+                                                class="d-flex align-items-center gap-1.5 fs-9 text-muted-secondary mb-1">
+                                                <i data-lucide="check" class="pricing-check-icon text-orange me-2"></i>
+                                                <span class="feature-text">Advanced API Integration</span>
+                                            </li>
+                                            <li
+                                                class="d-flex align-items-center gap-1.5 fs-9 text-muted-secondary mb-1">
+                                                <i data-lucide="check" class="pricing-check-icon text-orange me-2"></i>
+                                                <span class="feature-text">Dedicated SLA Support</span>
+                                            </li>
+                                            <li
+                                                class="d-flex align-items-center gap-1.5 fs-9 text-muted-secondary mb-1">
+                                                <i data-lucide="check" class="pricing-check-icon text-orange me-2"></i>
+                                                <span class="feature-text">Custom Onboarding</span>
+                                            </li>
+                                            <li class="d-flex align-items-center gap-1.5 fs-9 text-muted-secondary">
+                                                <i data-lucide="check" class="pricing-check-icon text-orange me-2"></i>
+                                                <span class="feature-text">Dedicated Account Mgr</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="mt-3">
+                                    <a href="#contact" class="btn btn-orange-theme btn-pricing w-100 text-center"
+                                        id="btn-select-elevate">Let's Build Together</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <!-- Full width horizontal ribbon at bottom -->
-            <div class="mt-3 bg-glass border border-light-alpha rounded-4 p-2 px-3 d-flex flex-column flex-md-row justify-content-between align-items-center gap-2 text-start shadow-sm" data-aos="fade-up">
-                <div class="d-flex flex-wrap align-items-center gap-3 fs-9 text-muted-secondary">
-                    <strong class="text-main fs-9">All Plans Include:</strong>
-                    <span class="d-flex align-items-center gap-1"><i class="fa-solid fa-headset text-primary"></i> Customer Support</span>
-                    <span class="d-flex align-items-center gap-1"><i class="fa-solid fa-rotate text-info"></i> Regular Updates</span>
-                    <span class="d-flex align-items-center gap-1"><i class="fa-solid fa-lock text-warning"></i> Data Security</span>
-                    <span class="d-flex align-items-center gap-1"><i class="fa-solid fa-shield-halved text-success"></i> No Hidden Fees</span>
-                    <span class="d-flex align-items-center gap-1"><i class="fa-solid fa-circle-check text-primary"></i> Cancel Anytime</span>
+                <!-- Full width horizontal ribbon at bottom -->
+                <div class="mt-3 bg-glass border border-light-alpha rounded-4 p-2 px-3 d-flex flex-column flex-md-row justify-content-between align-items-center gap-2 text-start shadow-sm"
+                    data-aos="fade-up">
+                    <div class="d-flex flex-wrap align-items-center gap-3 fs-9 text-muted-secondary">
+                        <strong class="text-main fs-9">All Plans Include:</strong>
+                        <span class="d-flex align-items-center gap-1"><i data-lucide="headphones"
+                                class="pricing-check-icon text-primary"></i> Customer Support</span>
+                        <span class="d-flex align-items-center gap-1"><i data-lucide="refresh-cw"
+                                class="pricing-check-icon text-info"></i> Regular Updates</span>
+                        <span class="d-flex align-items-center gap-1"><i data-lucide="lock"
+                                class="pricing-check-icon text-warning"></i> Data Security</span>
+                        <span class="d-flex align-items-center gap-1"><i data-lucide="shield"
+                                class="pricing-check-icon text-success"></i> No Hidden Fees</span>
+                        <span class="d-flex align-items-center gap-1"><i data-lucide="check-circle"
+                                class="pricing-check-icon text-primary"></i> Cancel Anytime</span>
+                    </div>
+                    <div class="fs-9">
+                        <span class="text-muted-secondary">Need a custom plan?</span>
+                        <a href="#contact"
+                            class="fw-bold text-decoration-none ms-1 d-inline-flex align-items-center gap-1"
+                            style="color: var(--primary);" id="pricing-custom-sales-link">Contact Sales <i
+                                data-lucide="arrow-right" class="pricing-check-icon"></i></a>
+                    </div>
                 </div>
-                <div class="fs-9">
-                    <span class="text-muted-secondary">Need a custom plan?</span>
-                    <a href="#contact" class="fw-bold text-decoration-none ms-1" style="color: var(--primary);" id="pricing-custom-sales-link">Contact Sales <i class="fa-solid fa-arrow-right fs-9 ms-1"></i></a>
-                </div>
-            </div>
         </div>
     </section>
 
@@ -2227,7 +2416,8 @@
         document.addEventListener('DOMContentLoaded', function () {
             AOS.init({ once: true, offset: 50, duration: 800 });
 
-            // Smooth Physics Cursor removed
+            // Initialize Lucide Icons
+            lucide.createIcons();
         });
     </script>
 </body>
