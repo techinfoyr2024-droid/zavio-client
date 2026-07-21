@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const nodeData = [
         {
             title: "Zavio Inbox AI",
-            subtitle: "Conversation AI",
+            subtitle: "AI Powered Inbox",
             desc: "Automates customer chats and messaging across WhatsApp, email, SMS, and web chat.",
             color: "var(--clr-cyan)",
             colorRGB: "6, 182, 212",
@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
             title: "Zavio Forge AI",
-            subtitle: "Content AI",
+            subtitle: "AI Content Studio",
             desc: "Generates engaging content, marketing copy, blogs, emails, and social media posts.",
             color: "var(--clr-purple)",
             colorRGB: "139, 92, 246",
@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
             title: "Zavio Echo AI",
-            subtitle: "Voice AI",
+            subtitle: "AI Call Assistant",
             desc: "AI voice agent for inbound/outbound calls, customer support, and appointment booking.",
             color: "var(--clr-pink)",
             colorRGB: "236, 72, 153",
@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
             title: "Zavio Flow AI",
-            subtitle: "Workflow AI",
+            subtitle: "Business Automation Engine",
             desc: "Automates business processes and connects apps to streamline repetitive tasks.",
             color: "var(--clr-orange)",
             colorRGB: "245, 158, 11)",
@@ -113,7 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
             title: "Zavio Reputation AI",
-            subtitle: "Review AI",
+            subtitle: "Reputation Management",
             desc: "Tracks customer feedback, responds to reviews, and enhances brand reputation.",
             color: "var(--clr-green)",
             colorRGB: "16, 185, 129",
@@ -126,7 +126,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
             title: "Zavio Build AI",
-            subtitle: "Funnel & Website AI",
+            subtitle: "Website & Funnel Builder",
             desc: "Builds landing pages, websites, and sales funnels optimized for conversions.",
             color: "var(--clr-blue)",
             colorRGB: "59, 130, 246",
